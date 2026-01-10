@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Discover Uz - Admin Add Booking</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d59f2",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1e293b",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for clean look */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #475569;
+        }
+        
+        /* Hide number input arrows */
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+            -webkit-appearance: none; 
+            margin: 0; 
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 overflow-hidden antialiased">
+<div class="flex h-screen w-full">
+<!-- SideNavBar -->
+<aside class="w-64 flex-shrink-0 border-r border-slate-200 dark:border-slate-800 bg-surface-light dark:bg-surface-dark flex flex-col justify-between transition-all duration-300 hidden md:flex">
+<div class="flex flex-col gap-6 p-6">
+<!-- Logo Area -->
+<div class="flex items-center gap-3">
+<div class="bg-primary/10 flex items-center justify-center rounded-lg size-10 text-primary">
+<span class="material-symbols-outlined text-2xl">travel_explore</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-slate-900 dark:text-white text-base font-bold leading-none">Discover Uz</h1>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium mt-1">Admin Panel</p>
+</div>
+</div>
+<!-- Navigation -->
+<nav class="flex flex-col gap-1.5">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-xl group-hover:text-primary transition-colors">pie_chart</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary dark:text-primary dark:bg-primary/20" href="#">
+<span class="material-symbols-outlined text-xl fill-current">calendar_month</span>
+<span class="text-sm font-medium">Bookings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-xl group-hover:text-primary transition-colors">map</span>
+<span class="text-sm font-medium">Tours</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-xl group-hover:text-primary transition-colors">group</span>
+<span class="text-sm font-medium">Users</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-xl group-hover:text-primary transition-colors">payments</span>
+<span class="text-sm font-medium">Financials</span>
+</a>
+</nav>
+</div>
+<!-- Bottom Actions -->
+<div class="p-6 border-t border-slate-200 dark:border-slate-800">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-xl group-hover:text-primary transition-colors">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+<div class="mt-4 flex items-center gap-3 px-3 py-2">
+<div class="size-8 rounded-full bg-cover bg-center" data-alt="Admin user profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCpsclZpzQW-Lwv19lgD8B-vJPNKnARmmUOGPWoNptNw_3ZSxQMdmajb9fbIgwctM_fDURzUME2oROPMfHQO7SvkFMPpi3-Fy0okoJBDeZu6x5g6IWKw1B-ofANM1VydtWnxyGdc1ijgRBkEBdSdtTE3FvdgsjLaXJEBZ4rA6xpZHEtOvEWqllqqqewTM5oM7ZIDM-izTaRtyeRhOv8-YD0yjAKrPjYwFX4EIVDqJSMb0j5PBJxx52k5SY06vzTxLrg-HO7fmku9uI");'></div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-slate-900 dark:text-white">Admin User</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">admin@discoveruz.com</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Wrapper -->
+<main class="flex-1 flex flex-col min-w-0 overflow-hidden bg-background-light dark:bg-background-dark relative">
+<!-- TopNavBar -->
+<header class="h-16 flex items-center justify-between px-6 border-b border-slate-200 dark:border-slate-800 bg-surface-light dark:bg-surface-dark z-20">
+<!-- Mobile Menu Toggle (Hidden on desktop) -->
+<button class="md:hidden p-2 -ml-2 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<!-- Search Bar -->
+<div class="hidden md:flex flex-1 max-w-lg items-center">
+<div class="relative w-full group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">search</span>
+<input class="w-full h-10 pl-10 pr-4 rounded-lg bg-slate-50 dark:bg-slate-800 border-none focus:ring-2 focus:ring-primary/20 text-sm placeholder:text-slate-400 text-slate-900 dark:text-white transition-all" placeholder="Search bookings, tours, or customers..." type="text"/>
+</div>
+</div>
+<!-- Header Actions -->
+<div class="flex items-center gap-4 ml-auto">
+<button class="relative p-2 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-red-500 rounded-full border-2 border-white dark:border-slate-900"></span>
+</button>
+<button class="flex items-center gap-2 px-3 py-1.5 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors shadow-sm text-sm font-medium">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span class="hidden sm:inline">New Booking</span>
+</button>
+</div>
+</header>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto p-4 md:p-8 scroll-smooth">
+<div class="max-w-6xl mx-auto space-y-6">
+<!-- Breadcrumbs -->
+<nav class="flex items-center text-sm font-medium text-slate-500 dark:text-slate-400">
+<a class="hover:text-primary transition-colors" href="#">Dashboard</a>
+<span class="mx-2 text-slate-300 dark:text-slate-600">/</span>
+<a class="hover:text-primary transition-colors" href="#">Bookings</a>
+<span class="mx-2 text-slate-300 dark:text-slate-600">/</span>
+<span class="text-slate-900 dark:text-white font-semibold">New Booking</span>
+</nav>
+<!-- Page Heading -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h1 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Add New Booking</h1>
+<p class="mt-1 text-slate-500 dark:text-slate-400">Create a manual reservation for a customer or an agent.</p>
+</div>
+</div>
+<!-- Main Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Left Column: Booking Form -->
+<div class="lg:col-span-2 space-y-6">
+<!-- Section: Experience Selection -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 overflow-hidden">
+<div class="p-6 border-b border-slate-100 dark:border-slate-700">
+<h2 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">tour</span>
+                                    Select Experience
+                                </h2>
+</div>
+<div class="p-6 space-y-4">
+<label class="block">
+<span class="text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5 block">Search Tour or Activity</span>
+<div class="relative">
+<select class="w-full h-12 pl-4 pr-10 rounded-lg bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:border-primary focus:ring-primary">
+<option disabled="" selected="" value="">Select an experience...</option>
+<option value="1">Samarkand Silk Road Tour (Day Trip)</option>
+<option value="2">Bukhara Old City Walking Tour</option>
+<option value="3">Khiva Historical Night Tour</option>
+<option value="4">Tashkent Modern City Excursion</option>
+</select>
+</div>
+<p class="text-xs text-slate-500 mt-1.5">Select the base experience to populate pricing and availability.</p>
+</label>
+<!-- Selected Experience Preview (conditionally shown) -->
+<div class="flex items-start gap-4 p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700">
+<div class="w-20 h-20 rounded-lg bg-cover bg-center shrink-0" data-alt="The Registan square in Samarkand with blue tiled madrasahs" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDaxO1GWz2jvYRfhSu69BWImjcXW1g_v03bGzqhxK7XI1bP6vzIlxKtW8yT_e1qzD8IB_O4GE8PiwwE_KeRonmfXbKdiNn78eOeAW93Z9nMjOuhsYs8txMX4i183CdERu9Ne2Nt-LDlFmuoAQnq8zeccYpLwtB5jdfYOgakADO9LctevPXy0jiAKQ101RlLiAJtIHJCfwChQYUybn2s1VT9lpIJGv_0J-cWe3D_1CGnxBi5lX06hl2v04yZ0tnez3b1W08iV3fVkdE");'></div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<h3 class="font-semibold text-slate-900 dark:text-white truncate">Samarkand Silk Road Tour</h3>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">Available</span>
+</div>
+<div class="flex items-center gap-1 text-xs text-slate-500 mt-1">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>8 Hours</span>
+<span class="mx-1">•</span>
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>Samarkand</span>
+</div>
+<div class="mt-2 text-primary font-bold text-sm">$85.00 <span class="text-slate-400 font-normal text-xs">per person</span></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Booking Details -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 overflow-hidden">
+<div class="p-6 border-b border-slate-100 dark:border-slate-700">
+<h2 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">calendar_today</span>
+                                    Date &amp; Participants
+                                </h2>
+</div>
+<div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Customer Lookup -->
+<div class="md:col-span-2">
+<label class="block">
+<span class="text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5 block">Customer</span>
+<div class="flex gap-2">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">person_search</span>
+<input class="w-full h-11 pl-10 pr-4 rounded-lg bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:border-primary focus:ring-primary" placeholder="Search by name or email..." type="text"/>
+</div>
+<button class="shrink-0 px-4 h-11 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 font-medium text-sm flex items-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+                                                New User
+                                            </button>
+</div>
+</label>
+</div>
+<!-- Date Picker -->
+<div>
+<label class="block">
+<span class="text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5 block">Booking Date</span>
+<input class="w-full h-11 px-4 rounded-lg bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:border-primary focus:ring-primary" type="date" value="2023-11-14"/>
+</label>
+</div>
+<!-- Time Slot -->
+<div>
+<label class="block">
+<span class="text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5 block">Start Time</span>
+<select class="w-full h-11 px-4 rounded-lg bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:border-primary focus:ring-primary">
+<option>09:00 AM</option>
+<option>10:00 AM</option>
+<option>11:00 AM</option>
+<option>02:00 PM</option>
+<option>04:00 PM</option>
+</select>
+</label>
+</div>
+<!-- Participants Adults -->
+<div>
+<label class="block">
+<span class="text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5 block">Adults (12+)</span>
+<div class="relative">
+<button class="absolute left-1 top-1 w-9 h-9 flex items-center justify-center rounded bg-white dark:bg-slate-700 text-slate-500 hover:text-primary shadow-sm border border-slate-200 dark:border-slate-600">
+<span class="material-symbols-outlined text-sm">remove</span>
+</button>
+<input class="w-full h-11 px-12 text-center rounded-lg bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:border-primary focus:ring-primary font-semibold" type="number" value="2"/>
+<button class="absolute right-1 top-1 w-9 h-9 flex items-center justify-center rounded bg-white dark:bg-slate-700 text-slate-500 hover:text-primary shadow-sm border border-slate-200 dark:border-slate-600">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</label>
+</div>
+<!-- Participants Children -->
+<div>
+<label class="block">
+<span class="text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5 block">Children (2-11)</span>
+<div class="relative">
+<button class="absolute left-1 top-1 w-9 h-9 flex items-center justify-center rounded bg-white dark:bg-slate-700 text-slate-500 hover:text-primary shadow-sm border border-slate-200 dark:border-slate-600">
+<span class="material-symbols-outlined text-sm">remove</span>
+</button>
+<input class="w-full h-11 px-12 text-center rounded-lg bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:border-primary focus:ring-primary font-semibold" type="number" value="0"/>
+<button class="absolute right-1 top-1 w-9 h-9 flex items-center justify-center rounded bg-white dark:bg-slate-700 text-slate-500 hover:text-primary shadow-sm border border-slate-200 dark:border-slate-600">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</label>
+</div>
+<!-- Special Requests -->
+<div class="md:col-span-2">
+<label class="block">
+<span class="text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5 block">Special Requests / Notes</span>
+<textarea class="w-full p-4 rounded-lg bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:border-primary focus:ring-primary resize-y placeholder:text-slate-400" placeholder="E.g. Vegetarian meal preference, hotel pickup location, etc." rows="4"></textarea>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Summary & Actions -->
+<div class="lg:col-span-1 space-y-6">
+<!-- Order Summary Card -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 sticky top-6">
+<div class="p-6 border-b border-slate-100 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-800/30">
+<h2 class="text-lg font-bold text-slate-900 dark:text-white">Booking Summary</h2>
+</div>
+<div class="p-6 space-y-4">
+<div class="flex justify-between items-center text-sm">
+<span class="text-slate-600 dark:text-slate-400">Adults (2 x $85)</span>
+<span class="font-medium text-slate-900 dark:text-white">$170.00</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-slate-600 dark:text-slate-400">Children (0 x $40)</span>
+<span class="font-medium text-slate-900 dark:text-white">$0.00</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-slate-600 dark:text-slate-400">Service Fee (5%)</span>
+<span class="font-medium text-slate-900 dark:text-white">$8.50</span>
+</div>
+<div class="my-4 border-t border-dashed border-slate-300 dark:border-slate-600"></div>
+<div class="flex justify-between items-end">
+<span class="text-base font-semibold text-slate-900 dark:text-white">Total</span>
+<span class="text-2xl font-bold text-primary">$178.50</span>
+</div>
+</div>
+<div class="p-6 pt-0 space-y-4">
+<div>
+<label class="block mb-2">
+<span class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Payment Status</span>
+</label>
+<select class="w-full h-10 px-3 rounded-lg bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:border-primary focus:ring-primary text-sm font-medium">
+<option selected="" value="pending">Pending Payment</option>
+<option value="paid">Paid in Full</option>
+<option value="deposit">Deposit Paid</option>
+<option value="invoice">Send Invoice</option>
+</select>
+</div>
+<div class="flex flex-col gap-3 pt-2">
+<button class="w-full h-12 flex items-center justify-center gap-2 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-all shadow-md hover:shadow-lg active:scale-[0.98]">
+<span class="material-symbols-outlined">check</span>
+                                        Create Booking
+                                    </button>
+<button class="w-full h-12 text-slate-600 dark:text-slate-400 font-medium rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                                        Cancel
+                                    </button>
+</div>
+</div>
+</div>
+<!-- Mini Help Card -->
+<div class="rounded-xl bg-blue-50 dark:bg-blue-900/20 p-4 border border-blue-100 dark:border-blue-900/30">
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-blue-600 dark:text-blue-400 shrink-0">info</span>
+<div>
+<h4 class="text-sm font-semibold text-blue-900 dark:text-blue-100">Need Help?</h4>
+<p class="text-xs text-blue-700 dark:text-blue-300 mt-1 leading-relaxed">
+                                        If the user is not found, please create a new user profile first. For custom group quotes, use the "Custom Quote" tool in the dashboard.
+                                    </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

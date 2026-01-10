@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Discover Uz Admin - Add New Blog Post</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d59f2",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        .rich-text-content p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            color: #374151;
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-white">
+<div class="flex h-screen w-full overflow-hidden">
+<!-- Sidebar -->
+<aside class="hidden w-64 flex-col border-r border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900 md:flex">
+<div class="flex h-16 items-center border-b border-slate-200 px-6 dark:border-slate-800">
+<div class="flex items-center gap-2 font-bold text-xl text-slate-900 dark:text-white">
+<div class="size-8 rounded bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined">explore</span>
+</div>
+                    Discover Uz
+                </div>
+</div>
+<div class="flex flex-1 flex-col overflow-y-auto px-4 py-6">
+<!-- User Profile Summary -->
+<div class="mb-6 flex items-center gap-3 px-2">
+<div class="h-10 w-10 rounded-full bg-slate-200 bg-cover bg-center" data-alt="Admin user profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB5Uygc4VsUAPgcg7o6tST8pZHSTYwk_2wtxXXS-npPJfQDduRWzIhbVitsAvyv-EFzOXG1-SYzrzfLWUIo7iQiCzuz2qXFiAuf6b169hkr5N0heTN9Uo8ROsUUqi0dCzJiH682UUaGjcD5HSEHAaeJo0IdmFQNkiWWBajxzj2qTght0YLFCAuGFQNTnkn_tShT3kYiXKZFiVYnnB0MgMUDL0Tbd7Jy6wRFvPmKTQZGIPUlDbtwnd0pIbHjMzUzQMz6bgpEdyJupSY");'></div>
+<div>
+<h3 class="text-sm font-medium text-slate-900 dark:text-white">Admin User</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400">Editor in Chief</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-slate-600 transition-colors hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 rounded-lg bg-primary/10 px-3 py-2 text-primary transition-colors dark:bg-primary/20" href="#">
+<span class="material-symbols-outlined text-primary">article</span>
+<span class="text-sm font-medium">Blog Posts</span>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-slate-600 transition-colors hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined">local_activity</span>
+<span class="text-sm font-medium">Tours</span>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-slate-600 transition-colors hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="text-sm font-medium">Bookings</span>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-slate-600 transition-colors hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</nav>
+</div>
+</aside>
+<!-- Main Content Wrapper -->
+<div class="flex flex-1 flex-col h-screen overflow-hidden">
+<!-- Top Header -->
+<header class="flex h-16 w-full items-center justify-between border-b border-slate-200 bg-white px-8 dark:border-slate-800 dark:bg-slate-900 shrink-0">
+<div class="flex items-center gap-4">
+<button class="md:hidden text-slate-500 hover:text-slate-700">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<nav class="hidden sm:flex text-sm font-medium text-slate-500 dark:text-slate-400">
+<a class="hover:text-primary" href="#">Dashboard</a>
+<span class="mx-2">/</span>
+<a class="hover:text-primary" href="#">Blog</a>
+<span class="mx-2">/</span>
+<span class="text-slate-900 dark:text-white">Add New Post</span>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="relative flex h-10 w-10 items-center justify-center rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute right-2 top-2 h-2 w-2 rounded-full bg-red-500 ring-2 ring-white dark:ring-slate-900"></span>
+</button>
+<button class="flex h-9 items-center gap-2 rounded-lg bg-white px-3 text-sm font-medium text-slate-700 shadow-sm ring-1 ring-slate-200 hover:bg-slate-50 dark:bg-slate-800 dark:text-slate-300 dark:ring-slate-700">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+                        Preview
+                    </button>
+</div>
+</header>
+<!-- Scrollable Content Area -->
+<main class="flex-1 overflow-y-auto bg-background-light p-4 md:p-8 dark:bg-background-dark">
+<div class="mx-auto flex w-full max-w-[1200px] flex-col gap-6 lg:flex-row">
+<!-- Left Column: Content Editor -->
+<div class="flex-1 min-w-0">
+<!-- Title Input Section -->
+<div class="mb-6">
+<input class="w-full bg-transparent text-4xl font-bold text-slate-900 placeholder-slate-300 focus:outline-none focus:ring-0 dark:text-white dark:placeholder-slate-600 border-none p-0" placeholder="Enter post title here..." type="text"/>
+</div>
+<!-- Rich Text Editor Container -->
+<div class="rounded-xl border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900">
+<!-- Editor Toolbar -->
+<div class="sticky top-0 z-10 flex flex-wrap items-center gap-1 border-b border-slate-200 bg-slate-50 p-2 dark:border-slate-800 dark:bg-slate-950/50 rounded-t-xl">
+<div class="flex items-center gap-1 border-r border-slate-200 pr-2 dark:border-slate-700">
+<button class="rounded p-1.5 text-slate-500 hover:bg-slate-200 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white" title="Bold">
+<span class="material-symbols-outlined text-[20px]">format_bold</span>
+</button>
+<button class="rounded p-1.5 text-slate-500 hover:bg-slate-200 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white" title="Italic">
+<span class="material-symbols-outlined text-[20px]">format_italic</span>
+</button>
+<button class="rounded p-1.5 text-slate-500 hover:bg-slate-200 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white" title="Underline">
+<span class="material-symbols-outlined text-[20px]">format_underlined</span>
+</button>
+</div>
+<div class="flex items-center gap-1 border-r border-slate-200 pr-2 px-2 dark:border-slate-700">
+<button class="rounded p-1.5 text-slate-500 hover:bg-slate-200 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white" title="Heading 1">
+<span class="material-symbols-outlined text-[20px]">title</span>
+</button>
+<button class="rounded p-1.5 text-slate-500 hover:bg-slate-200 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white" title="Quote">
+<span class="material-symbols-outlined text-[20px]">format_quote</span>
+</button>
+</div>
+<div class="flex items-center gap-1 border-r border-slate-200 pr-2 px-2 dark:border-slate-700">
+<button class="rounded p-1.5 text-slate-500 hover:bg-slate-200 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white" title="Link">
+<span class="material-symbols-outlined text-[20px]">link</span>
+</button>
+<button class="rounded p-1.5 text-slate-500 hover:bg-slate-200 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white" title="Image">
+<span class="material-symbols-outlined text-[20px]">image</span>
+</button>
+</div>
+<div class="flex items-center gap-1 px-2">
+<button class="rounded p-1.5 text-slate-500 hover:bg-slate-200 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white" title="Bullet List">
+<span class="material-symbols-outlined text-[20px]">format_list_bulleted</span>
+</button>
+<button class="rounded p-1.5 text-slate-500 hover:bg-slate-200 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white" title="Ordered List">
+<span class="material-symbols-outlined text-[20px]">format_list_numbered</span>
+</button>
+</div>
+</div>
+<!-- Editor Body -->
+<div class="min-h-[500px] p-6 md:p-10 outline-none">
+<div class="rich-text-content">
+<p class="text-lg text-slate-600 dark:text-slate-300">
+                                        Start writing your amazing story about Uzbekistan here...
+                                    </p>
+<br/>
+<!-- Example Content Block -->
+<div class="my-6 rounded-lg border border-dashed border-slate-300 bg-slate-50 p-4 text-center dark:border-slate-700 dark:bg-slate-800/50">
+<span class="material-symbols-outlined text-4xl text-slate-400 mb-2">add_photo_alternate</span>
+<p class="text-sm text-slate-500">Add an inline image or gallery</p>
+</div>
+<p class="text-slate-400">Type '/' for commands</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Sidebar Settings -->
+<div class="flex w-full flex-col gap-6 lg:w-80 shrink-0">
+<!-- Publish Card -->
+<div class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+<div class="mb-4 flex items-center justify-between">
+<h3 class="font-semibold text-slate-900 dark:text-white">Publish</h3>
+<span class="rounded-full bg-yellow-100 px-2.5 py-0.5 text-xs font-medium text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-500">
+                                    Draft
+                                </span>
+</div>
+<div class="mb-4 space-y-3">
+<div class="flex items-center justify-between text-sm">
+<span class="text-slate-500 dark:text-slate-400 flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">visibility</span> Visibility:</span>
+<span class="font-medium text-slate-900 dark:text-white">Public</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<span class="text-slate-500 dark:text-slate-400 flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">schedule</span> Schedule:</span>
+<span class="font-medium text-slate-900 dark:text-white">Immediately</span>
+</div>
+</div>
+<div class="flex flex-col gap-3 pt-2">
+<button class="flex w-full cursor-pointer items-center justify-center rounded-lg bg-primary py-2.5 text-sm font-bold text-white shadow-sm hover:bg-blue-700 transition-colors">
+                                    Publish Post
+                                </button>
+<button class="flex w-full cursor-pointer items-center justify-center rounded-lg border border-slate-200 bg-white py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700 transition-colors">
+                                    Save Draft
+                                </button>
+</div>
+</div>
+<!-- Post Details Card -->
+<div class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+<h3 class="mb-4 font-semibold text-slate-900 dark:text-white">Post Details</h3>
+<div class="flex flex-col gap-5">
+<!-- Author -->
+<div class="space-y-1.5">
+<label class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Author</label>
+<select class="w-full rounded-lg border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 focus:border-primary focus:ring-primary dark:border-slate-700 dark:bg-slate-800 dark:text-white">
+<option>Admin User</option>
+<option>Editor Staff</option>
+<option>Guest Writer</option>
+</select>
+</div>
+<!-- Categories -->
+<div class="space-y-1.5">
+<label class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Category</label>
+<div class="flex flex-col gap-2 rounded-lg border border-slate-200 p-3 dark:border-slate-700">
+<label class="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
+<input class="h-4 w-4 border-slate-300 text-primary focus:ring-primary dark:border-slate-600 dark:bg-slate-700" name="category" type="radio"/>
+                                            Travel Guides
+                                        </label>
+<label class="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
+<input checked="" class="h-4 w-4 border-slate-300 text-primary focus:ring-primary dark:border-slate-600 dark:bg-slate-700" name="category" type="radio"/>
+                                            Culture &amp; History
+                                        </label>
+<label class="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
+<input class="h-4 w-4 border-slate-300 text-primary focus:ring-primary dark:border-slate-600 dark:bg-slate-700" name="category" type="radio"/>
+                                            Food &amp; Drink
+                                        </label>
+</div>
+</div>
+<!-- Tags -->
+<div class="space-y-1.5">
+<label class="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Tags</label>
+<input class="w-full rounded-lg border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 focus:border-primary focus:ring-primary dark:border-slate-700 dark:bg-slate-800 dark:text-white" placeholder="Add tags..." type="text"/>
+<div class="mt-2 flex flex-wrap gap-2">
+<span class="inline-flex items-center gap-1 rounded bg-slate-100 px-2 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+                                            Samarkand
+                                            <button class="ml-0.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+<span class="material-symbols-outlined text-[14px]">close</span>
+</button>
+</span>
+<span class="inline-flex items-center gap-1 rounded bg-slate-100 px-2 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+                                            Silk Road
+                                            <button class="ml-0.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+<span class="material-symbols-outlined text-[14px]">close</span>
+</button>
+</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Hero Image Card -->
+<div class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+<h3 class="mb-4 font-semibold text-slate-900 dark:text-white">Featured Image</h3>
+<div class="relative flex w-full flex-col items-center justify-center rounded-lg border-2 border-dashed border-slate-300 bg-slate-50 p-6 transition-colors hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-800/50 dark:hover:bg-slate-800">
+<div class="text-center">
+<span class="material-symbols-outlined mx-auto h-12 w-12 text-slate-400">cloud_upload</span>
+<div class="mt-2 flex text-sm leading-6 text-slate-600 dark:text-slate-400">
+<label class="relative cursor-pointer rounded-md font-semibold text-primary focus-within:outline-none focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2 hover:text-blue-600" for="file-upload">
+<span>Upload a file</span>
+<input class="sr-only" id="file-upload" name="file-upload" type="file"/>
+</label>
+<p class="pl-1">or drag and drop</p>
+</div>
+<p class="text-xs leading-5 text-slate-500">PNG, JPG, GIF up to 10MB</p>
+</div>
+</div>
+<div class="mt-4 hidden">
+<div class="relative aspect-video w-full overflow-hidden rounded-lg bg-slate-100">
+<img alt="Preview of uploaded hero image" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaOe4iok8MadSxGx3T_Ug-xOa0jhjj-zNSyNtUdMxPlb9fXc8V54vbC1F-nLlJjv0YV-OXpEpL6SZ8oUEYc1Ckd84qyNXIZjqTSLPpiK92DeVWEgE2vwXADrSBX2cflMQb9AfWIrShqj--XsBJ3p7NhniMZcIGXCWHJtlPCNHPUTlMdQAmurKoBwMfLVnTe74LunIFktYDkDvojAQ3pyXdR5kb1ipug7nVQyG2fNH5P61C9Thb6giuxMTbO2qu9HpzyGfwvFFe2cM"/>
+<button class="absolute right-2 top-2 rounded-full bg-white/90 p-1 text-slate-600 shadow-sm hover:text-red-600">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- SEO Settings (Optional but good for enterprise) -->
+<div class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+<div class="flex items-center justify-between cursor-pointer group">
+<h3 class="font-semibold text-slate-900 dark:text-white group-hover:text-primary transition-colors">SEO Settings</h3>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">expand_more</span>
+</div>
+<!-- Hidden by default for cleaner look, simulating accordion collapsed state. 
+                                  If this was interactive JS, we'd toggle height. Showing simplified view here. -->
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

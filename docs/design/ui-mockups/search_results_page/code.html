@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Discover Uz - Search Results</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d59f2",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111318] antialiased">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e5e7eb] bg-white px-6 py-3 lg:px-10">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-[#111318]">
+<div class="size-8 flex items-center justify-center text-primary">
+<!-- Logo Icon -->
+<span class="material-symbols-outlined !text-[32px]">travel_explore</span>
+</div>
+<h2 class="text-[#111318] text-xl font-bold leading-tight tracking-[-0.015em]">Discover Uz</h2>
+</div>
+<!-- Search Bar (Desktop) -->
+<label class="hidden md:flex flex-col min-w-[320px] h-10">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full border border-[#e5e7eb] focus-within:border-primary focus-within:ring-1 focus-within:ring-primary overflow-hidden transition-all">
+<div class="text-[#606e8a] flex bg-white items-center justify-center pl-3">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="flex w-full min-w-0 flex-1 resize-none overflow-hidden text-[#111318] focus:outline-0 border-none bg-white h-full placeholder:text-[#606e8a] px-3 text-sm font-normal leading-normal" placeholder="Where do you want to go?" value="Samarkand"/>
+</div>
+</label>
+</div>
+<div class="flex items-center gap-4 lg:gap-8">
+<div class="hidden lg:flex items-center gap-6">
+<a class="text-[#111318] hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Tours</a>
+<a class="text-[#111318] hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Destinations</a>
+<a class="text-[#111318] hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">About Us</a>
+</div>
+<div class="flex gap-2">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-white border border-[#e5e7eb] text-[#111318] hover:bg-gray-50 text-sm font-bold leading-normal transition-colors">
+<span class="truncate">Log In</span>
+</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-primary text-white hover:bg-blue-700 text-sm font-bold leading-normal transition-colors shadow-sm">
+<span class="truncate">Sign Up</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 w-full max-w-[1400px] mx-auto px-4 md:px-8 py-6">
+<!-- Breadcrumbs -->
+<div class="flex flex-wrap items-center gap-2 pb-4 text-sm">
+<a class="text-[#606e8a] hover:text-primary font-medium" href="#">Home</a>
+<span class="text-[#606e8a] font-medium">/</span>
+<span class="text-[#111318] font-medium">Search Results</span>
+</div>
+<!-- Headline & Layout Header -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+<div>
+<h1 class="text-[#111318] text-2xl md:text-3xl font-bold leading-tight">Found 42 results for "Samarkand"</h1>
+<p class="text-[#606e8a] text-sm mt-1">Explore the ancient silk road city and its surroundings.</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-sm font-medium text-[#606e8a]">Sort by:</span>
+<div class="relative">
+<select class="appearance-none bg-white border border-[#e5e7eb] text-[#111318] text-sm font-medium rounded-lg py-2 pl-3 pr-8 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary cursor-pointer shadow-sm">
+<option>Recommended</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+<option>Top Rated</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-[#606e8a]">
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Tabs -->
+<div class="mb-8 border-b border-[#e5e7eb]">
+<div class="flex gap-8 overflow-x-auto no-scrollbar">
+<a class="flex items-center gap-2 border-b-[3px] border-primary pb-3 px-1" href="#">
+<span class="material-symbols-outlined text-sm text-primary">grid_view</span>
+<p class="text-primary text-sm font-bold whitespace-nowrap">All Results</p>
+</a>
+<a class="flex items-center gap-2 border-b-[3px] border-transparent hover:border-[#dbdfe6] pb-3 px-1 transition-colors group" href="#">
+<span class="material-symbols-outlined text-sm text-[#606e8a] group-hover:text-[#111318]">attractions</span>
+<p class="text-[#606e8a] group-hover:text-[#111318] text-sm font-bold whitespace-nowrap">Experiences</p>
+<span class="bg-[#f0f1f5] text-[#606e8a] text-xs font-semibold px-2 py-0.5 rounded-full">34</span>
+</a>
+<a class="flex items-center gap-2 border-b-[3px] border-transparent hover:border-[#dbdfe6] pb-3 px-1 transition-colors group" href="#">
+<span class="material-symbols-outlined text-sm text-[#606e8a] group-hover:text-[#111318]">location_city</span>
+<p class="text-[#606e8a] group-hover:text-[#111318] text-sm font-bold whitespace-nowrap">Cities</p>
+<span class="bg-[#f0f1f5] text-[#606e8a] text-xs font-semibold px-2 py-0.5 rounded-full">3</span>
+</a>
+<a class="flex items-center gap-2 border-b-[3px] border-transparent hover:border-[#dbdfe6] pb-3 px-1 transition-colors group" href="#">
+<span class="material-symbols-outlined text-sm text-[#606e8a] group-hover:text-[#111318]">article</span>
+<p class="text-[#606e8a] group-hover:text-[#111318] text-sm font-bold whitespace-nowrap">Stories</p>
+<span class="bg-[#f0f1f5] text-[#606e8a] text-xs font-semibold px-2 py-0.5 rounded-full">5</span>
+</a>
+</div>
+</div>
+<!-- Two Column Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left Sidebar: Filters -->
+<aside class="hidden lg:block lg:col-span-3 sticky top-24">
+<div class="bg-white rounded-xl border border-[#e5e7eb] p-5 shadow-sm">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-lg font-bold text-[#111318]">Filters</h3>
+<button class="text-xs font-bold text-primary hover:underline">Reset All</button>
+</div>
+<!-- Price Filter -->
+<div class="mb-6 border-b border-[#f0f1f5] pb-6">
+<div class="flex items-center justify-between mb-3">
+<span class="text-sm font-bold text-[#111318]">Price Range</span>
+<span class="material-symbols-outlined text-[#606e8a] text-sm">expand_less</span>
+</div>
+<div class="px-1">
+<input class="w-full h-1 bg-[#e5e7eb] rounded-lg appearance-none cursor-pointer accent-primary" max="1000" min="0" type="range"/>
+<div class="flex justify-between mt-2 text-sm text-[#606e8a]">
+<span>$0</span>
+<span>$1000+</span>
+</div>
+</div>
+</div>
+<!-- Category Filter -->
+<div class="mb-6 border-b border-[#f0f1f5] pb-6">
+<div class="flex items-center justify-between mb-3">
+<span class="text-sm font-bold text-[#111318]">Category</span>
+<span class="material-symbols-outlined text-[#606e8a] text-sm">expand_less</span>
+</div>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="rounded border-gray-300 text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-sm text-[#606e8a] group-hover:text-[#111318]">Cultural Tours</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-gray-300 text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-sm text-[#606e8a] group-hover:text-[#111318]">Adventure &amp; Hiking</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-gray-300 text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-sm text-[#606e8a] group-hover:text-[#111318]">Food &amp; Gastronomy</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-gray-300 text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-sm text-[#606e8a] group-hover:text-[#111318]">Historical Sites</span>
+</label>
+</div>
+</div>
+<!-- Rating Filter -->
+<div class="mb-6 border-b border-[#f0f1f5] pb-6">
+<div class="flex items-center justify-between mb-3">
+<span class="text-sm font-bold text-[#111318]">Rating</span>
+<span class="material-symbols-outlined text-[#606e8a] text-sm">expand_less</span>
+</div>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="border-gray-300 text-primary focus:ring-primary h-4 w-4" name="rating" type="radio"/>
+<div class="flex items-center text-yellow-400 text-sm">
+<span class="material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="text-[#111318] ml-2 font-medium">5 Stars Only</span>
+</div>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="border-gray-300 text-primary focus:ring-primary h-4 w-4" name="rating" type="radio"/>
+<div class="flex items-center text-yellow-400 text-sm">
+<span class="material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="text-[#606e8a] ml-2 group-hover:text-[#111318]">4 Stars &amp; Up</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Duration -->
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="text-sm font-bold text-[#111318]">Duration</span>
+<span class="material-symbols-outlined text-[#606e8a] text-sm">expand_less</span>
+</div>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-gray-300 text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-sm text-[#606e8a] group-hover:text-[#111318]">Up to 4 hours</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-gray-300 text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-sm text-[#606e8a] group-hover:text-[#111318]">1 Day</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-gray-300 text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-sm text-[#606e8a] group-hover:text-[#111318]">Multi-day</span>
+</label>
+</div>
+</div>
+</div>
+</aside>
+<!-- Right Column: Results -->
+<div class="col-span-1 lg:col-span-9 flex flex-col gap-6">
+<!-- Result Type: City Highlight -->
+<div class="w-full relative rounded-xl overflow-hidden aspect-[16/4] group cursor-pointer shadow-md">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Panoramic view of Registan Square in Samarkand with blue tiled madrasahs" data-location="Samarkand" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALjnnVgyuv6wW15_ETtB9TLvS3O3p7wfOu7AcupueIMVrDjnElupd-twn2wqjX0Php90wDsHAuud-0Ek5LCac3U8rR82Y1uxDXtDDZlVzifrgDvRwtH6Opccrfv_JTNQ9qH1Z41zJL3AefqUeV8vGKUwtPS23-TBWEu5EDWtg3mYPSah1Yd3bIliGi482sgdkZwdg3ZS66xgkFT_oe5MTdaQmIJbCu0hqu-uXQ9FlImlR400jPXM1BsKiO2Dyht8aCbu9MegCjOo0"/>
+<div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent flex flex-col justify-center px-8">
+<span class="text-white/80 text-sm font-bold tracking-wider uppercase mb-1">Destination</span>
+<h2 class="text-white text-3xl font-bold mb-2">Samarkand City Guide</h2>
+<p class="text-white/90 text-sm max-w-[500px] mb-4 line-clamp-2">Discover the heart of the Silk Road. Visit the Registan, Gur-e-Amir, and experience the rich history of this ancient metropolis.</p>
+<button class="bg-white/20 hover:bg-white/30 backdrop-blur-md text-white border border-white/40 w-fit px-4 py-2 rounded-lg text-sm font-bold transition-all">Explore City</button>
+</div>
+</div>
+<!-- Result Card: Experience -->
+<div class="flex flex-col md:flex-row bg-white rounded-xl overflow-hidden border border-[#e5e7eb] shadow-sm hover:shadow-md transition-shadow group">
+<div class="w-full md:w-[300px] h-[220px] md:h-auto relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Intricate blue tile patterns on a historic building facade in Uzbekistan" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1iy1KBKbrUg-O4d5Mu6n73J-lRUSQNYH88SLLWvFsM7v8hnDrBj6PcJC6DsLGSrlmCK_I5V7CJZSmsioaKYYK8sFeuHaanh99neBJirM7rCOgsKj4Q99UXBUua9rbP6ETt2cnbpVqMwmdIkYEHMWigq7OdcUoPnC82eVUe9fqtv-52q51y04FfBNberqovI38DPGuUh3YkKlQGC6pbMEfQ7FDHUh63xjKWMC9MDhGn11DurQGixd0cSm8mi1GIxv3HqOv7Wps5XU"/>
+<div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2 py-1 rounded text-xs font-bold text-[#111318]">Bestseller</div>
+<button class="absolute top-3 right-3 p-1.5 bg-black/40 hover:bg-black/60 rounded-full text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="flex-1 p-5 flex flex-col">
+<div class="flex justify-between items-start">
+<div>
+<div class="text-xs font-bold text-primary uppercase tracking-wide mb-1">Cultural Tour</div>
+<h3 class="text-lg font-bold text-[#111318] mb-1 group-hover:text-primary transition-colors">Golden Road to Samarkand: Full Day Tour</h3>
+<div class="flex items-center gap-1 mb-3">
+<span class="material-symbols-outlined text-yellow-400 text-sm fill-current">star</span>
+<span class="text-sm font-bold text-[#111318]">4.9</span>
+<span class="text-sm text-[#606e8a]">(124 reviews)</span>
+<span class="mx-2 text-[#e5e7eb]">•</span>
+<span class="text-sm text-[#606e8a]">6-8 hours</span>
+</div>
+</div>
+</div>
+<p class="text-[#606e8a] text-sm line-clamp-2 mb-4">
+                            Explore the architectural masterpieces of Samarkand including Registan Square, Gur-e-Amir Mausoleum, and Bibi-Khanym Mosque with an expert local guide.
+                        </p>
+<div class="mt-auto flex items-center justify-between border-t border-[#f0f1f5] pt-4">
+<div class="flex flex-col">
+<span class="text-xs text-[#606e8a] line-through">$65.00</span>
+<div class="flex items-baseline gap-1">
+<span class="text-lg font-bold text-[#111318]">$52.00</span>
+<span class="text-xs text-[#606e8a]">per person</span>
+</div>
+</div>
+<button class="bg-primary hover:bg-blue-700 text-white text-sm font-bold py-2 px-5 rounded-lg transition-colors">
+                                View Details
+                            </button>
+</div>
+</div>
+</div>
+<!-- Result Card: Experience -->
+<div class="flex flex-col md:flex-row bg-white rounded-xl overflow-hidden border border-[#e5e7eb] shadow-sm hover:shadow-md transition-shadow group">
+<div class="w-full md:w-[300px] h-[220px] md:h-auto relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Traditional Uzbek bread (non) stacked in a local market" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAODPLNmVYsT2imSm4SogQcWrljJTfc7TpWn0ZKvk9YAgonUb0-sSCFhErBFcy6uPaUsztO60JB-gSVDs1CAXTGW1oAKcJwzQu5_zbro7JSl0NzDXavJ_3tKFHBLRwUz6wef3ms5KjDO_QihKIrur2Q5aAep4-wm1NhTGd9zt0OJ7YVYByimFBsmlT6e5hY4ygrxq8d9dGLketMMaxTYNcHHuK7gYnM1n4VU8Ox52Bgz04xIPPt5KeUlcPp-jiYIuUZQyplAsLkqpA"/>
+<button class="absolute top-3 right-3 p-1.5 bg-black/40 hover:bg-black/60 rounded-full text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="flex-1 p-5 flex flex-col">
+<div class="flex justify-between items-start">
+<div>
+<div class="text-xs font-bold text-[#606e8a] uppercase tracking-wide mb-1">Gastronomy</div>
+<h3 class="text-lg font-bold text-[#111318] mb-1 group-hover:text-primary transition-colors">Samarkand Food Tasting &amp; Market Walk</h3>
+<div class="flex items-center gap-1 mb-3">
+<span class="material-symbols-outlined text-yellow-400 text-sm fill-current">star</span>
+<span class="text-sm font-bold text-[#111318]">4.7</span>
+<span class="text-sm text-[#606e8a]">(42 reviews)</span>
+<span class="mx-2 text-[#e5e7eb]">•</span>
+<span class="text-sm text-[#606e8a]">3 hours</span>
+</div>
+</div>
+</div>
+<p class="text-[#606e8a] text-sm line-clamp-2 mb-4">
+                            Taste the flavors of the Silk Road. Visit the Siab Bazaar to taste fresh fruits, sweets, and famous Samarkand bread, followed by a Plov cooking masterclass.
+                        </p>
+<div class="mt-auto flex items-center justify-between border-t border-[#f0f1f5] pt-4">
+<div class="flex flex-col">
+<div class="flex items-baseline gap-1">
+<span class="text-lg font-bold text-[#111318]">$35.00</span>
+<span class="text-xs text-[#606e8a]">per person</span>
+</div>
+</div>
+<button class="bg-white border border-[#e5e7eb] hover:bg-gray-50 text-[#111318] text-sm font-bold py-2 px-5 rounded-lg transition-colors">
+                                View Details
+                            </button>
+</div>
+</div>
+</div>
+<!-- Result Card: Experience -->
+<div class="flex flex-col md:flex-row bg-white rounded-xl overflow-hidden border border-[#e5e7eb] shadow-sm hover:shadow-md transition-shadow group">
+<div class="w-full md:w-[300px] h-[220px] md:h-auto relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A man wearing traditional Uzbek clothing playing a musical instrument" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVJG9SFMU2OFoiQFf4STzQEbh8CnfXzki_LSzkAzh4X7e3fc2VOaFapkBpHgRjWy3U2rQjzhXKArWNGz4ssgI9-XVMSOjs0KkUBhWXEl-fFErBLHDgIkz6hsPHm52fL0ahkCfi5IrQvFcHCgiF1M7c7JBavTfAcxp42fY5m1aYe-VnAt7h1bg37YkDxZA45khRbk0YqNK8AgLxwFGlWkvX4niFqegoclfn1Y9UyrJLFTWIfzNy10WaQyyNjU7TeCLg5a0vl7cakWQ"/>
+<button class="absolute top-3 right-3 p-1.5 bg-black/40 hover:bg-black/60 rounded-full text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+<div class="absolute bottom-3 left-3 bg-red-500 text-white px-2 py-1 rounded text-xs font-bold">Likely to sell out</div>
+</div>
+<div class="flex-1 p-5 flex flex-col">
+<div class="flex justify-between items-start">
+<div>
+<div class="text-xs font-bold text-[#606e8a] uppercase tracking-wide mb-1">Evening Activity</div>
+<h3 class="text-lg font-bold text-[#111318] mb-1 group-hover:text-primary transition-colors">El Merosi Theatre: Historical Costume Show</h3>
+<div class="flex items-center gap-1 mb-3">
+<span class="material-symbols-outlined text-yellow-400 text-sm fill-current">star</span>
+<span class="text-sm font-bold text-[#111318]">4.8</span>
+<span class="text-sm text-[#606e8a]">(89 reviews)</span>
+<span class="mx-2 text-[#e5e7eb]">•</span>
+<span class="text-sm text-[#606e8a]">1.5 hours</span>
+</div>
+</div>
+</div>
+<p class="text-[#606e8a] text-sm line-clamp-2 mb-4">
+                            A unique theatrical performance showcasing the history of Uzbekistan through traditional costumes, music, and dance from different eras.
+                        </p>
+<div class="mt-auto flex items-center justify-between border-t border-[#f0f1f5] pt-4">
+<div class="flex flex-col">
+<div class="flex items-baseline gap-1">
+<span class="text-lg font-bold text-[#111318]">$25.00</span>
+<span class="text-xs text-[#606e8a]">per person</span>
+</div>
+</div>
+<button class="bg-white border border-[#e5e7eb] hover:bg-gray-50 text-[#111318] text-sm font-bold py-2 px-5 rounded-lg transition-colors">
+                                View Details
+                            </button>
+</div>
+</div>
+</div>
+<!-- Result Card: Blog/Story -->
+<div class="flex flex-col sm:flex-row items-center gap-6 p-5 bg-white rounded-xl border border-[#e5e7eb] shadow-sm">
+<div class="w-full sm:w-[120px] h-[120px] shrink-0 rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="An ornate blue dome of a mosque in Uzbekistan against a blue sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxi9Vh3RfsuBn4wpsmW7Pc324RyfdBeG_M5mM7JyjR53ce3kKGh1paeiqJAPCCg69ru1jaJ3T2ze3mE6y4CJf9eGIBnZpIvIt0Xx8cd0wBVreNlcs9jdm-8_SG0SgJx3oymlB0EX8nxkogkxNCAQVunQJtgGmH11iIRBFum-IUegzWgxhKjwcKNHhRjnu_V7Q0aJYPpkTDain_nZvhck2wWR_Tfd1QdtCkkULp5c3xXwVbonORvtt7BNOyvu15QW0cepCSczneJX8"/>
+</div>
+<div class="flex-1">
+<div class="text-xs font-bold text-primary uppercase tracking-wide mb-1">Travel Story</div>
+<h3 class="text-lg font-bold text-[#111318] mb-1">10 Hidden Gems in Samarkand Tourists Often Miss</h3>
+<p class="text-[#606e8a] text-sm line-clamp-2 mb-2">Go beyond the Registan and discover the quiet neighborhoods, secret gardens, and artisan workshops that define the true spirit of the city.</p>
+<a class="text-sm font-bold text-primary hover:underline flex items-center gap-1" href="#">
+                            Read article <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Pagination -->
+<div class="flex items-center justify-center gap-2 mt-8">
+<button class="w-9 h-9 flex items-center justify-center rounded-lg border border-[#e5e7eb] bg-white text-[#606e8a] hover:bg-gray-50 disabled:opacity-50">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="w-9 h-9 flex items-center justify-center rounded-lg bg-primary text-white font-bold text-sm shadow-sm">1</button>
+<button class="w-9 h-9 flex items-center justify-center rounded-lg border border-[#e5e7eb] bg-white text-[#111318] hover:bg-gray-50 font-medium text-sm transition-colors">2</button>
+<button class="w-9 h-9 flex items-center justify-center rounded-lg border border-[#e5e7eb] bg-white text-[#111318] hover:bg-gray-50 font-medium text-sm transition-colors">3</button>
+<div class="w-9 h-9 flex items-center justify-center text-[#606e8a]">...</div>
+<button class="w-9 h-9 flex items-center justify-center rounded-lg border border-[#e5e7eb] bg-white text-[#111318] hover:bg-gray-50 font-medium text-sm transition-colors">8</button>
+<button class="w-9 h-9 flex items-center justify-center rounded-lg border border-[#e5e7eb] bg-white text-[#111318] hover:bg-gray-50">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<footer class="mt-12 py-8 bg-white border-t border-[#e5e7eb]">
+<div class="max-w-[1400px] mx-auto px-4 md:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="flex items-center gap-2 text-[#606e8a] text-sm">
+<span>© 2024 Discover Uz</span>
+<span>•</span>
+<a class="hover:text-[#111318]" href="#">Privacy</a>
+<span>•</span>
+<a class="hover:text-[#111318]" href="#">Terms</a>
+<span>•</span>
+<a class="hover:text-[#111318]" href="#">Sitemap</a>
+</div>
+<div class="flex gap-4">
+<a class="text-[#606e8a] hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">language</span></a>
+<a class="text-[#606e8a] hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">currency_exchange</span></a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

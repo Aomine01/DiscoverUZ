@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Discover Uz - Admin Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style type="text/tailwindcss">
+        :root {
+            --primary-blue: #0f172a;
+            --secondary-blue: #1e293b;
+            --accent-gold: #c29d59;--bg-gray: #f8fafc;
+            --text-main: #334155;
+            --text-light: #64748b;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-gray);
+            color: var(--text-main);
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex overflow-hidden">
+<aside class="w-64 bg-[var(--primary-blue)] text-white flex-shrink-0 flex flex-col h-screen fixed left-0 top-0 z-50">
+<div class="h-16 flex items-center px-6 border-b border-[var(--secondary-blue)] bg-[var(--primary-blue)]">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[var(--accent-gold)] text-3xl">travel_explore</span>
+<span class="font-bold text-xl tracking-tight">Discover Uz</span>
+</div>
+</div>
+<nav class="flex-1 overflow-y-auto py-6 px-3 space-y-1">
+<p class="px-3 text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Overview</p>
+<a class="flex items-center gap-3 px-3 py-2.5 bg-[var(--secondary-blue)] rounded-lg text-white group" href="#">
+<span class="material-symbols-outlined text-[var(--accent-gold)]">dashboard</span>
+<span class="font-medium text-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-300 hover:bg-[var(--secondary-blue)] hover:text-white rounded-lg transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-white transition-colors">analytics</span>
+<span class="font-medium text-sm">Analytics</span>
+</a>
+<div class="pt-6"></div>
+<p class="px-3 text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Management</p>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-300 hover:bg-[var(--secondary-blue)] hover:text-white rounded-lg transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-white transition-colors">confirmation_number</span>
+<span class="font-medium text-sm">Bookings</span>
+<span class="ml-auto bg-[var(--accent-gold)] text-[var(--primary-blue)] py-0.5 px-2 rounded-full text-xs font-bold">12</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-300 hover:bg-[var(--secondary-blue)] hover:text-white rounded-lg transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-white transition-colors">landscape</span>
+<span class="font-medium text-sm">Experiences</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-300 hover:bg-[var(--secondary-blue)] hover:text-white rounded-lg transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-white transition-colors">location_city</span>
+<span class="font-medium text-sm">Cities</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-300 hover:bg-[var(--secondary-blue)] hover:text-white rounded-lg transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-white transition-colors">group</span>
+<span class="font-medium text-sm">Users</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-300 hover:bg-[var(--secondary-blue)] hover:text-white rounded-lg transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-white transition-colors">reviews</span>
+<span class="font-medium text-sm">Reviews</span>
+</a>
+<div class="pt-6"></div>
+<p class="px-3 text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">System</p>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-300 hover:bg-[var(--secondary-blue)] hover:text-white rounded-lg transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-white transition-colors">settings</span>
+<span class="font-medium text-sm">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-300 hover:bg-[var(--secondary-blue)] hover:text-white rounded-lg transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-white transition-colors">admin_panel_settings</span>
+<span class="font-medium text-sm">Permissions</span>
+</a>
+</nav>
+<div class="p-4 border-t border-[var(--secondary-blue)]">
+<div class="flex items-center gap-3 cursor-pointer hover:bg-[var(--secondary-blue)] p-2 rounded-lg transition-colors">
+<div class="h-9 w-9 rounded-full bg-slate-500 flex items-center justify-center text-white font-semibold">
+                AD
+            </div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-medium text-white truncate">Admin User</p>
+<p class="text-xs text-slate-400 truncate">admin@discoveruz.com</p>
+</div>
+<span class="material-symbols-outlined text-slate-400">logout</span>
+</div>
+</div>
+</aside>
+<main class="flex-1 ml-64 flex flex-col min-h-screen">
+<header class="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-8 sticky top-0 z-40 shadow-sm">
+<div class="flex items-center gap-4">
+<h1 class="text-xl font-semibold text-slate-800">Dashboard Overview</h1>
+<span class="px-2 py-1 bg-green-50 text-green-700 border border-green-200 rounded text-xs font-medium">System Operational</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative hidden md:block">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</span>
+<input class="w-64 pl-10 pr-4 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--primary-blue)] focus:border-transparent bg-slate-50" placeholder="Search bookings, users..." type="text"/>
+</div>
+<button class="relative p-2 text-slate-500 hover:text-[var(--primary-blue)] transition-colors rounded-full hover:bg-slate-100">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1.5 right-1.5 h-2.5 w-2.5 bg-red-500 rounded-full border-2 border-white"></span>
+</button>
+</div>
+</header>
+<div class="p-8 space-y-8 bg-[var(--bg-gray)] flex-1">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-sm font-medium text-slate-500 mb-1">Total Revenue</p>
+<h3 class="text-2xl font-bold text-slate-800">$128,430</h3>
+</div>
+<div class="p-2 bg-green-50 rounded-lg">
+<span class="material-symbols-outlined text-green-600">payments</span>
+</div>
+</div>
+<div class="mt-4 flex items-center text-sm">
+<span class="text-green-600 flex items-center font-medium">
+<span class="material-symbols-outlined text-base mr-0.5">trending_up</span>
+                            12.5%
+                        </span>
+<span class="text-slate-400 ml-2">vs last month</span>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-sm font-medium text-slate-500 mb-1">Active Bookings</p>
+<h3 class="text-2xl font-bold text-slate-800">1,432</h3>
+</div>
+<div class="p-2 bg-blue-50 rounded-lg">
+<span class="material-symbols-outlined text-blue-600">book_online</span>
+</div>
+</div>
+<div class="mt-4 flex items-center text-sm">
+<span class="text-green-600 flex items-center font-medium">
+<span class="material-symbols-outlined text-base mr-0.5">trending_up</span>
+                            8.2%
+                        </span>
+<span class="text-slate-400 ml-2">vs last month</span>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-sm font-medium text-slate-500 mb-1">Total Experiences</p>
+<h3 class="text-2xl font-bold text-slate-800">89</h3>
+</div>
+<div class="p-2 bg-orange-50 rounded-lg">
+<span class="material-symbols-outlined text-orange-600">hiking</span>
+</div>
+</div>
+<div class="mt-4 flex items-center text-sm">
+<span class="text-slate-400">4 new added this week</span>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-sm font-medium text-slate-500 mb-1">User Growth</p>
+<h3 class="text-2xl font-bold text-slate-800">24.8k</h3>
+</div>
+<div class="p-2 bg-purple-50 rounded-lg">
+<span class="material-symbols-outlined text-purple-600">group_add</span>
+</div>
+</div>
+<div class="mt-4 flex items-center text-sm">
+<span class="text-red-600 flex items-center font-medium">
+<span class="material-symbols-outlined text-base mr-0.5">trending_down</span>
+                            2.1%
+                        </span>
+<span class="text-slate-400 ml-2">vs last month</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2 bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+<div class="flex items-center justify-between mb-6">
+<div>
+<h2 class="text-lg font-bold text-slate-800">Booking Trends</h2>
+<p class="text-sm text-slate-500">Daily booking volume over the last 30 days</p>
+</div>
+<div class="flex gap-2">
+<select class="form-select border-slate-200 rounded-lg text-sm text-slate-600 focus:ring-[var(--primary-blue)] focus:border-[var(--primary-blue)] py-2 pl-3 pr-8 cursor-pointer hover:bg-slate-50 transition-colors">
+<option>Last 30 Days</option>
+<option>Last 7 Days</option>
+<option>This Year</option>
+</select>
+<button class="p-2 text-slate-400 hover:text-[var(--primary-blue)] rounded-lg hover:bg-slate-50 transition-colors">
+<span class="material-symbols-outlined">download</span>
+</button>
+</div>
+</div>
+<div class="relative h-80 w-full pl-2">
+<div class="absolute left-0 top-0 bottom-8 w-8 flex flex-col justify-between text-xs text-slate-400 font-medium">
+<span>250</span>
+<span>200</span>
+<span>150</span>
+<span>100</span>
+<span>50</span>
+<span>0</span>
+</div>
+<div class="absolute left-10 right-0 top-2 bottom-8">
+<div class="h-full w-full flex flex-col justify-between">
+<div class="border-t border-dashed border-slate-100 w-full h-0"></div>
+<div class="border-t border-dashed border-slate-100 w-full h-0"></div>
+<div class="border-t border-dashed border-slate-100 w-full h-0"></div>
+<div class="border-t border-dashed border-slate-100 w-full h-0"></div>
+<div class="border-t border-dashed border-slate-100 w-full h-0"></div>
+<div class="border-t border-slate-200 w-full h-0"></div>
+</div>
+<svg class="absolute inset-0 h-full w-full overflow-visible z-10" preserveAspectRatio="none" viewBox="0 0 1000 200">
+<defs>
+<linearGradient id="chartGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#0f172a" stop-opacity="0.1"></stop>
+<stop offset="100%" stop-color="#0f172a" stop-opacity="0"></stop>
+</linearGradient>
+</defs>
+<path d="M0,200 L0,150 L100,120 L200,140 L300,90 L400,110 L500,60 L600,100 L700,40 L800,80 L900,50 L1000,90 L1000,200 Z" fill="url(#chartGradient)" stroke="none"></path>
+<polyline fill="none" points="0,150 100,120 200,140 300,90 400,110 500,60 600,100 700,40 800,80 900,50 1000,90" stroke="#0f172a" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" vector-effect="non-scaling-stroke"></polyline>
+<circle class="transition-all duration-300 hover:r-6 cursor-pointer" cx="700" cy="40" fill="#c29d59" r="5" stroke="white" stroke-width="2"></circle>
+</svg>
+<div class="absolute top-[10%] left-[70%] transform -translate-x-1/2 -translate-y-full mb-2 bg-[var(--secondary-blue)] text-white text-xs font-semibold py-1.5 px-3 rounded shadow-xl z-20 pointer-events-none">
+                            214 Bookings
+                            <div class="absolute bottom-[-4px] left-1/2 transform -translate-x-1/2 rotate-45 w-2 h-2 bg-[var(--secondary-blue)]"></div>
+</div>
+</div>
+<div class="absolute left-10 right-0 bottom-0 flex justify-between text-xs text-slate-400 font-medium pt-2 border-t border-transparent">
+<span>Oct 01</span>
+<span>Oct 05</span>
+<span>Oct 10</span>
+<span>Oct 15</span>
+<span>Oct 20</span>
+<span>Oct 25</span>
+<span>Oct 30</span>
+</div>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex flex-col h-full">
+<div class="flex items-center justify-between mb-6">
+<div>
+<h2 class="text-lg font-bold text-slate-800">New Users</h2>
+<p class="text-sm text-slate-500">Recent registrations</p>
+</div>
+<a class="text-sm text-[var(--primary-blue)] font-medium hover:underline" href="#">View All</a>
+</div>
+<div class="flex-1 space-y-4 overflow-y-auto pr-1">
+<div class="flex items-center gap-3 p-2 hover:bg-slate-50 rounded-lg transition-colors cursor-pointer group">
+<div class="h-10 w-10 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center text-xs font-bold ring-2 ring-white shadow-sm">
+                            MK
+                        </div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-semibold text-slate-800 truncate group-hover:text-[var(--primary-blue)] transition-colors">Malika K.</p>
+<p class="text-xs text-slate-500 truncate">malika@example.com</p>
+</div>
+<div class="text-right">
+<p class="text-xs font-medium text-slate-500">2m</p>
+</div>
+</div>
+<div class="flex items-center gap-3 p-2 hover:bg-slate-50 rounded-lg transition-colors cursor-pointer group">
+<div class="h-10 w-10 rounded-full bg-[var(--accent-gold)] text-white flex items-center justify-center text-xs font-bold ring-2 ring-white shadow-sm">
+                            JD
+                        </div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-semibold text-slate-800 truncate group-hover:text-[var(--primary-blue)] transition-colors">John Doe</p>
+<p class="text-xs text-slate-500 truncate">New York, USA</p>
+</div>
+<div class="text-right">
+<p class="text-xs font-medium text-slate-500">15m</p>
+</div>
+</div>
+<div class="flex items-center gap-3 p-2 hover:bg-slate-50 rounded-lg transition-colors cursor-pointer group">
+<div class="h-10 w-10 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center text-xs font-bold ring-2 ring-white shadow-sm">
+                            AT
+                        </div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-semibold text-slate-800 truncate group-hover:text-[var(--primary-blue)] transition-colors">Aziz T.</p>
+<p class="text-xs text-slate-500 truncate">Bukhara</p>
+</div>
+<div class="text-right">
+<p class="text-xs font-medium text-slate-500">1h</p>
+</div>
+</div>
+<div class="flex items-center gap-3 p-2 hover:bg-slate-50 rounded-lg transition-colors cursor-pointer group">
+<div class="h-10 w-10 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center text-xs font-bold ring-2 ring-white shadow-sm">
+                            EL
+                        </div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-semibold text-slate-800 truncate group-hover:text-[var(--primary-blue)] transition-colors">Elena L.</p>
+<p class="text-xs text-slate-500 truncate">Russia</p>
+</div>
+<div class="text-right">
+<p class="text-xs font-medium text-slate-500">3h</p>
+</div>
+</div>
+<div class="flex items-center gap-3 p-2 hover:bg-slate-50 rounded-lg transition-colors cursor-pointer group">
+<div class="h-10 w-10 rounded-full bg-blue-50 text-[var(--primary-blue)] flex items-center justify-center text-xs font-bold ring-2 ring-white shadow-sm">
+                            BS
+                        </div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-semibold text-slate-800 truncate group-hover:text-[var(--primary-blue)] transition-colors">Bob Smith</p>
+<p class="text-xs text-slate-500 truncate">London, UK</p>
+</div>
+<div class="text-right">
+<p class="text-xs font-medium text-slate-500">5h</p>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-slate-100">
+<div class="flex justify-between items-center bg-slate-50 p-3 rounded-lg border border-slate-100">
+<span class="text-xs font-medium text-slate-500">New users last 7 days</span>
+<div class="flex items-center gap-2">
+<span class="text-sm font-bold text-slate-800">142</span>
+<span class="flex items-center text-xs font-medium text-green-600">
+<span class="material-symbols-outlined text-[14px] mr-0.5">trending_up</span>
+                                12%
+                            </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2 bg-white rounded-xl border border-slate-200 shadow-sm flex flex-col">
+<div class="p-6 border-b border-slate-100 flex justify-between items-center">
+<h2 class="text-lg font-bold text-slate-800">Recent Bookings</h2>
+<a class="text-sm text-[var(--primary-blue)] font-medium hover:underline" href="#">View All</a>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="text-xs font-semibold text-slate-500 uppercase bg-slate-50 border-b border-slate-100">
+<th class="px-6 py-4">Booking ID</th>
+<th class="px-6 py-4">Customer</th>
+<th class="px-6 py-4">Experience</th>
+<th class="px-6 py-4">Date</th>
+<th class="px-6 py-4">Status</th>
+<th class="px-6 py-4 text-right">Amount</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100">
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="px-6 py-4 font-mono text-sm text-slate-600">#BK-8902</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-8 w-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs font-bold">AS</div>
+<span class="text-sm font-medium text-slate-800">Alex Smith</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600">Samarkand Gold Tour</td>
+<td class="px-6 py-4 text-sm text-slate-500">Oct 24, 2023</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                            Confirmed
+                                        </span>
+</td>
+<td class="px-6 py-4 text-sm font-medium text-slate-800 text-right">$450.00</td>
+</tr>
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="px-6 py-4 font-mono text-sm text-slate-600">#BK-8901</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-8 w-8 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center text-xs font-bold">MJ</div>
+<span class="text-sm font-medium text-slate-800">Maria Jones</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600">Bukhara Silk Road</td>
+<td class="px-6 py-4 text-sm text-slate-500">Oct 23, 2023</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
+                                            Pending
+                                        </span>
+</td>
+<td class="px-6 py-4 text-sm font-medium text-slate-800 text-right">$320.00</td>
+</tr>
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="px-6 py-4 font-mono text-sm text-slate-600">#BK-8900</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-8 w-8 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center text-xs font-bold">KL</div>
+<span class="text-sm font-medium text-slate-800">Ken Lee</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600">Khiva Night Walk</td>
+<td class="px-6 py-4 text-sm text-slate-500">Oct 23, 2023</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+                                            Cancelled
+                                        </span>
+</td>
+<td class="px-6 py-4 text-sm font-medium text-slate-800 text-right">$120.00</td>
+</tr>
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="px-6 py-4 font-mono text-sm text-slate-600">#BK-8899</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-8 w-8 rounded-full bg-teal-100 text-teal-600 flex items-center justify-center text-xs font-bold">SR</div>
+<span class="text-sm font-medium text-slate-800">Sarah Rahim</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600">Tashkent Metro Tour</td>
+<td class="px-6 py-4 text-sm text-slate-500">Oct 22, 2023</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                            Confirmed
+                                        </span>
+</td>
+<td class="px-6 py-4 text-sm font-medium text-slate-800 text-right">$85.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="bg-white rounded-xl border border-slate-200 shadow-sm flex flex-col">
+<div class="p-6 border-b border-slate-100">
+<h2 class="text-lg font-bold text-slate-800">Top Destinations</h2>
+<p class="text-sm text-slate-500 mt-1">Based on booking volume this month</p>
+</div>
+<div class="p-6 space-y-6">
+<div>
+<div class="flex justify-between items-center mb-2">
+<span class="text-sm font-medium text-slate-700">Samarkand</span>
+<span class="text-sm text-slate-500">45%</span>
+</div>
+<div class="w-full bg-slate-100 rounded-full h-2">
+<div class="bg-[var(--primary-blue)] h-2 rounded-full" style="width: 45%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-2">
+<span class="text-sm font-medium text-slate-700">Bukhara</span>
+<span class="text-sm text-slate-500">28%</span>
+</div>
+<div class="w-full bg-slate-100 rounded-full h-2">
+<div class="bg-[var(--accent-gold)] h-2 rounded-full" style="width: 28%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-2">
+<span class="text-sm font-medium text-slate-700">Tashkent</span>
+<span class="text-sm text-slate-500">15%</span>
+</div>
+<div class="w-full bg-slate-100 rounded-full h-2">
+<div class="bg-slate-400 h-2 rounded-full" style="width: 15%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-2">
+<span class="text-sm font-medium text-slate-700">Khiva</span>
+<span class="text-sm text-slate-500">12%</span>
+</div>
+<div class="w-full bg-slate-100 rounded-full h-2">
+<div class="bg-slate-300 h-2 rounded-full" style="width: 12%"></div>
+</div>
+</div>
+</div>
+<div class="p-6 pt-0 mt-auto">
+<button class="w-full py-2 border border-slate-300 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-50 transition-colors">
+                        Generate Regional Report
+                    </button>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-xl border border-slate-200 shadow-sm flex flex-col">
+<div class="p-6 border-b border-slate-100 flex justify-between items-center">
+<div class="flex items-center gap-3">
+<h2 class="text-lg font-bold text-slate-800">Pending Reviews</h2>
+<div class="px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 border border-yellow-200">
+                3 Pending
+            </div>
+</div>
+<div class="flex gap-2">
+<button class="text-sm text-slate-500 hover:text-[var(--primary-blue)] font-medium px-3 py-1 hover:bg-slate-50 rounded-lg transition-colors">Filters</button>
+<a class="text-sm text-[var(--primary-blue)] font-medium px-3 py-1 hover:bg-blue-50 rounded-lg transition-colors" href="#">View All</a>
+</div>
+</div>
+<div class="divide-y divide-slate-100">
+<div class="p-5 flex flex-col md:flex-row gap-4 items-start hover:bg-slate-50 transition-colors group">
+<div class="flex items-center gap-3 w-full md:w-auto md:min-w-[200px]">
+<div class="h-10 w-10 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center text-sm font-bold shadow-sm">
+                    SJ
+                </div>
+<div>
+<p class="text-sm font-semibold text-slate-800">Sarah Jenkins</p>
+<p class="text-xs text-slate-500">Oct 25, 10:30 AM</p>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2 mb-1">
+<div class="flex">
+<span class="material-symbols-outlined text-[16px] text-[var(--accent-gold)]">star</span>
+<span class="material-symbols-outlined text-[16px] text-[var(--accent-gold)]">star</span>
+<span class="material-symbols-outlined text-[16px] text-[var(--accent-gold)]">star</span>
+<span class="material-symbols-outlined text-[16px] text-[var(--accent-gold)]">star</span>
+<span class="material-symbols-outlined text-[16px] text-slate-200">star</span>
+</div>
+<span class="text-xs font-semibold text-slate-700 bg-slate-100 px-2 py-0.5 rounded">Samarkand Gold Tour</span>
+</div>
+<p class="text-sm text-slate-600 truncate group-hover:whitespace-normal group-hover:overflow-visible transition-all">
+                    The tour guide was knowledgeable, but the bus arrived 20 minutes late. Otherwise a great experience seeing the Registan.
+                </p>
+</div>
+<div class="flex items-center gap-2 w-full md:w-auto pt-2 md:pt-0">
+<button class="p-2 text-green-600 hover:bg-green-50 rounded-lg transition-colors tooltip" title="Approve">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+</button>
+<button class="p-2 text-red-500 hover:bg-red-50 rounded-lg transition-colors tooltip" title="Reject">
+<span class="material-symbols-outlined text-[20px]">cancel</span>
+</button>
+<button class="p-2 text-slate-400 hover:text-[var(--primary-blue)] hover:bg-slate-100 rounded-lg transition-colors tooltip" title="View Details">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</div>
+<div class="p-5 flex flex-col md:flex-row gap-4 items-start hover:bg-slate-50 transition-colors group">
+<div class="flex items-center gap-3 w-full md:w-auto md:min-w-[200px]">
+<div class="h-10 w-10 rounded-full bg-[var(--accent-gold)] text-white flex items-center justify-center text-sm font-bold shadow-sm">
+                    RM
+                </div>
+<div>
+<p class="text-sm font-semibold text-slate-800">Rustam M.</p>
+<p class="text-xs text-slate-500">Oct 24, 04:15 PM</p>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2 mb-1">
+<div class="flex">
+<span class="material-symbols-outlined text-[16px] text-[var(--accent-gold)]">star</span>
+<span class="material-symbols-outlined text-[16px] text-[var(--accent-gold)]">star</span>
+<span class="material-symbols-outlined text-[16px] text-[var(--accent-gold)]">star</span>
+<span class="material-symbols-outlined text-[16px] text-[var(--accent-gold)]">star</span>
+<span class="material-symbols-outlined text-[16px] text-[var(--accent-gold)]">star</span>
+</div>
+<span class="text-xs font-semibold text-slate-700 bg-slate-100 px-2 py-0.5 rounded">Bukhara Silk Road</span>
+</div>
+<p class="text-sm text-slate-600 truncate group-hover:whitespace-normal group-hover:overflow-visible transition-all">
+                    Absolutely stunning architecture! The lunch spot recommended by the guide was the best plov I've ever had.
+                </p>
+</div>
+<div class="flex items-center gap-2 w-full md:w-auto pt-2 md:pt-0">
+<button class="p-2 text-green-600 hover:bg-green-50 rounded-lg transition-colors tooltip" title="Approve">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+</button>
+<button class="p-2 text-red-500 hover:bg-red-50 rounded-lg transition-colors tooltip" title="Reject">
+<span class="material-symbols-outlined text-[20px]">cancel</span>
+</button>
+<button class="p-2 text-slate-400 hover:text-[var(--primary-blue)] hover:bg-slate-100 rounded-lg transition-colors tooltip" title="View Details">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</div>
+<div class="p-5 flex flex-col md:flex-row gap-4 items-start hover:bg-slate-50 transition-colors group">
+<div class="flex items-center gap-3 w-full md:w-auto md:min-w-[200px]">
+<div class="h-10 w-10 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center text-sm font-bold shadow-sm">
+                    JL
+                </div>
+<div>
+<p class="text-sm font-semibold text-slate-800">Jessica Lee</p>
+<p class="text-xs text-slate-500">Oct 24, 09:00 AM</p>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2 mb-1">
+<div class="flex">
+<span class="material-symbols-outlined text-[16px] text-[var(--accent-gold)]">star</span>
+<span class="material-symbols-outlined text-[16px] text-[var(--accent-gold)]">star</span>
+<span class="material-symbols-outlined text-[16px] text-slate-200">star</span>
+<span class="material-symbols-outlined text-[16px] text-slate-200">star</span>
+<span class="material-symbols-outlined text-[16px] text-slate-200">star</span>
+</div>
+<span class="text-xs font-semibold text-slate-700 bg-slate-100 px-2 py-0.5 rounded">Tashkent Metro Tour</span>
+</div>
+<p class="text-sm text-slate-600 truncate group-hover:whitespace-normal group-hover:overflow-visible transition-all">
+                    It was okay, but a bit crowded. Hard to hear the guide in the metro stations due to noise.
+                </p>
+</div>
+<div class="flex items-center gap-2 w-full md:w-auto pt-2 md:pt-0">
+<button class="p-2 text-green-600 hover:bg-green-50 rounded-lg transition-colors tooltip" title="Approve">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+</button>
+<button class="p-2 text-red-500 hover:bg-red-50 rounded-lg transition-colors tooltip" title="Reject">
+<span class="material-symbols-outlined text-[20px]">cancel</span>
+</button>
+<button class="p-2 text-slate-400 hover:text-[var(--primary-blue)] hover:bg-slate-100 rounded-lg transition-colors tooltip" title="View Details">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-[var(--primary-blue)] rounded-xl p-8 text-white relative overflow-hidden">
+<div class="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+<div>
+<h3 class="text-2xl font-bold mb-2">Need to add a new seasonal campaign?</h3>
+<p class="text-slate-300 max-w-xl">Create promotional banners and manage seasonal discounts directly from the marketing hub to boost tourism during off-peak seasons.</p>
+</div>
+<button class="bg-[var(--accent-gold)] text-[var(--primary-blue)] px-6 py-3 rounded-lg font-bold hover:bg-white hover:text-[var(--primary-blue)] transition-colors shadow-lg">
+                    Create Campaign
+                </button>
+</div>
+<div class="absolute top-0 right-0 -mt-10 -mr-10 w-64 h-64 bg-white opacity-5 rounded-full pointer-events-none"></div>
+<div class="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-[var(--accent-gold)] opacity-10 rounded-full pointer-events-none"></div>
+</div>
+</div>
+</main>
+</body></html>

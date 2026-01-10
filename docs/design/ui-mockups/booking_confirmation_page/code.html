@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Booking Confirmation - Discover Uz</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d59f2",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111318] dark:text-white min-h-screen flex flex-col">
+<!-- Top Navigation -->
+<header class="bg-white dark:bg-[#1a2230] border-b border-gray-200 dark:border-gray-800 sticky top-0 z-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-16">
+<!-- Logo Section -->
+<div class="flex items-center gap-2">
+<div class="size-8 text-primary flex items-center justify-center bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-[24px]">travel_explore</span>
+</div>
+<span class="text-xl font-bold tracking-tight text-[#111318] dark:text-white">Discover Uz</span>
+</div>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary transition-colors" href="#">Tours</a>
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary transition-colors" href="#">Destinations</a>
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary transition-colors" href="#">About Us</a>
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary transition-colors" href="#">Contact</a>
+</nav>
+<!-- User Profile -->
+<div class="flex items-center gap-4">
+<button class="bg-white dark:bg-[#2a3441] p-2 rounded-full text-gray-500 hover:text-primary transition-colors md:hidden">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="hidden md:flex items-center gap-3 pl-4 border-l border-gray-200 dark:border-gray-700">
+<div class="text-right hidden lg:block">
+<p class="text-xs text-gray-500 dark:text-gray-400 font-medium">Welcome back</p>
+<p class="text-sm font-bold text-gray-900 dark:text-white">Alex M.</p>
+</div>
+<div class="h-10 w-10 rounded-full bg-cover bg-center border-2 border-white dark:border-gray-700 shadow-sm" data-alt="User profile photo avatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD30_9vRXhczMdC_lb2ur79ZKs8HxI_XfNVuzKHsyzIZNRdpzQ2ChP_wqwXy604w-tloGxH97f1v0J2eV4UAHc-ZZcHy-SZZOX5SUU8Neo3a1xpDGwfiRk9TC7C-eF_wPrDKzMzVvszS8H8BQ1bG3GFNzIrR98lh3NfxRHyTpDXwXHQjG1riDP0A0a_gXfn8OWTW4jrLpizUnVPVQvf669iFX8Dq5A44CC8w_K4KQFiuoMOkC1k8ES33F-zJAjdGvpij2CVl18-iQY');">
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow flex flex-col items-center justify-start pt-10 pb-20 px-4 sm:px-6">
+<!-- Success Animation/Icon -->
+<div class="mb-6 flex flex-col items-center animate-fade-in-up">
+<div class="h-20 w-20 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mb-6 shadow-sm ring-8 ring-green-50 dark:ring-green-900/10">
+<span class="material-symbols-outlined text-green-600 dark:text-green-400 text-[48px]">check_circle</span>
+</div>
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white text-center tracking-tight mb-2">Booking Confirmed!</h1>
+<p class="text-gray-600 dark:text-gray-400 text-center max-w-lg text-lg">
+                Success! Your trip to Uzbekistan is secured. A confirmation email has been sent to <span class="font-semibold text-gray-900 dark:text-gray-200">alex.m@example.com</span>.
+            </p>
+</div>
+<!-- Layout Container: Left (Details) & Right (Next Steps) -->
+<div class="w-full max-w-5xl grid grid-cols-1 lg:grid-cols-3 gap-8 mt-4">
+<!-- Left Column: Booking Details Card -->
+<div class="lg:col-span-2 space-y-6">
+<!-- Main Ticket Card -->
+<div class="bg-white dark:bg-[#1a2230] rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden">
+<!-- Card Header with Reference -->
+<div class="bg-primary/5 dark:bg-primary/10 px-6 py-4 border-b border-primary/10 flex flex-wrap justify-between items-center gap-4">
+<div>
+<p class="text-xs uppercase tracking-wider text-primary font-bold mb-1">Booking Reference</p>
+<p class="text-xl font-mono font-bold text-gray-900 dark:text-white tracking-widest">#UZ-88429</p>
+</div>
+<div class="bg-white dark:bg-[#1a2230] py-1 px-3 rounded text-xs font-semibold text-gray-500 border border-gray-200 dark:border-gray-700 shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">print</span>
+                            Print Receipt
+                        </div>
+</div>
+<!-- Experience Details -->
+<div class="p-6">
+<div class="flex flex-col md:flex-row gap-6">
+<!-- Image Thumbnail -->
+<div class="w-full md:w-1/3 aspect-[4/3] rounded-xl bg-cover bg-center shadow-md relative group overflow-hidden" data-alt="Detailed view of Registan Square architecture in Samarkand with blue domes" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAnUUNthZBgAylvwcr0I1NiMp5rYzxPIre_KKEQJivGwh7Am_S5Dj72tRWk-g1EJg9HxPAOWZeoDLGGfWyWymS3tdrEg7S-kYjWBdeM_CJfwuxmce3yzskfn5GrbsnI88BT06qcvoL1kEVCjK-8CBeuXnI8uSo0wsO_Brtdi2oTWE7pmNyE1h5GiIXbclSCqDr7pi-lyyykZ-Hoyp26OL_duSRTS9v0XobDPGIwDympfL3VRIDqrU6z2eH32QwPwF6W5gNzC7E519s');">
+<div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
+</div>
+<!-- Text Details -->
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h2 class="text-2xl font-bold text-gray-900 dark:text-white leading-tight">Historic Samarkand Day Trip</h2>
+</div>
+<p class="text-gray-500 dark:text-gray-400 text-sm mb-4 leading-relaxed">A full day guided tour through the ancient Silk Road city, visiting Registan Square, Gur-e-Amir, and more.</p>
+<div class="grid grid-cols-2 gap-y-4 gap-x-2 text-sm">
+<div>
+<p class="text-gray-400 dark:text-gray-500 text-xs mb-0.5">Date</p>
+<p class="font-medium text-gray-900 dark:text-gray-200 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">calendar_month</span>
+                                                Oct 12, 2023
+                                            </p>
+</div>
+<div>
+<p class="text-gray-400 dark:text-gray-500 text-xs mb-0.5">Time</p>
+<p class="font-medium text-gray-900 dark:text-gray-200 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">schedule</span>
+                                                09:00 AM
+                                            </p>
+</div>
+<div>
+<p class="text-gray-400 dark:text-gray-500 text-xs mb-0.5">Guests</p>
+<p class="font-medium text-gray-900 dark:text-gray-200 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">group</span>
+                                                2 Adults
+                                            </p>
+</div>
+<div>
+<p class="text-gray-400 dark:text-gray-500 text-xs mb-0.5">Language</p>
+<p class="font-medium text-gray-900 dark:text-gray-200 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">translate</span>
+                                                English
+                                            </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Divider -->
+<div class="h-px bg-gray-100 dark:bg-gray-800 my-6"></div>
+<!-- Price Breakdown (Simplified) -->
+<div class="flex justify-between items-end">
+<div class="flex gap-2 items-center">
+<span class="material-symbols-outlined text-gray-400 text-[24px]">verified_user</span>
+<span class="text-xs text-gray-400">Payment Secured via Visa **** 4242</span>
+</div>
+<div class="text-right">
+<p class="text-sm text-gray-500 dark:text-gray-400 mb-1">Total Paid</p>
+<p class="text-3xl font-bold text-primary">$120.00</p>
+</div>
+</div>
+</div>
+</div>
+<!-- CTA Actions Mobile/Desktop -->
+<div class="flex flex-col sm:flex-row gap-4 pt-2">
+<button class="flex-1 bg-primary hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition shadow-md shadow-blue-500/20 flex justify-center items-center gap-2">
+<span class="material-symbols-outlined">receipt_long</span>
+                        Manage My Bookings
+                    </button>
+<button class="flex-1 bg-white dark:bg-[#1a2230] border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-200 font-semibold py-3 px-6 rounded-lg transition flex justify-center items-center gap-2">
+<span class="material-symbols-outlined">home</span>
+                        Return to Home
+                    </button>
+</div>
+</div>
+<!-- Right Column: Sidebar (Next Steps) -->
+<div class="lg:col-span-1 space-y-6">
+<!-- Timeline Card -->
+<div class="bg-white dark:bg-[#1a2230] p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800">
+<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-6">What happens next?</h3>
+<div class="relative pl-4 border-l-2 border-gray-100 dark:border-gray-800 space-y-8">
+<!-- Step 1 -->
+<div class="relative">
+<div class="absolute -left-[21px] top-1 bg-green-500 rounded-full h-3 w-3 ring-4 ring-white dark:ring-[#1a2230]"></div>
+<h4 class="text-sm font-bold text-gray-900 dark:text-white">Check your email</h4>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-1">We sent a confirmation email with your tickets attached.</p>
+</div>
+<!-- Step 2 -->
+<div class="relative">
+<div class="absolute -left-[21px] top-1 bg-gray-300 dark:bg-gray-600 rounded-full h-3 w-3 ring-4 ring-white dark:ring-[#1a2230]"></div>
+<h4 class="text-sm font-bold text-gray-900 dark:text-white">Prepare for pickup</h4>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-1">You selected hotel pickup. Please be in the lobby 15 minutes early.</p>
+</div>
+<!-- Step 3 -->
+<div class="relative">
+<div class="absolute -left-[21px] top-1 bg-gray-300 dark:bg-gray-600 rounded-full h-3 w-3 ring-4 ring-white dark:ring-[#1a2230]"></div>
+<h4 class="text-sm font-bold text-gray-900 dark:text-white">Meet your guide</h4>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Show your digital or printed ticket to the guide upon arrival.</p>
+</div>
+</div>
+</div>
+<!-- Support Card -->
+<div class="bg-primary/5 dark:bg-[#151b26] p-6 rounded-2xl border border-primary/10">
+<div class="flex items-start gap-4">
+<div class="bg-white dark:bg-[#1a2230] p-2 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-primary">support_agent</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-gray-900 dark:text-white">Need help?</h4>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-1 mb-3">Our team is available 24/7 to assist with your booking.</p>
+<a class="text-sm font-semibold text-primary hover:text-blue-700 flex items-center gap-1" href="#">
+                                Contact Support
+                                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Destination Teaser (Small) -->
+<div class="bg-white dark:bg-[#1a2230] rounded-2xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="p-4 border-b border-gray-100 dark:border-gray-800">
+<h4 class="font-bold text-gray-900 dark:text-white text-sm">Suggested for you</h4>
+</div>
+<div class="p-4 flex gap-3 items-center hover:bg-gray-50 dark:hover:bg-gray-800/50 cursor-pointer transition-colors">
+<div class="h-16 w-16 rounded-lg bg-cover bg-center flex-shrink-0" data-alt="Colorful mosaic tiles of a madrasah in Uzbekistan" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCQ9iX9wWqq6f_z96upufd19gCV6qHMaPxlEra86eMnGuQkQaNSoPY7hSNAWazj6SNZkoyYMfWSdpFZ1u5NTxl2XHsqX-0mMTeCFJoEB9202xrp8TVX2pPnYd-6sE8OgpoxSWG4_HS-2lZnHxnUSpOs80rVZELC55VmjTwGIWV0xIiQ2FL31SW9vYZpwRR8w9UOvus5bprV1EU25GTdXtUf1NpwvKTro5TN_PX2xZc5czvjq_XvRX6g5NTSM9bOgDLOZssoPUUuuOQ');">
+</div>
+<div>
+<p class="text-sm font-bold text-gray-900 dark:text-white line-clamp-1">Traditional Plov Cooking Class</p>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-1">From $45.00</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Simple Footer -->
+<footer class="border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-[#1a2230] py-8 mt-auto">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-sm text-gray-500 dark:text-gray-400">© 2023 Discover Uz. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-sm text-gray-500 hover:text-primary" href="#">Privacy Policy</a>
+<a class="text-sm text-gray-500 hover:text-primary" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</body></html>

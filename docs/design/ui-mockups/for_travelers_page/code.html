@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Uzbekistan Travel - For Travelers</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d59f2",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111318] dark:text-white antialiased transition-colors duration-200">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Top Navigation -->
+<div class="w-full bg-white dark:bg-[#1a202c] border-b border-[#f0f1f5] dark:border-gray-800 sticky top-0 z-50">
+<div class="flex justify-center">
+<div class="flex flex-col max-w-[1280px] w-full">
+<header class="flex items-center justify-between whitespace-nowrap px-4 md:px-10 py-3">
+<div class="flex items-center gap-4">
+<div class="size-8 text-primary">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M39.5563 34.1455V13.8546C39.5563 15.708 36.8773 17.3437 32.7927 18.3189C30.2914 18.916 27.263 19.2655 24 19.2655C20.737 19.2655 17.7086 18.916 15.2073 18.3189C11.1227 17.3437 8.44365 15.708 8.44365 13.8546V34.1455C8.44365 35.9988 11.1227 37.6346 15.2073 38.6098C17.7086 39.2069 20.737 39.5564 24 39.5564C27.263 39.5564 30.2914 39.2069 32.7927 38.6098C36.8773 37.6346 39.5563 35.9988 39.5563 34.1455Z" fill="currentColor"></path>
+<path clip-rule="evenodd" d="M10.4485 13.8519C10.4749 13.9271 10.6203 14.246 11.379 14.7361C12.298 15.3298 13.7492 15.9145 15.6717 16.3735C18.0007 16.9296 20.8712 17.2655 24 17.2655C27.1288 17.2655 29.9993 16.9296 32.3283 16.3735C34.2508 15.9145 35.702 15.3298 36.621 14.7361C37.3796 14.246 37.5251 13.9271 37.5515 13.8519C37.5287 13.7876 37.4333 13.5973 37.0635 13.2931C36.5266 12.8516 35.6288 12.3647 34.343 11.9175C31.79 11.0295 28.1333 10.4437 24 10.4437C19.8667 10.4437 16.2099 11.0295 13.657 11.9175C12.3712 12.3647 11.4734 12.8516 10.9365 13.2931C10.5667 13.5973 10.4713 13.7876 10.4485 13.8519ZM37.5563 18.7877C36.3176 19.3925 34.8502 19.8839 33.2571 20.2642C30.5836 20.9025 27.3973 21.2655 24 21.2655C20.6027 21.2655 17.4164 20.9025 14.7429 20.2642C13.1498 19.8839 11.6824 19.3925 10.4436 18.7877V34.1275C10.4515 34.1545 10.5427 34.4867 11.379 35.027C12.298 35.6207 13.7492 36.2054 15.6717 36.6644C18.0007 37.2205 20.8712 37.5564 24 37.5564C27.1288 37.5564 29.9993 37.2205 32.3283 36.6644C34.2508 36.2054 35.702 35.6207 36.621 35.027C37.4573 34.4867 37.5485 34.1546 37.5563 34.1275V18.7877ZM41.5563 13.8546V34.1455C41.5563 36.1078 40.158 37.5042 38.7915 38.3869C37.3498 39.3182 35.4192 40.0389 33.2571 40.5551C30.5836 41.1934 27.3973 41.5564 24 41.5564C20.6027 41.5564 17.4164 41.1934 14.7429 40.5551C12.5808 40.0389 10.6502 39.3182 9.20848 38.3869C7.84205 37.5042 6.44365 36.1078 6.44365 34.1455L6.44365 13.8546C6.44365 12.2684 7.37223 11.0454 8.39581 10.2036C9.43325 9.3505 10.8137 8.67141 12.343 8.13948C15.4203 7.06909 19.5418 6.44366 24 6.44366C28.4582 6.44366 32.5797 7.06909 35.657 8.13948C37.1863 8.67141 38.5667 9.3505 39.6042 10.2036C40.6278 11.0454 41.5563 12.2684 41.5563 13.8546Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-[#111318] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Uzbekistan Travel</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8 items-center">
+<div class="hidden lg:flex items-center gap-9">
+<a class="text-[#111318] dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors" href="#">Destinations</a>
+<a class="text-[#111318] dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors" href="#">Tours</a>
+<a class="text-[#111318] dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors" href="#">Plan Your Trip</a>
+<a class="text-[#111318] dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors" href="#">About Us</a>
+</div>
+<div class="flex gap-2">
+<button class="flex items-center justify-center overflow-hidden rounded-lg h-10 bg-background-light dark:bg-gray-800 text-[#111318] dark:text-white gap-2 text-sm font-bold min-w-0 px-3 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+<span class="material-symbols-outlined text-[20px]">language</span>
+<span class="hidden sm:inline">EN</span>
+</button>
+<button class="flex items-center justify-center overflow-hidden rounded-lg h-10 bg-background-light dark:bg-gray-800 text-[#111318] dark:text-white gap-2 text-sm font-bold min-w-0 px-3 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+<span class="material-symbols-outlined text-[20px]">currency_exchange</span>
+<span class="hidden sm:inline">USD</span>
+</button>
+<button class="flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold hover:bg-blue-700 transition-colors">
+<span class="truncate">Sign In</span>
+</button>
+</div>
+</div>
+</header>
+</div>
+</div>
+</div>
+<!-- Hero Section with Integrated Search -->
+<div class="flex justify-center px-4 py-6 md:px-0">
+<div class="max-w-[1280px] w-full px-4 md:px-10">
+<div class="relative overflow-hidden rounded-2xl bg-gray-900 shadow-xl">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/30 z-10"></div>
+<div class="h-full w-full bg-cover bg-center" data-alt="Stunning view of Registan Square in Samarkand with intricate blue mosaic tiles at sunset" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBtzE6cE2Q4H-1U4lwIOjRLg0V7cfMERPII3An15bnB6OEdsdF7-kpG59LS0FHa37UAwIOULxoYu196hVyYhyn3IHdR0jgs_lEbJzHxc2zA9VuZ4pUqgjhR2NFXdlbiJaZ9_C4Ba9mHAj5tQpY8WHdf8C43BSEXb0rTzEw2IlCD5McBMr6Mnq8ueEMy9g_NqM0IHmJ5KMc2mz8toHKY7_ivqjmNGuWDRMXXcp0zfWFALau6-0IcH9eSBpIh8As7E0RBrSIDQPULqCY");'></div>
+</div>
+<div class="relative z-20 flex min-h-[560px] flex-col items-center justify-center gap-8 p-6 text-center">
+<div class="max-w-3xl flex flex-col gap-4 animate-fade-in-up">
+<h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] md:text-6xl drop-shadow-lg">
+                                Discover the Heart of the Silk Road
+                            </h1>
+<h2 class="text-white/90 text-lg font-medium md:text-xl drop-shadow-md">
+                                Curated experiences in Uzbekistan for the modern explorer. Uncover ancient cities, rich culture, and breathtaking landscapes.
+                            </h2>
+</div>
+<!-- Floating Search Bar -->
+<div class="mt-8 w-full max-w-4xl p-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl">
+<div class="flex flex-col md:flex-row bg-white dark:bg-[#1a202c] rounded-xl p-2 gap-2 shadow-2xl">
+<div class="flex-1 relative group">
+<div class="absolute inset-y-0 left-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-gray-400 group-focus-within:text-primary">location_on</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-3 rounded-lg border-0 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white placeholder:text-gray-400 focus:ring-2 focus:ring-primary sm:text-sm sm:leading-6 font-medium" placeholder="Where do you want to go? (e.g., Bukhara)" type="text"/>
+</div>
+<div class="flex-1 relative group">
+<div class="absolute inset-y-0 left-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-gray-400 group-focus-within:text-primary">calendar_month</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-3 rounded-lg border-0 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white placeholder:text-gray-400 focus:ring-2 focus:ring-primary sm:text-sm sm:leading-6 font-medium" placeholder="Add dates" type="text"/>
+</div>
+<div class="flex-1 relative group">
+<div class="absolute inset-y-0 left-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-gray-400 group-focus-within:text-primary">group</span>
+</div>
+<select class="block w-full pl-10 pr-3 py-3 rounded-lg border-0 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary sm:text-sm sm:leading-6 font-medium appearance-none">
+<option>2 Travelers</option>
+<option>1 Traveler</option>
+<option>3 Travelers</option>
+<option>4+ Travelers</option>
+</select>
+<div class="absolute inset-y-0 right-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-gray-400 text-sm">expand_more</span>
+</div>
+</div>
+<button class="bg-primary hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">search</span>
+<span>Search</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Content Container -->
+<div class="flex flex-1 justify-center py-10">
+<div class="layout-content-container flex flex-col max-w-[1280px] w-full px-4 md:px-10 gap-16">
+<!-- Curated Tours Section -->
+<section>
+<div class="flex justify-between items-end mb-6">
+<div>
+<h2 class="text-[#111318] dark:text-white text-[28px] font-bold leading-tight tracking-[-0.015em]">Top Rated Tours</h2>
+<p class="text-gray-500 dark:text-gray-400 mt-2 text-base">Handpicked adventures for an unforgettable journey.</p>
+</div>
+<a class="hidden sm:flex items-center text-primary font-bold hover:underline gap-1" href="#">
+                            View all tours <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="group bg-white dark:bg-[#1a202c] rounded-xl overflow-hidden border border-[#dbdfe6] dark:border-gray-800 hover:shadow-lg transition-all duration-300">
+<div class="relative h-60 overflow-hidden">
+<div class="absolute top-3 left-3 bg-white/90 dark:bg-black/80 backdrop-blur px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-[#111318] dark:text-white z-10 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-yellow-500">star</span> 4.9
+                                </div>
+<div class="absolute top-3 right-3 bg-primary text-white px-3 py-1 rounded-full text-sm font-bold z-10">
+                                    7 Days
+                                </div>
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Ancient fortress walls in Khiva glowing under the golden sun" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAOD9cg35UhIWzoVcKj5-9_Rm2aWiTMb-ni_CBi6P7j64Km1L81KsBd0_UArH5NV3YG85Eu-1qZGJjZXO0iXiN6fp2p5J04X5jGjbdsfK6-_mgCLHGyDGGbUFHQFKe3OP4AnvW2i7XixnpjDBfG6xmzsW8NPZT7tXqFXAdL6es-AnfKwB46RjcG_6efM8RHmgO1H5HVMj8gWv7gNKqUIqUTbRavQgeEhyKVVojEbSgEMwCLJeQDhhEArixeB4tAnhj0KaQJ4aqmPaM");'></div>
+</div>
+<div class="p-5 flex flex-col gap-3">
+<div class="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400 font-medium uppercase tracking-wide">
+<span class="material-symbols-outlined text-sm">location_on</span> Samarkand &amp; Bukhara
+                                </div>
+<h3 class="text-xl font-bold text-[#111318] dark:text-white leading-tight">Golden Road to Samarkand</h3>
+<p class="text-sm text-gray-600 dark:text-gray-300 line-clamp-2">Explore the architectural masterpieces of the Timurid empire and ancient bazaars.</p>
+<div class="mt-2 pt-4 border-t border-gray-100 dark:border-gray-700 flex items-center justify-between">
+<div>
+<span class="text-xs text-gray-500 dark:text-gray-400">From</span>
+<div class="text-lg font-bold text-primary">$850</div>
+</div>
+<button class="bg-primary/10 hover:bg-primary text-primary hover:text-white font-bold py-2 px-4 rounded-lg text-sm transition-colors">
+                                        View Details
+                                    </button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group bg-white dark:bg-[#1a202c] rounded-xl overflow-hidden border border-[#dbdfe6] dark:border-gray-800 hover:shadow-lg transition-all duration-300">
+<div class="relative h-60 overflow-hidden">
+<div class="absolute top-3 left-3 bg-white/90 dark:bg-black/80 backdrop-blur px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-[#111318] dark:text-white z-10 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-yellow-500">star</span> 4.8
+                                </div>
+<div class="absolute top-3 right-3 bg-primary text-white px-3 py-1 rounded-full text-sm font-bold z-10">
+                                    3 Days
+                                </div>
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Modern skyline of Tashkent with the TV tower and Chorsu Bazaar dome" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBSLBtJtwHmYqwkAzETbJuyZqxlxJupF1_zH7KT-30uUyJxHI9NZXyuZmsUKAzsio_sqhpsSWzjwi-kumX_b9dPcGVsDu6ROftL4WigIN5rTDDehZ005-oAcS8X_NfUGdJNURkbtLKiF0qs8OR9ywQKsQ6JzzgIKMJ71fdS6RSj673fi6uZinvm01Gic4Q2mSMsyvk-lHEBohSeyOKWHWY6Jhph4wRydTPw_Uwkie4wKlOc5vaAmNVc0s5vePxRTjGlJ3IT-TR8D6E");'></div>
+</div>
+<div class="p-5 flex flex-col gap-3">
+<div class="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400 font-medium uppercase tracking-wide">
+<span class="material-symbols-outlined text-sm">location_on</span> Tashkent
+                                </div>
+<h3 class="text-xl font-bold text-[#111318] dark:text-white leading-tight">Tashkent City Break</h3>
+<p class="text-sm text-gray-600 dark:text-gray-300 line-clamp-2">Experience the perfect blend of Soviet modernism and Islamic heritage in the capital.</p>
+<div class="mt-2 pt-4 border-t border-gray-100 dark:border-gray-700 flex items-center justify-between">
+<div>
+<span class="text-xs text-gray-500 dark:text-gray-400">From</span>
+<div class="text-lg font-bold text-primary">$320</div>
+</div>
+<button class="bg-primary/10 hover:bg-primary text-primary hover:text-white font-bold py-2 px-4 rounded-lg text-sm transition-colors">
+                                        View Details
+                                    </button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group bg-white dark:bg-[#1a202c] rounded-xl overflow-hidden border border-[#dbdfe6] dark:border-gray-800 hover:shadow-lg transition-all duration-300">
+<div class="relative h-60 overflow-hidden">
+<div class="absolute top-3 left-3 bg-white/90 dark:bg-black/80 backdrop-blur px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-[#111318] dark:text-white z-10 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-yellow-500">star</span> 5.0
+                                </div>
+<div class="absolute top-3 right-3 bg-primary text-white px-3 py-1 rounded-full text-sm font-bold z-10">
+                                    10 Days
+                                </div>
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Traditional yurt camp in the desert under a starry sky near Aidarkul Lake" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD_0FSCaXs1xsTGswoDEeiUts078rX8JSUpTqWmuABJlJUxSppD0e73ILwYY_Wg3Y07Q-8sQ4pk6Kdi-jrkYvDowhD4qJJCU03EqBy2B86fDyijOshlzYzqq8mThywaH0FxkLrhG5Z4-tGIeJlAWOvxD2wBv-FC2wr6lKXuDLRJzIK1VYQMJ2LfOoZ__jQcyHSTIqotXBnWDoU3QbPWYOpW9bgo0n2uvfrid_CsBrfSxYnerccfMYW3yZxMNi4HFBZQk0vj09nMQKc");'></div>
+</div>
+<div class="p-5 flex flex-col gap-3">
+<div class="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400 font-medium uppercase tracking-wide">
+<span class="material-symbols-outlined text-sm">location_on</span> Desert &amp; Mountains
+                                </div>
+<h3 class="text-xl font-bold text-[#111318] dark:text-white leading-tight">Nomadic Trails &amp; Yurt Camps</h3>
+<p class="text-sm text-gray-600 dark:text-gray-300 line-clamp-2">Sleep under the stars and ride camels across the Kyzylkum Desert.</p>
+<div class="mt-2 pt-4 border-t border-gray-100 dark:border-gray-700 flex items-center justify-between">
+<div>
+<span class="text-xs text-gray-500 dark:text-gray-400">From</span>
+<div class="text-lg font-bold text-primary">$1,200</div>
+</div>
+<button class="bg-primary/10 hover:bg-primary text-primary hover:text-white font-bold py-2 px-4 rounded-lg text-sm transition-colors">
+                                        View Details
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Cultural Immersion Section (Pills) -->
+<section>
+<h2 class="text-[#111318] dark:text-white text-[24px] font-bold leading-tight tracking-[-0.015em] mb-6">Immerse Yourself in Culture</h2>
+<div class="flex flex-wrap gap-4">
+<a class="flex items-center gap-3 px-6 py-4 rounded-xl bg-white dark:bg-[#1a202c] border border-gray-200 dark:border-gray-700 shadow-sm hover:border-primary hover:shadow-md transition-all group" href="#">
+<div class="p-2 rounded-full bg-orange-100 text-orange-600 dark:bg-orange-900/30 dark:text-orange-400">
+<span class="material-symbols-outlined">restaurant_menu</span>
+</div>
+<span class="font-bold text-base text-[#111318] dark:text-white group-hover:text-primary">Gastronomy</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-4 rounded-xl bg-white dark:bg-[#1a202c] border border-gray-200 dark:border-gray-700 shadow-sm hover:border-primary hover:shadow-md transition-all group" href="#">
+<div class="p-2 rounded-full bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400">
+<span class="material-symbols-outlined">history_edu</span>
+</div>
+<span class="font-bold text-base text-[#111318] dark:text-white group-hover:text-primary">History &amp; Heritage</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-4 rounded-xl bg-white dark:bg-[#1a202c] border border-gray-200 dark:border-gray-700 shadow-sm hover:border-primary hover:shadow-md transition-all group" href="#">
+<div class="p-2 rounded-full bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400">
+<span class="material-symbols-outlined">nature_people</span>
+</div>
+<span class="font-bold text-base text-[#111318] dark:text-white group-hover:text-primary">Eco-Tourism</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-4 rounded-xl bg-white dark:bg-[#1a202c] border border-gray-200 dark:border-gray-700 shadow-sm hover:border-primary hover:shadow-md transition-all group" href="#">
+<div class="p-2 rounded-full bg-purple-100 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400">
+<span class="material-symbols-outlined">palette</span>
+</div>
+<span class="font-bold text-base text-[#111318] dark:text-white group-hover:text-primary">Arts &amp; Crafts</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-4 rounded-xl bg-white dark:bg-[#1a202c] border border-gray-200 dark:border-gray-700 shadow-sm hover:border-primary hover:shadow-md transition-all group" href="#">
+<div class="p-2 rounded-full bg-red-100 text-red-600 dark:bg-red-900/30 dark:text-red-400">
+<span class="material-symbols-outlined">mosque</span>
+</div>
+<span class="font-bold text-base text-[#111318] dark:text-white group-hover:text-primary">Architecture</span>
+</a>
+</div>
+</section>
+<!-- Must-See Destinations (Bento Style) -->
+<section>
+<h2 class="text-[#111318] dark:text-white text-[28px] font-bold leading-tight tracking-[-0.015em] mb-6">Must-See Destinations</h2>
+<div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-4 h-auto md:h-[500px]">
+<!-- Large Featured Item -->
+<div class="md:col-span-2 md:row-span-2 relative group overflow-hidden rounded-xl bg-gray-200 cursor-pointer">
+<div class="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors z-10"></div>
+<div class="absolute bottom-0 left-0 p-6 z-20">
+<h3 class="text-white text-3xl font-bold">Bukhara</h3>
+<p class="text-white/90 mt-2 text-sm max-w-xs">An open-air museum with over 140 architectural monuments.</p>
+</div>
+<div class="h-full w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="The Kalyan Minaret in Bukhara towering over the Po-i-Kalyan complex" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDOTwZKAwTvRNkVLpVdimIC85y3nEBpYK2Y8PwKeGce75b-lOzELQICDFWOuguk7cKm5-Aan3r1JBvK-kvkzPz7tG79HJJHlu87Ygl5wcvJXbohZScH_SrTtqJbn4IwfPMTePmFgkHH4ePwFCbXkLyhgbm6ucYZ5DmBX3YQhPivo8wsDXyJE_IlD0S95weV7Cr4PMMHho-PNijIXpUzYZZzw9QnN2-ukdOjEwEUbUZqZPyQyRPF8P9cTmjloyqAShQkdd2xTt9jKGQ");'></div>
+</div>
+<!-- Top Right Item -->
+<div class="md:col-span-2 relative group overflow-hidden rounded-xl bg-gray-200 cursor-pointer h-64 md:h-auto">
+<div class="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors z-10"></div>
+<div class="absolute bottom-0 left-0 p-6 z-20">
+<h3 class="text-white text-2xl font-bold">Samarkand</h3>
+<p class="text-white/90 mt-1 text-sm">Crossroad of cultures.</p>
+</div>
+<div class="h-full w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Blue domes of the Shah-i-Zinda necropolis in Samarkand" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAIjxNu8VY3PVKHhTJO6zma8MkUH9Wpu_n530263UFfH4BLix2DeldbFOzUEerw9c5xzyU9p-bMk2GmcNKFhBT4o4cOkTgbBrkWY65-_HP0LErOuOZaw3fVS1H4_DEUL1GbRlSI1HcJeqgy57PeFNmpnQRylUq7Mlji4iUO36RuHEkpDIFir4SXTCPnJqaVZJeqHC077W2MzTQGrjl5DYrbxItEBUSaDT0vZBSv7_ZE2w_xBJtB1MW8EuW06_TIPU9KG9ChJrT6FoU");'></div>
+</div>
+<!-- Bottom Right Items -->
+<div class="relative group overflow-hidden rounded-xl bg-gray-200 cursor-pointer h-64 md:h-auto">
+<div class="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors z-10"></div>
+<div class="absolute bottom-0 left-0 p-4 z-20">
+<h3 class="text-white text-xl font-bold">Khiva</h3>
+</div>
+<div class="h-full w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Ancient streets of Ichan-Kala fortress in Khiva" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB5HGI0CqHmyVR7rCN9S5FCxX5XdsuK55r4a073GrLHvclLTPA71a_2bHK4r1u_GtJf-8hVhYFq6sMr1Ls_EVY7fcVg-gr4BYzBGAQEQbdoH2U1hL1OlQFJdZEAtfAXRKcbgkHRdcx_OsyxsGFFUc2PaCrG7U_R3brok2s0HgZkfszUgSLZnN0g4DoLAoEg1o-awct2zvvf4n9_yFIrJ_bXP86xx-2eQBRime1k7wdng1i7iodADsb2rvIa1WVlag4DNBMdTgn2XaI");'></div>
+</div>
+<div class="relative group overflow-hidden rounded-xl bg-gray-200 cursor-pointer h-64 md:h-auto">
+<div class="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors z-10"></div>
+<div class="absolute bottom-0 left-0 p-4 z-20">
+<h3 class="text-white text-xl font-bold">Fergana</h3>
+</div>
+<div class="h-full w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Lush green landscapes and mountains of the Fergana Valley" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC1BGlYU7wDxgfHloWaJvZyIm1fpwc6fTL_Iewzu-pfZpEiQoEjZtuKDRb3muhTiwhM3d05t_YpntCFX7_AsZ2nBuXBIkFT8uMgySRDJl6yFnxg1Yi6Sfdc2GUHlHA57px6v--pXsk2NWCJGhoKs_8EnleZ5uOCNTp6TpgWAPdWlCnrAYCf5tRN7MoM51A9G-3pbccrrkoYyhWsvk4atMhaTl-EwrsJcG46f6Dr-Nz9YvqUXoG-MZH8ZyLnsIKoPbt-fIo09LNqiYM");'></div>
+</div>
+</div>
+</section>
+<!-- Practical Info Grid -->
+<section class="bg-blue-50/50 dark:bg-blue-900/10 rounded-2xl p-8 border border-blue-100 dark:border-blue-800/30">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="text-[#111318] dark:text-white text-[28px] font-bold leading-tight tracking-[-0.015em]">Essential Travel Info</h2>
+<p class="text-gray-500 dark:text-gray-400 mt-2 text-base">Prepare for your trip with these practical guides.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Info 1 -->
+<div class="flex flex-col gap-3">
+<div class="size-12 rounded-full bg-white dark:bg-gray-800 shadow-sm flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">card_travel</span>
+</div>
+<h3 class="font-bold text-lg text-[#111318] dark:text-white">Visa Requirements</h3>
+<p class="text-sm text-gray-600 dark:text-gray-300">Uzbekistan is visa-free for citizens of 90+ countries. Check your eligibility.</p>
+<a class="text-primary text-sm font-bold hover:underline mt-auto inline-block" href="#">Learn More</a>
+</div>
+<!-- Info 2 -->
+<div class="flex flex-col gap-3">
+<div class="size-12 rounded-full bg-white dark:bg-gray-800 shadow-sm flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">flight_takeoff</span>
+</div>
+<h3 class="font-bold text-lg text-[#111318] dark:text-white">Best Time to Visit</h3>
+<p class="text-sm text-gray-600 dark:text-gray-300">Spring (Apr-Jun) and Autumn (Sep-Nov) offer the most pleasant weather.</p>
+<a class="text-primary text-sm font-bold hover:underline mt-auto inline-block" href="#">Read Guide</a>
+</div>
+<!-- Info 3 -->
+<div class="flex flex-col gap-3">
+<div class="size-12 rounded-full bg-white dark:bg-gray-800 shadow-sm flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">train</span>
+</div>
+<h3 class="font-bold text-lg text-[#111318] dark:text-white">Getting Around</h3>
+<p class="text-sm text-gray-600 dark:text-gray-300">High-speed trains (Afrosiyob) connect major tourist cities efficiently.</p>
+<a class="text-primary text-sm font-bold hover:underline mt-auto inline-block" href="#">View Transport</a>
+</div>
+<!-- Info 4 -->
+<div class="flex flex-col gap-3">
+<div class="size-12 rounded-full bg-white dark:bg-gray-800 shadow-sm flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">shield</span>
+</div>
+<h3 class="font-bold text-lg text-[#111318] dark:text-white">Safety &amp; Etiquette</h3>
+<p class="text-sm text-gray-600 dark:text-gray-300">Uzbekistan is one of the safest countries. Learn about local customs.</p>
+<a class="text-primary text-sm font-bold hover:underline mt-auto inline-block" href="#">Safety Tips</a>
+</div>
+</div>
+</section>
+<!-- Newsletter -->
+<section class="relative overflow-hidden rounded-2xl bg-primary text-white p-8 md:p-12 text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+<div class="relative z-10 max-w-lg">
+<h2 class="text-2xl md:text-3xl font-bold mb-2">Get Inspired for Your Trip</h2>
+<p class="text-blue-100">Subscribe to our newsletter for curated travel guides, hidden gems, and exclusive tour offers.</p>
+</div>
+<div class="relative z-10 w-full max-w-md">
+<form class="flex flex-col sm:flex-row gap-2">
+<input class="flex-1 rounded-lg border-0 px-4 py-3 text-gray-900 focus:ring-2 focus:ring-white/50" placeholder="Enter your email" type="email"/>
+<button class="bg-[#111318] hover:bg-gray-900 text-white font-bold py-3 px-6 rounded-lg transition-colors" type="button">
+                                 Subscribe
+                             </button>
+</form>
+</div>
+</section>
+</div>
+</div>
+<!-- Footer -->
+<footer class="bg-white dark:bg-[#1a202c] border-t border-[#f0f1f5] dark:border-gray-800 pt-16 pb-8">
+<div class="max-w-[1280px] mx-auto px-4 md:px-10">
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
+<div class="col-span-2 lg:col-span-2">
+<div class="flex items-center gap-2 text-[#111318] dark:text-white mb-4">
+<div class="size-6 text-primary">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M39.5563 34.1455V13.8546C39.5563 15.708 36.8773 17.3437 32.7927 18.3189C30.2914 18.916 27.263 19.2655 24 19.2655C20.737 19.2655 17.7086 18.916 15.2073 18.3189C11.1227 17.3437 8.44365 15.708 8.44365 13.8546V34.1455C8.44365 35.9988 11.1227 37.6346 15.2073 38.6098C17.7086 39.2069 20.737 39.5564 24 39.5564C27.263 39.5564 30.2914 39.2069 32.7927 38.6098C36.8773 37.6346 39.5563 35.9988 39.5563 34.1455Z" fill="currentColor"></path>
+<path clip-rule="evenodd" d="M10.4485 13.8519C10.4749 13.9271 10.6203 14.246 11.379 14.7361C12.298 15.3298 13.7492 15.9145 15.6717 16.3735C18.0007 16.9296 20.8712 17.2655 24 17.2655C27.1288 17.2655 29.9993 16.9296 32.3283 16.3735C34.2508 15.9145 35.702 15.3298 36.621 14.7361C37.3796 14.246 37.5251 13.9271 37.5515 13.8519C37.5287 13.7876 37.4333 13.5973 37.0635 13.2931C36.5266 12.8516 35.6288 12.3647 34.343 11.9175C31.79 11.0295 28.1333 10.4437 24 10.4437C19.8667 10.4437 16.2099 11.0295 13.657 11.9175C12.3712 12.3647 11.4734 12.8516 10.9365 13.2931C10.5667 13.5973 10.4713 13.7876 10.4485 13.8519ZM37.5563 18.7877C36.3176 19.3925 34.8502 19.8839 33.2571 20.2642C30.5836 20.9025 27.3973 21.2655 24 21.2655C20.6027 21.2655 17.4164 20.9025 14.7429 20.2642C13.1498 19.8839 11.6824 19.3925 10.4436 18.7877V34.1275C10.4515 34.1545 10.5427 34.4867 11.379 35.027C12.298 35.6207 13.7492 36.2054 15.6717 36.6644C18.0007 37.2205 20.8712 37.5564 24 37.5564C27.1288 37.5564 29.9993 37.2205 32.3283 36.6644C34.2508 36.2054 35.702 35.6207 36.621 35.027C37.4573 34.4867 37.5485 34.1546 37.5563 34.1275V18.7877ZM41.5563 13.8546V34.1455C41.5563 36.1078 40.158 37.5042 38.7915 38.3869C37.3498 39.3182 35.4192 40.0389 33.2571 40.5551C30.5836 41.1934 27.3973 41.5564 24 41.5564C20.6027 41.5564 17.4164 41.1934 14.7429 40.5551C12.5808 40.0389 10.6502 39.3182 9.20848 38.3869C7.84205 37.5042 6.44365 36.1078 6.44365 34.1455L6.44365 13.8546C6.44365 12.2684 7.37223 11.0454 8.39581 10.2036C9.43325 9.3505 10.8137 8.67141 12.343 8.13948C15.4203 7.06909 19.5418 6.44366 24 6.44366C28.4582 6.44366 32.5797 7.06909 35.657 8.13948C37.1863 8.67141 38.5667 9.3505 39.6042 10.2036C40.6278 11.0454 41.5563 12.2684 41.5563 13.8546Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<span class="text-xl font-bold">Uzbekistan Travel</span>
+</div>
+<p class="text-gray-500 text-sm mb-6">The official national platform for tourism in Uzbekistan. Discover the magic of the Silk Road with us.</p>
+<div class="flex gap-4">
+<a class="text-gray-400 hover:text-primary" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-gray-400 hover:text-primary" href="#"><span class="material-symbols-outlined">photo_camera</span></a>
+<a class="text-gray-400 hover:text-primary" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-[#111318] dark:text-white mb-4">Destinations</h4>
+<ul class="flex flex-col gap-2 text-sm text-gray-500 dark:text-gray-400">
+<li><a class="hover:text-primary" href="#">Samarkand</a></li>
+<li><a class="hover:text-primary" href="#">Bukhara</a></li>
+<li><a class="hover:text-primary" href="#">Khiva</a></li>
+<li><a class="hover:text-primary" href="#">Tashkent</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-[#111318] dark:text-white mb-4">Travel Planning</h4>
+<ul class="flex flex-col gap-2 text-sm text-gray-500 dark:text-gray-400">
+<li><a class="hover:text-primary" href="#">Visa Info</a></li>
+<li><a class="hover:text-primary" href="#">Accommodation</a></li>
+<li><a class="hover:text-primary" href="#">Transportation</a></li>
+<li><a class="hover:text-primary" href="#">Tours</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-[#111318] dark:text-white mb-4">Support</h4>
+<ul class="flex flex-col gap-2 text-sm text-gray-500 dark:text-gray-400">
+<li><a class="hover:text-primary" href="#">Help Center</a></li>
+<li><a class="hover:text-primary" href="#">Contact Us</a></li>
+<li><a class="hover:text-primary" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary" href="#">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-100 dark:border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">
+<p>© 2024 Uzbekistan Travel. All rights reserved.</p>
+<p class="mt-2 md:mt-0">Designed for Travelers</p>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

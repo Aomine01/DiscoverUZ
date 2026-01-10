@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Destinations - Discover Uz</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d59f2",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                        "text-main": "#111318",
+                        "text-secondary": "#606e8a",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-main dark:text-white antialiased overflow-x-hidden min-h-screen flex flex-col">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 bg-white/95 dark:bg-background-dark/95 backdrop-blur-sm border-b border-[#f0f1f5] dark:border-gray-800">
+<div class="max-w-[1280px] mx-auto px-4 md:px-8 h-[72px] flex items-center justify-between">
+<!-- Logo Section -->
+<div class="flex items-center gap-4">
+<a class="flex items-center gap-3 group" href="#">
+<div class="size-8 text-primary transition-transform group-hover:scale-105">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h1 class="text-text-main dark:text-white text-xl font-bold tracking-tight">Discover Uz</h1>
+</a>
+</div>
+<!-- Navigation Links (Desktop) -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-primary font-semibold text-sm leading-normal border-b-2 border-primary pb-0.5" href="#">Destinations</a>
+<a class="text-text-main dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="#">Tours</a>
+<a class="text-text-main dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="#">About Us</a>
+<a class="text-text-main dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="#">Contact</a>
+</nav>
+<!-- Actions -->
+<div class="flex items-center gap-3">
+<button class="hidden sm:flex h-9 items-center justify-center rounded-lg bg-background-light dark:bg-gray-800 text-text-main dark:text-white text-sm font-semibold px-4 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                    Language
+                </button>
+<button class="h-9 flex items-center justify-center rounded-lg bg-primary text-white text-sm font-bold px-5 shadow-sm hover:bg-primary/90 transition-colors">
+                    Sign In
+                </button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow">
+<div class="max-w-[1280px] mx-auto px-4 md:px-8 py-8 md:py-12">
+<!-- Page Heading -->
+<div class="flex flex-col gap-3 mb-10">
+<h2 class="text-text-main dark:text-white text-3xl md:text-4xl font-black leading-tight tracking-tight">
+                    Explore Destinations
+                </h2>
+<p class="text-text-secondary dark:text-gray-400 text-lg font-normal max-w-2xl">
+                    Find your next adventure in the heart of the Silk Road. From ancient holy cities to modern metropolises.
+                </p>
+</div>
+<!-- Search and Sort Toolbar -->
+<div class="flex flex-col md:flex-row gap-4 mb-8">
+<!-- Search Input -->
+<div class="flex-grow">
+<div class="relative w-full">
+<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-text-secondary dark:text-gray-400">
+<span class="material-symbols-outlined text-2xl">search</span>
+</div>
+<input class="block w-full h-12 rounded-lg border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 pl-11 pr-4 text-base text-text-main dark:text-white placeholder-text-secondary dark:placeholder-gray-500 focus:border-primary focus:ring-primary shadow-sm" placeholder="Search cities (e.g., Samarkand, Bukhara)" type="text"/>
+</div>
+</div>
+<!-- Sort Dropdown -->
+<div class="md:w-64 flex-shrink-0">
+<div class="relative">
+<select class="block w-full h-12 appearance-none rounded-lg border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-4 pr-10 text-base text-text-main dark:text-white focus:border-primary focus:ring-primary shadow-sm cursor-pointer">
+<option>Most Popular</option>
+<option>Alphabetical (A-Z)</option>
+<option>Number of Tours</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-text-secondary dark:text-gray-400">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Cities Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<!-- Tashkent Card -->
+<a class="group flex flex-col bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-lg hover:border-primary/20 hover:-translate-y-1 transition-all duration-300" href="#">
+<div class="relative h-56 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Modern skyline of Tashkent with blue domes and TV tower" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDk49LguI-E3FfeZA6KsxKO5hG2nutiod3Ysi98qM04oemmP95WSGusQBw2wekQvw8991I1WkX2KpoE7qOqQmoibpGg6SHXk8SXCrMe3Q4zKJUau_6rW8ugiH0nEt5Ae8KBOj443WQ7Cc8nv_eHbFRp3R8tDGozY2KBK5OVvEem8lt2m22jlmPcThrHMbPa596tZsbcfxKTyIQ6VyktcP56_bOo2fBQmKpb5a7HDcDEqJJS83nTAoVB83rq4jit9oTYboiWrDA4Rt8');"></div>
+<div class="absolute top-3 right-3 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-xs font-bold text-text-main dark:text-white shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">local_activity</span>
+                            56 Experiences
+                        </div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold text-text-main dark:text-white group-hover:text-primary transition-colors">Tashkent</h3>
+</div>
+<p class="text-text-secondary dark:text-gray-400 text-sm mb-4 line-clamp-2">
+                            The modern capital where Soviet architecture meets Islamic heritage. A vibrant metropolis of parks and museums.
+                        </p>
+<div class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-700 flex items-center justify-between">
+<span class="text-xs font-medium text-text-secondary dark:text-gray-500 uppercase tracking-wider">Capital City</span>
+<span class="text-primary text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
+                                Explore <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</span>
+</div>
+</div>
+</a>
+<!-- Samarkand Card -->
+<a class="group flex flex-col bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-lg hover:border-primary/20 hover:-translate-y-1 transition-all duration-300" href="#">
+<div class="relative h-56 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Registan square in Samarkand with illuminated madrasahs at twilight" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCCdR2oDOgagL77AnTYsrW8CuHB-RH6mDQBjjhHze750yuQL51eW5eworGjZvAsgarOJ0R14A4cc7NjoDpZCDABE0WvdnnMuCSLVS0vdo5L10YvA4abACjPbnY5NvL-0j3KICera9ZeTwwlIaswj_NJ4OA_EGZTkOADs_K8Wjg8liXC-0d5Nc00ocJJ4CMZWaK0f2PA_pOoOKfHoKYVgh-OdoGtsg3Uxsh0vAWdAT9_raX7HRO1op18Zn469Y1HGfkBl_pIuaym2LI');"></div>
+<div class="absolute top-3 right-3 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-xs font-bold text-text-main dark:text-white shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">local_activity</span>
+                            42 Experiences
+                        </div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<h3 class="text-xl font-bold text-text-main dark:text-white mb-2 group-hover:text-primary transition-colors">Samarkand</h3>
+<p class="text-text-secondary dark:text-gray-400 text-sm mb-4 line-clamp-2">
+                            Crossroad of Cultures. Marvel at the majestic Registan Square and the turquoise domes of the Timurid empire.
+                        </p>
+<div class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-700 flex items-center justify-between">
+<span class="text-xs font-medium text-text-secondary dark:text-gray-500 uppercase tracking-wider">UNESCO Site</span>
+<span class="text-primary text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
+                                Explore <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</span>
+</div>
+</div>
+</a>
+<!-- Bukhara Card -->
+<a class="group flex flex-col bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-lg hover:border-primary/20 hover:-translate-y-1 transition-all duration-300" href="#">
+<div class="relative h-56 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Ancient brick minaret and mosque facade in Bukhara" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCJiZDOao3iVoZGbi2RAYYRxCITmwW0wKo0oxWJohTBMT-W3KDYNI4UGm7HtuF7tf9jCj_UgRL7OZKGSoqRX5NabUwpOz8rcCH70mYCFejXpe_ICJTkCfN1D12x4agg_rbcLSW5uahj8VcSiUWFL0bNlxtCArFVa-46fGv42YvRpp2qDs5CvsCbbHi1NrS01E4DaR-pM0Rmiy4gSt-JMonHdzeNkfogeVbg8laRlYzf83mH2Fv-15qmCkm-mXeHKYsyVD8kUWKfLlM');"></div>
+<div class="absolute top-3 right-3 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-xs font-bold text-text-main dark:text-white shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">local_activity</span>
+                            38 Experiences
+                        </div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<h3 class="text-xl font-bold text-text-main dark:text-white mb-2 group-hover:text-primary transition-colors">Bukhara</h3>
+<p class="text-text-secondary dark:text-gray-400 text-sm mb-4 line-clamp-2">
+                            Ancient Holy City. A living museum with over 140 architectural monuments dating back to the Middle Ages.
+                        </p>
+<div class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-700 flex items-center justify-between">
+<span class="text-xs font-medium text-text-secondary dark:text-gray-500 uppercase tracking-wider">Historical</span>
+<span class="text-primary text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
+                                Explore <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</span>
+</div>
+</div>
+</a>
+<!-- Khiva Card -->
+<a class="group flex flex-col bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-lg hover:border-primary/20 hover:-translate-y-1 transition-all duration-300" href="#">
+<div class="relative h-56 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Sand colored fortress walls of Ichan Kala in Khiva" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAHaZ9f9ecexiMvSOQTGCMb0cbJg81qxI1ZGWN8Xnm8doegETsSIq6k_0DILSGfeS62ql-9_86Z31sqJdIohE1Pj7RogLYnCCKlEoJwclKxpX56pgJjLddPZjnaYmxK_MVKc5BmzvPrwR2zvDlenHN-oS9CdQIQTne-XabU5VlLIshoYHhULbW1oz_0gL1EKj2HkH28dJvJV2aTBNkk-eccMYcoKdAQ7XLeeUcks0M3dSZHZu-CfN-KlZ_mfUITf76tC2TwTMBuSmE');"></div>
+<div class="absolute top-3 right-3 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-xs font-bold text-text-main dark:text-white shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">local_activity</span>
+                            25 Experiences
+                        </div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<h3 class="text-xl font-bold text-text-main dark:text-white mb-2 group-hover:text-primary transition-colors">Khiva</h3>
+<p class="text-text-secondary dark:text-gray-400 text-sm mb-4 line-clamp-2">
+                            Open Air Museum. Step into a world of Arabian Nights within the walled city of Itchan Kala.
+                        </p>
+<div class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-700 flex items-center justify-between">
+<span class="text-xs font-medium text-text-secondary dark:text-gray-500 uppercase tracking-wider">Desert City</span>
+<span class="text-primary text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
+                                Explore <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</span>
+</div>
+</div>
+</a>
+<!-- Nukus Card -->
+<a class="group flex flex-col bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-lg hover:border-primary/20 hover:-translate-y-1 transition-all duration-300" href="#">
+<div class="relative h-56 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Abstract desert landscape representing the Aral Sea region" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDWoUQsxKZ6_phVZxiUyDIrxAoKHYWFZBuNBksbKpo8RM9JQeBC95Ai0Q7I4lEPclwMuzoGIBDDhaHikUoTDfdj53GYqjUf65wqtRqL4Vqcc15430A8nZL-Lhfqj369PLbOA1gY2wwsYqbBtOwAkxP_2byRgpOS67TRtO7us6f-dqPTEzHqxXk_alSqXvDvGKRtoUu0NE2c_8E0pFdPsx6g5ZinB7Q9zQUFaE-KjbuCv858Q0XnUPam6kBIz__OYip7NR361ZBcQ3Q');"></div>
+<div class="absolute top-3 right-3 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-xs font-bold text-text-main dark:text-white shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">local_activity</span>
+                            15 Experiences
+                        </div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<h3 class="text-xl font-bold text-text-main dark:text-white mb-2 group-hover:text-primary transition-colors">Nukus</h3>
+<p class="text-text-secondary dark:text-gray-400 text-sm mb-4 line-clamp-2">
+                            Gateway to the Aral Sea and home to the world-renowned Savitsky Art Museum.
+                        </p>
+<div class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-700 flex items-center justify-between">
+<span class="text-xs font-medium text-text-secondary dark:text-gray-500 uppercase tracking-wider">Art &amp; Nature</span>
+<span class="text-primary text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
+                                Explore <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</span>
+</div>
+</div>
+</a>
+<!-- Termez Card -->
+<a class="group flex flex-col bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-lg hover:border-primary/20 hover:-translate-y-1 transition-all duration-300" href="#">
+<div class="relative h-56 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Ruins of an ancient Buddhist stupa in southern Uzbekistan" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAr61_8UZFfEfO6rYM8HIhng1PnhvHHTMqZlb1LOYGbz7_scdVCAUDrC5qt2pnrUFoCVSazJs5lDvzMgIE7hx7tYtCHdip7J4q9xs4GjBh_A4YnNoS5kvDLPlKqvLOSQCAeW9sXAI18EDQq_aWiOXNUSSeqUbdOnuVx0OD_tp55R-qFD4K1nHVsEe50BHInKsDCafUr4Z8FWRUDpCBQUNLjsD0yDSbcRSHLWbx1cUG5hc7E1Wg3SC-U0wFeZbDhvfn2_AFuHQZeTjc');"></div>
+<div class="absolute top-3 right-3 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-xs font-bold text-text-main dark:text-white shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">local_activity</span>
+                            12 Experiences
+                        </div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<h3 class="text-xl font-bold text-text-main dark:text-white mb-2 group-hover:text-primary transition-colors">Termez</h3>
+<p class="text-text-secondary dark:text-gray-400 text-sm mb-4 line-clamp-2">
+                            Buddhist Heritage. Discover ancient stupas and the archaeological treasures of the southern frontier.
+                        </p>
+<div class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-700 flex items-center justify-between">
+<span class="text-xs font-medium text-text-secondary dark:text-gray-500 uppercase tracking-wider">Archaeology</span>
+<span class="text-primary text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
+                                Explore <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</span>
+</div>
+</div>
+</a>
+<!-- Fergana Card -->
+<a class="group flex flex-col bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-lg hover:border-primary/20 hover:-translate-y-1 transition-all duration-300" href="#">
+<div class="relative h-56 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Lush green landscape with mountains in the distance" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCHKn6RHw7SJMwlZ4-U_5IWikksWIEV_RxGa3e7Famd3CFVJTrab3EJLr-DPJZTtsQpk84qk3yG9F236DSwubN3Gzcz3XhWzECmmrYSOp8pIUP9SQ6kx1qtgGXwa5sxFUBabrrZI3UH8Ozs1JZXzZbCufCEwNcXqKwjlinTTcwBjMplDAA_txJcVYT28VwX5KpJwZq_tL8M5-V05omct_dE3e6t8IJhkQNEP4CkkVfk96vwesqKfmNKFzNFjUUNXAZpzGWHG0IUm5k');"></div>
+<div class="absolute top-3 right-3 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-xs font-bold text-text-main dark:text-white shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">local_activity</span>
+                            20 Experiences
+                        </div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<h3 class="text-xl font-bold text-text-main dark:text-white mb-2 group-hover:text-primary transition-colors">Fergana</h3>
+<p class="text-text-secondary dark:text-gray-400 text-sm mb-4 line-clamp-2">
+                            The Garden City. Famous for its lush landscapes, silk production, and rich agricultural heritage.
+                        </p>
+<div class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-700 flex items-center justify-between">
+<span class="text-xs font-medium text-text-secondary dark:text-gray-500 uppercase tracking-wider">Nature</span>
+<span class="text-primary text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
+                                Explore <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</span>
+</div>
+</div>
+</a>
+<!-- Kokand Card -->
+<a class="group flex flex-col bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-lg hover:border-primary/20 hover:-translate-y-1 transition-all duration-300" href="#">
+<div class="relative h-56 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Intricate wooden columns and painted ceiling of a palace" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAQSIgN7jeQNJlXy_QW3zj0Lh8plEaacdApvflLaEcR08pJUojdchy_aUeOO-lu0GPJrqeG3arswLzE6NVPdfXrO4qkCQ5qWd3D__3i5VPGgqotXNDO48XqVcNFlUNqJjirku0rRuV-myfIgTzMOp4jfkyDfs6ttsOLlDE3BUKMyGZTp1pzogayh0jSR-nJXh7Twbd5UU5jmyySJ3K27p9OKKdvrqOrFStpU14xWD8ta_l-ZoJVWt3BqADIawNuJH6ZnmDOqpHRShM');"></div>
+<div class="absolute top-3 right-3 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-xs font-bold text-text-main dark:text-white shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">local_activity</span>
+                            18 Experiences
+                        </div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<h3 class="text-xl font-bold text-text-main dark:text-white mb-2 group-hover:text-primary transition-colors">Kokand</h3>
+<p class="text-text-secondary dark:text-gray-400 text-sm mb-4 line-clamp-2">
+                            City of Winds. Explore the stunning Palace of Khudayar Khan and the city's rich literary history.
+                        </p>
+<div class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-700 flex items-center justify-between">
+<span class="text-xs font-medium text-text-secondary dark:text-gray-500 uppercase tracking-wider">Culture</span>
+<span class="text-primary text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
+                                Explore <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</span>
+</div>
+</div>
+</a>
+</div>
+<!-- Pagination / Load More -->
+<div class="mt-12 flex justify-center">
+<button class="flex items-center gap-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-6 py-3 text-sm font-bold text-text-main dark:text-white transition-all hover:bg-gray-50 dark:hover:bg-gray-700 hover:shadow-sm">
+                    Load more cities
+                    <span class="material-symbols-outlined text-[20px]">expand_more</span>
+</button>
+</div>
+</div>
+</main>
+</body></html>

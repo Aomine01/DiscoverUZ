@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FAQ - Discover Uz</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d59f2",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom scrollbar for cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        
+        /* Hide default details marker */
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white min-h-screen flex flex-col">
+<!-- Navigation -->
+<header class="sticky top-0 z-50 bg-white dark:bg-slate-900 border-b border-gray-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<!-- Logo -->
+<div class="flex items-center gap-3">
+<div class="text-primary">
+<span class="material-symbols-outlined text-3xl">travel_explore</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">Discover Uz</h2>
+</div>
+<!-- Desktop Menu -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-white transition-colors" href="#">Tours</a>
+<a class="text-sm font-medium text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-white transition-colors" href="#">Destinations</a>
+<a class="text-sm font-medium text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-white transition-colors" href="#">About Us</a>
+<a class="text-sm font-medium text-primary dark:text-white" href="#">Help</a>
+</nav>
+<!-- Auth Buttons -->
+<div class="flex items-center gap-4">
+<button class="hidden sm:flex h-9 items-center justify-center rounded-lg bg-primary px-4 text-sm font-bold text-white shadow-sm hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+                        Sign In
+                    </button>
+<!-- Mobile Menu Button -->
+<button class="md:hidden p-2 text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<!-- Breadcrumbs -->
+<div class="bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+<div class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+<a class="hover:text-primary transition-colors" href="#">Home</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Help Center</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="font-medium text-slate-900 dark:text-white">FAQ</span>
+</div>
+</div>
+</div>
+<!-- Hero Search Section -->
+<section class="bg-white dark:bg-slate-900 pb-12 pt-10 px-4 sm:px-6 lg:px-8 shadow-sm">
+<div class="max-w-3xl mx-auto text-center space-y-6">
+<h1 class="text-3xl sm:text-4xl font-black tracking-tight text-slate-900 dark:text-white">
+                Frequently Asked Questions
+            </h1>
+<p class="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+                Find answers to common questions about booking your Uzbekistan adventure, payments, visas, and more.
+            </p>
+<div class="relative max-w-xl mx-auto mt-8 group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400 group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="block w-full pl-11 pr-4 py-4 rounded-xl border-gray-200 bg-gray-50 dark:bg-slate-800 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-500 focus:border-primary focus:ring-primary shadow-sm text-base transition-all" placeholder="Search for answers (e.g., 'refund policy', 'visa')" type="text"/>
+<div class="absolute inset-y-0 right-2 flex items-center">
+<button class="h-10 px-4 bg-primary text-white text-sm font-bold rounded-lg hover:bg-blue-700 transition-colors">
+                        Search
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Content -->
+<main class="flex-grow max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+<!-- Sidebar Navigation (Sticky) -->
+<aside class="hidden lg:block lg:col-span-3">
+<div class="sticky top-24 space-y-1">
+<h3 class="px-4 pb-2 text-xs font-semibold text-slate-400 uppercase tracking-wider">Categories</h3>
+<a class="group flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-lg bg-primary/10 text-primary" href="#general">
+<span class="material-symbols-outlined filled text-[20px]">dashboard</span>
+                        General
+                    </a>
+<a class="group flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-lg text-slate-600 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition-colors" href="#booking">
+<span class="material-symbols-outlined text-[20px]">confirmation_number</span>
+                        Booking
+                    </a>
+<a class="group flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-lg text-slate-600 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition-colors" href="#payments">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+                        Payments
+                    </a>
+<a class="group flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-lg text-slate-600 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition-colors" href="#visa">
+<span class="material-symbols-outlined text-[20px]">public</span>
+                        Visa &amp; Travel
+                    </a>
+<a class="group flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-lg text-slate-600 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition-colors" href="#cancellations">
+<span class="material-symbols-outlined text-[20px]">cancel</span>
+                        Cancellations
+                    </a>
+</div>
+</aside>
+<!-- Mobile Category Select (Visible only on small screens) -->
+<div class="lg:hidden mb-6">
+<label class="sr-only" for="tabs">Select a category</label>
+<select class="block w-full rounded-lg border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 focus:border-primary focus:ring-primary text-slate-900 dark:text-white py-3 px-4" id="tabs" name="tabs">
+<option selected="">General</option>
+<option>Booking</option>
+<option>Payments</option>
+<option>Visa &amp; Travel</option>
+<option>Cancellations</option>
+</select>
+</div>
+<!-- FAQ Content Area -->
+<div class="lg:col-span-9 space-y-12">
+<!-- Section: General -->
+<section class="scroll-mt-28" id="general">
+<div class="flex items-center gap-3 mb-6 pb-2 border-b border-gray-200 dark:border-slate-800">
+<span class="p-2 rounded-lg bg-blue-100 dark:bg-blue-900/30 text-primary">
+<span class="material-symbols-outlined">dashboard</span>
+</span>
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white">General Questions</h2>
+</div>
+<div class="space-y-4">
+<details class="group bg-white dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700 overflow-hidden shadow-sm transition-all duration-200 open:shadow-md">
+<summary class="flex cursor-pointer items-center justify-between gap-4 p-5 sm:px-6">
+<h3 class="text-base font-semibold text-slate-900 dark:text-white">What is Discover Uz?</h3>
+<span class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform duration-300">expand_more</span>
+</summary>
+<div class="px-6 pb-6 pt-0 text-slate-600 dark:text-slate-300 leading-relaxed">
+<p>Discover Uz is the premier national platform for booking authentic experiences, tours, and activities across Uzbekistan. We connect international travelers and local residents with verified local guides and tour operators to ensure high-quality adventures.</p>
+</div>
+</details>
+<details class="group bg-white dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700 overflow-hidden shadow-sm transition-all duration-200">
+<summary class="flex cursor-pointer items-center justify-between gap-4 p-5 sm:px-6">
+<h3 class="text-base font-semibold text-slate-900 dark:text-white">Is the platform available in multiple languages?</h3>
+<span class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform duration-300">expand_more</span>
+</summary>
+<div class="px-6 pb-6 pt-0 text-slate-600 dark:text-slate-300 leading-relaxed">
+<p>Yes! We currently support English, Russian, and Uzbek. You can switch your preferred language using the globe icon in the footer or the settings in your account profile.</p>
+</div>
+</details>
+</div>
+</section>
+<!-- Section: Booking -->
+<section class="scroll-mt-28" id="booking">
+<div class="flex items-center gap-3 mb-6 pb-2 border-b border-gray-200 dark:border-slate-800">
+<span class="p-2 rounded-lg bg-blue-100 dark:bg-blue-900/30 text-primary">
+<span class="material-symbols-outlined">confirmation_number</span>
+</span>
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white">Booking &amp; Tickets</h2>
+</div>
+<div class="space-y-4">
+<details class="group bg-white dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700 overflow-hidden shadow-sm transition-all duration-200">
+<summary class="flex cursor-pointer items-center justify-between gap-4 p-5 sm:px-6">
+<h3 class="text-base font-semibold text-slate-900 dark:text-white">How do I receive my ticket?</h3>
+<span class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform duration-300">expand_more</span>
+</summary>
+<div class="px-6 pb-6 pt-0 text-slate-600 dark:text-slate-300 leading-relaxed">
+<p>After your booking is confirmed, an electronic ticket (e-ticket) will be sent to your registered email address within 15 minutes. This email will contain a QR code that you can present on your mobile device at the venue or meeting point. No printing required!</p>
+</div>
+</details>
+<details class="group bg-white dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700 overflow-hidden shadow-sm transition-all duration-200">
+<summary class="flex cursor-pointer items-center justify-between gap-4 p-5 sm:px-6">
+<h3 class="text-base font-semibold text-slate-900 dark:text-white">Can I book for a large group?</h3>
+<span class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform duration-300">expand_more</span>
+</summary>
+<div class="px-6 pb-6 pt-0 text-slate-600 dark:text-slate-300 leading-relaxed">
+<p>Absolutely. For groups larger than 10 people, we recommend contacting our "Group Sales" team directly via the contact form to ensure availability and potentially access special group rates. For smaller groups, you can simply select the number of participants during the standard checkout process.</p>
+</div>
+</details>
+<details class="group bg-white dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700 overflow-hidden shadow-sm transition-all duration-200">
+<summary class="flex cursor-pointer items-center justify-between gap-4 p-5 sm:px-6">
+<h3 class="text-base font-semibold text-slate-900 dark:text-white">Do I need to create an account to book?</h3>
+<span class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform duration-300">expand_more</span>
+</summary>
+<div class="px-6 pb-6 pt-0 text-slate-600 dark:text-slate-300 leading-relaxed">
+<p>While you can browse tours as a guest, we require account creation at checkout. This ensures your tickets are saved securely and allows you to manage your bookings, download invoices, and contact support easily.</p>
+</div>
+</details>
+</div>
+</section>
+<!-- Section: Payments -->
+<section class="scroll-mt-28" id="payments">
+<div class="flex items-center gap-3 mb-6 pb-2 border-b border-gray-200 dark:border-slate-800">
+<span class="p-2 rounded-lg bg-blue-100 dark:bg-blue-900/30 text-primary">
+<span class="material-symbols-outlined">payments</span>
+</span>
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white">Payments</h2>
+</div>
+<div class="space-y-4">
+<details class="group bg-white dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700 overflow-hidden shadow-sm transition-all duration-200">
+<summary class="flex cursor-pointer items-center justify-between gap-4 p-5 sm:px-6">
+<h3 class="text-base font-semibold text-slate-900 dark:text-white">What payment methods do you accept?</h3>
+<span class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform duration-300">expand_more</span>
+</summary>
+<div class="px-6 pb-6 pt-0 text-slate-600 dark:text-slate-300 leading-relaxed">
+<p>We accept all major international credit and debit cards (Visa, Mastercard, UnionPay) as well as local UzCard and Humo payment systems. All transactions are processed in UZS (Uzbek Soum) or converted automatically by your bank.</p>
+</div>
+</details>
+<details class="group bg-white dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700 overflow-hidden shadow-sm transition-all duration-200">
+<summary class="flex cursor-pointer items-center justify-between gap-4 p-5 sm:px-6">
+<h3 class="text-base font-semibold text-slate-900 dark:text-white">Is my payment information secure?</h3>
+<span class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform duration-300">expand_more</span>
+</summary>
+<div class="px-6 pb-6 pt-0 text-slate-600 dark:text-slate-300 leading-relaxed">
+<p>Yes, your security is our priority. We use enterprise-grade 256-bit SSL encryption for all transactions. We do not store your full credit card details on our servers; payments are processed securely through our regulated banking partners.</p>
+</div>
+</details>
+</div>
+</section>
+<!-- Section: Visa -->
+<section class="scroll-mt-28" id="visa">
+<div class="flex items-center gap-3 mb-6 pb-2 border-b border-gray-200 dark:border-slate-800">
+<span class="p-2 rounded-lg bg-blue-100 dark:bg-blue-900/30 text-primary">
+<span class="material-symbols-outlined">public</span>
+</span>
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white">Visa &amp; Travel</h2>
+</div>
+<div class="space-y-4">
+<details class="group bg-white dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700 overflow-hidden shadow-sm transition-all duration-200">
+<summary class="flex cursor-pointer items-center justify-between gap-4 p-5 sm:px-6">
+<h3 class="text-base font-semibold text-slate-900 dark:text-white">Do I need a visa for Uzbekistan?</h3>
+<span class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform duration-300">expand_more</span>
+</summary>
+<div class="px-6 pb-6 pt-0 text-slate-600 dark:text-slate-300 leading-relaxed">
+<p>Citizens of over 90 countries can enter Uzbekistan visa-free for up to 30 days. Others can easily apply for an e-visa online. We recommend checking the official Ministry of Foreign Affairs website for the most up-to-date requirements for your specific nationality.</p>
+</div>
+</details>
+</div>
+</section>
+<!-- Section: Cancellations -->
+<section class="scroll-mt-28" id="cancellations">
+<div class="flex items-center gap-3 mb-6 pb-2 border-b border-gray-200 dark:border-slate-800">
+<span class="p-2 rounded-lg bg-blue-100 dark:bg-blue-900/30 text-primary">
+<span class="material-symbols-outlined">cancel</span>
+</span>
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white">Cancellations &amp; Refunds</h2>
+</div>
+<div class="space-y-4">
+<details class="group bg-white dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700 overflow-hidden shadow-sm transition-all duration-200">
+<summary class="flex cursor-pointer items-center justify-between gap-4 p-5 sm:px-6">
+<h3 class="text-base font-semibold text-slate-900 dark:text-white">What is the cancellation policy?</h3>
+<span class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform duration-300">expand_more</span>
+</summary>
+<div class="px-6 pb-6 pt-0 text-slate-600 dark:text-slate-300 leading-relaxed">
+<p>Most standard tours offer a full refund if cancelled at least 24 hours before the scheduled start time. However, multi-day tours or special events may have different policies. Please check the specific "Cancellation Policy" section on each tour's booking page before confirming your purchase.</p>
+</div>
+</details>
+<details class="group bg-white dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700 overflow-hidden shadow-sm transition-all duration-200">
+<summary class="flex cursor-pointer items-center justify-between gap-4 p-5 sm:px-6">
+<h3 class="text-base font-semibold text-slate-900 dark:text-white">How long do refunds take?</h3>
+<span class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform duration-300">expand_more</span>
+</summary>
+<div class="px-6 pb-6 pt-0 text-slate-600 dark:text-slate-300 leading-relaxed">
+<p>Refunds are processed immediately by our system once a cancellation is approved. Depending on your bank or credit card issuer, it typically takes 5-10 business days for the funds to appear on your statement.</p>
+</div>
+</details>
+</div>
+</section>
+<!-- Still Need Help CTA -->
+<div class="mt-12 p-8 rounded-2xl bg-blue-50 dark:bg-slate-800 border border-blue-100 dark:border-slate-700 flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-5">
+<div class="flex-shrink-0 size-12 rounded-full bg-primary text-white flex items-center justify-center">
+<span class="material-symbols-outlined">support_agent</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Still can't find the answer?</h3>
+<p class="text-slate-600 dark:text-slate-300">Our team is happy to assist you personally.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<button class="px-6 py-2.5 rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-700 dark:text-white font-medium hover:bg-gray-50 dark:hover:bg-slate-600 transition-colors">
+                            Email Us
+                        </button>
+<button class="px-6 py-2.5 rounded-lg bg-primary text-white font-medium hover:bg-blue-700 shadow-md shadow-blue-500/20 transition-all">
+                            Chat Support
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-slate-900 border-t border-gray-200 dark:border-slate-800 py-10 mt-auto">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="text-sm text-slate-500 dark:text-slate-400">
+                © 2024 Discover Uz. All rights reserved.
+            </div>
+<div class="flex items-center gap-6">
+<a class="text-sm text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-white" href="#">Terms of Service</a>
+<a class="text-sm text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-white" href="#">Privacy Policy</a>
+<a class="text-sm text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-white" href="#">Cookie Policy</a>
+</div>
+<div class="flex gap-4">
+<a class="text-slate-400 hover:text-primary dark:hover:text-white" href="#">
+<span class="sr-only">Facebook</span>
+<svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewbox="0 0 24 24">
+<path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path>
+</svg>
+</a>
+<a class="text-slate-400 hover:text-primary dark:hover:text-white" href="#">
+<span class="sr-only">Instagram</span>
+<svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewbox="0 0 24 24">
+<path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.468 2.373c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" fill-rule="evenodd"></path>
+</svg>
+</a>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin Booking Management - Discover Uz</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d59f2",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scrollbar for table if needed */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display min-h-screen flex overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-64 bg-white dark:bg-[#1A2230] border-r border-slate-200 dark:border-slate-800 flex-col hidden lg:flex h-screen sticky top-0 z-50">
+<div class="flex flex-col h-full p-4 justify-between">
+<div class="flex flex-col gap-6">
+<!-- Branding -->
+<div class="flex gap-3 items-center px-2">
+<div class="bg-center bg-no-repeat bg-cover rounded-lg size-10 shadow-sm" data-alt="Discover Uz Logo, abstract mountain shape in blue gradient" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCzmb06sa7j4QH_T3vEffMBT6PPuGROycqsbiUa9uhWh8VDy4llCtulYDmGorEnARNyp2ij4z0fB21NZ6BP9FKSbm_A7PbgNYMtNaSvpRU-tXfI-OG-sZ8XKbXo8HK5sw_xrqgamAmu9fQWwGKzGX0NPItTUSWITgK03OTBja-aVCAfQWrZiJajtE4Bf80u8igsqXlMbKEV0E05IMZ6_eS5AYveaanUvsItKEvIJWL0BKYENwvyOBOLBVwDVPzMNSOZ0LFhzWkAz1g");'>
+</div>
+<div class="flex flex-col">
+<h1 class="text-slate-900 dark:text-white text-base font-bold leading-normal">Discover Uz</h1>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium leading-normal">Admin Panel</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors">map</span>
+<span class="text-sm font-medium">Tours</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary dark:bg-primary/20 dark:text-blue-400" href="#">
+<span class="material-symbols-outlined text-[20px] font-variation-settings-'FILL' 1">calendar_month</span>
+<span class="text-sm font-semibold">Bookings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors">group</span>
+<span class="text-sm font-medium">Users</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors">monitoring</span>
+<span class="text-sm font-medium">Analytics</span>
+</a>
+</nav>
+</div>
+<!-- Bottom User Profile -->
+<div class="flex items-center gap-3 px-3 py-3 border-t border-slate-100 dark:border-slate-800 mt-auto">
+<div class="size-8 rounded-full bg-slate-200 dark:bg-slate-700 bg-cover bg-center" data-alt="Admin user profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDEjEv2A3jvTq2pFz_Z6mQWF0RQgr75XDQWptC6qyQgu9FBdFXkgEsd9v1ZPUGPVBePvvYSk31419UEJI-ABoOVcBNw-jwGABHXhJtoR-Mopb4BxvefdiW13U9_KkV316BZBfybdcwz2v-kGfNBoJnr82_R1NUDAcvPyc6Eym9kABOS4eNafrjRuzXT_wAYgi7pZr7wON4h9n3YcHqzzpwL1iADDkeWBxxMTzV1hpFO55qvA_zA7otOVoDmrbjMc9_VzdvICZ7FuLk");'>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-medium text-slate-900 dark:text-white">Admin User</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">admin@discoveruz.com</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col h-screen overflow-y-auto">
+<div class="max-w-[1280px] w-full mx-auto p-4 md:p-8 flex flex-col gap-8">
+<!-- Header Section -->
+<div class="flex flex-col gap-6">
+<!-- Breadcrumbs -->
+<div class="flex flex-wrap gap-2 items-center text-sm">
+<a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors font-medium" href="#">Home</a>
+<span class="text-slate-400 dark:text-slate-600">/</span>
+<a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors font-medium" href="#">Admin</a>
+<span class="text-slate-400 dark:text-slate-600">/</span>
+<span class="text-slate-900 dark:text-white font-semibold">Bookings</span>
+</div>
+<!-- Page Heading & Actions -->
+<div class="flex flex-wrap justify-between items-end gap-4">
+<div class="flex flex-col gap-2">
+<h1 class="text-slate-900 dark:text-white text-3xl md:text-4xl font-bold tracking-tight">Booking Management</h1>
+<p class="text-slate-500 dark:text-slate-400 text-base font-normal max-w-2xl">Manage reservations, track payments, and update booking statuses for all tours across Uzbekistan.</p>
+</div>
+<button class="bg-primary hover:bg-blue-700 text-white px-5 py-2.5 rounded-lg text-sm font-medium flex items-center gap-2 transition-colors shadow-sm shadow-blue-500/20">
+<span class="material-symbols-outlined text-[20px]">add</span>
+                        Create Booking
+                    </button>
+</div>
+</div>
+<!-- Stats Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="bg-white dark:bg-[#1A2230] p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col gap-3">
+<div class="flex justify-between items-start">
+<div class="p-2 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+<span class="material-symbols-outlined text-primary dark:text-blue-400">confirmation_number</span>
+</div>
+<span class="text-emerald-600 dark:text-emerald-400 text-xs font-semibold bg-emerald-50 dark:bg-emerald-900/20 px-2 py-1 rounded-full">+12%</span>
+</div>
+<div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Total Bookings</p>
+<p class="text-slate-900 dark:text-white text-2xl font-bold mt-1">1,240</p>
+</div>
+</div>
+<div class="bg-white dark:bg-[#1A2230] p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col gap-3">
+<div class="flex justify-between items-start">
+<div class="p-2 bg-orange-50 dark:bg-orange-900/20 rounded-lg">
+<span class="material-symbols-outlined text-orange-600 dark:text-orange-400">pending_actions</span>
+</div>
+<span class="text-orange-600 dark:text-orange-400 text-xs font-semibold bg-orange-50 dark:bg-orange-900/20 px-2 py-1 rounded-full">+2 new</span>
+</div>
+<div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Pending Approval</p>
+<p class="text-slate-900 dark:text-white text-2xl font-bold mt-1">12</p>
+</div>
+</div>
+<div class="bg-white dark:bg-[#1A2230] p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col gap-3">
+<div class="flex justify-between items-start">
+<div class="p-2 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
+<span class="material-symbols-outlined text-purple-600 dark:text-purple-400">today</span>
+</div>
+</div>
+<div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Today's Arrivals</p>
+<p class="text-slate-900 dark:text-white text-2xl font-bold mt-1">5</p>
+</div>
+</div>
+<div class="bg-white dark:bg-[#1A2230] p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col gap-3">
+<div class="flex justify-between items-start">
+<div class="p-2 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg">
+<span class="material-symbols-outlined text-emerald-600 dark:text-emerald-400">payments</span>
+</div>
+<span class="text-emerald-600 dark:text-emerald-400 text-xs font-semibold bg-emerald-50 dark:bg-emerald-900/20 px-2 py-1 rounded-full">+8%</span>
+</div>
+<div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Total Revenue</p>
+<p class="text-slate-900 dark:text-white text-2xl font-bold mt-1">$45,200</p>
+</div>
+</div>
+</div>
+<!-- Main Content Card -->
+<div class="bg-white dark:bg-[#1A2230] border border-slate-200 dark:border-slate-800 rounded-xl shadow-sm flex flex-col">
+<!-- Toolbar -->
+<div class="p-4 border-b border-slate-200 dark:border-slate-800 flex flex-col lg:flex-row gap-4 justify-between items-start lg:items-center">
+<!-- Search -->
+<div class="relative w-full lg:w-96 group">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-slate-400 group-focus-within:text-primary transition-colors">search</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-2.5 border-none ring-1 ring-slate-200 dark:ring-slate-700 rounded-lg bg-slate-50 dark:bg-slate-800/50 text-slate-900 dark:text-white placeholder-slate-400 focus:ring-2 focus:ring-primary focus:bg-white dark:focus:bg-slate-800 transition-all sm:text-sm" placeholder="Search by ID, name, or tour..." type="text"/>
+</div>
+<!-- Filters & Export -->
+<div class="flex flex-wrap gap-2 w-full lg:w-auto">
+<select class="form-select bg-white dark:bg-[#1A2230] border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-sm rounded-lg focus:ring-primary focus:border-primary px-3 py-2 cursor-pointer shadow-sm">
+<option>All Status</option>
+<option>Confirmed</option>
+<option>Pending</option>
+<option>Cancelled</option>
+</select>
+<select class="form-select bg-white dark:bg-[#1A2230] border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-sm rounded-lg focus:ring-primary focus:border-primary px-3 py-2 cursor-pointer shadow-sm">
+<option>Last 30 Days</option>
+<option>Last 7 Days</option>
+<option>This Month</option>
+<option>Custom Range</option>
+</select>
+<button class="flex items-center gap-2 px-3 py-2 bg-white dark:bg-[#1A2230] border border-slate-200 dark:border-slate-700 rounded-lg text-slate-700 dark:text-slate-300 text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[20px]">download</span>
+                            Export
+                        </button>
+</div>
+</div>
+<!-- Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50">
+<th class="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Booking ID</th>
+<th class="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Customer</th>
+<th class="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Tour Name</th>
+<th class="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Date</th>
+<th class="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 text-center">Guests</th>
+<th class="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 text-right">Total</th>
+<th class="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Status</th>
+<th class="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<!-- Row 1 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors group">
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="text-sm font-medium text-slate-900 dark:text-white">#UZ-8821</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-slate-200 dark:bg-slate-700 bg-cover bg-center" data-alt="Customer Alisher profile" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDzuKD04W1DO_JiOkyGtU0VnGRt2-pMO2KbYOLiOCKMcfqNW4V13bsxtfLepemMuciKFVH5tPdwOgh6vI_JnzCS34WCL4bBB4MYI0dPPdRgLIATINVgYUNhAEJKrPLKsFmsx-HWKaO-mSd8O5HQhSVu7l2PGWG9QpgefDBSSGuUmDmTrD2G3Y34_m6R4NfazXA4Daj2x7-9jvgfHBeG8eDWzT1D4WUy_FeSQzsTH-vb5RhXcvnG4nV3wTLoespQ8o0XUQ1nnhiXdzo')"></div>
+<div class="flex flex-col">
+<span class="text-sm font-medium text-slate-900 dark:text-white">Alisher Navoi</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">alisher@example.com</span>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="text-sm text-slate-700 dark:text-slate-300">Samarkand Golden Journey</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="text-sm text-slate-500 dark:text-slate-400">Oct 24, 2023</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-center">
+<span class="text-sm text-slate-700 dark:text-slate-300">2</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-right">
+<span class="text-sm font-medium text-slate-900 dark:text-white">$450.00</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400">
+<span class="w-1.5 h-1.5 mr-1.5 bg-yellow-400 rounded-full"></span>
+                                        Pending
+                                    </span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-slate-400 hover:text-primary transition-colors p-1" title="View Details">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+<button class="text-slate-400 hover:text-primary transition-colors p-1" title="Edit">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="text-slate-400 hover:text-red-600 transition-colors p-1" title="Cancel">
+<span class="material-symbols-outlined text-[20px]">cancel</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors group">
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="text-sm font-medium text-slate-900 dark:text-white">#UZ-8820</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-slate-200 dark:bg-slate-700 bg-cover bg-center" data-alt="Customer Sarah profile" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAR7s7SzpXJQsfh0TAkSnJtg7MusGK3god6jEmtZH4MVt03tQbLE0wcM7j3tElFWCHwWj-tcqofL1Bzd_JIXxLrh9bGdgAoAVv2C6d-eTtqezjjsacbRv6d-ZTwfp9Urt99ze_zHWLCkpMlrs_XBnKZeBEXrnkGYVJZg1_irdQddZFKJGs9KzLtXUrCM7ceXk4stJZKiOvj0OUZqhy8E3oLzPIAu38jB-s4mcWpa2JgWMI_WPJ4isNIzAQjL2Wy0M02jrp9toMC-60')"></div>
+<div class="flex flex-col">
+<span class="text-sm font-medium text-slate-900 dark:text-white">Sarah Jenkins</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">sarah.j@example.com</span>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="text-sm text-slate-700 dark:text-slate-300">Bukhara Silk Road</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="text-sm text-slate-500 dark:text-slate-400">Oct 23, 2023</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-center">
+<span class="text-sm text-slate-700 dark:text-slate-300">4</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-right">
+<span class="text-sm font-medium text-slate-900 dark:text-white">$1,200.00</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">
+<span class="w-1.5 h-1.5 mr-1.5 bg-green-500 rounded-full"></span>
+                                        Confirmed
+                                    </span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-slate-400 hover:text-primary transition-colors p-1" title="View Details">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+<button class="text-slate-400 hover:text-primary transition-colors p-1" title="Edit">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="text-slate-400 hover:text-red-600 transition-colors p-1" title="Cancel">
+<span class="material-symbols-outlined text-[20px]">cancel</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors group">
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="text-sm font-medium text-slate-900 dark:text-white">#UZ-8819</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-300 flex items-center justify-center font-bold text-xs">JD</div>
+<div class="flex flex-col">
+<span class="text-sm font-medium text-slate-900 dark:text-white">John Doe</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">john.d@example.com</span>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="text-sm text-slate-700 dark:text-slate-300">Tashkent City Tour</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="text-sm text-slate-500 dark:text-slate-400">Oct 22, 2023</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-center">
+<span class="text-sm text-slate-700 dark:text-slate-300">1</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-right">
+<span class="text-sm font-medium text-slate-900 dark:text-white">$80.00</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400">
+<span class="w-1.5 h-1.5 mr-1.5 bg-red-500 rounded-full"></span>
+                                        Cancelled
+                                    </span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-slate-400 hover:text-primary transition-colors p-1" title="View Details">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+<button class="text-slate-400 hover:text-primary transition-colors p-1" title="Edit">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="text-slate-400 hover:text-red-600 transition-colors p-1" title="Cancel">
+<span class="material-symbols-outlined text-[20px]">cancel</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors group">
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="text-sm font-medium text-slate-900 dark:text-white">#UZ-8818</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-slate-200 dark:bg-slate-700 bg-cover bg-center" data-alt="Customer Malika profile" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC4Z5jy-6ykk6eiOi96TP_xDO1McSjjBy67nW1TNU7aMPXtoD1wbmknRWQA9B2bk92TDizujWHXcLJ5W-GZn1UTiJymIKNSH8A92uYv4JxRhjzV4yR4BuTQc1E5dsIejSQNUI0GeYA0rtoS6MQ7h35FZXSPQrVhcrWsNoihlBU0tn_EA1pHbQHPBxpc7-dxBMEcLNWPgGb8wdXqcvg8XDW6vDQYLKuA9Z5VPBryu77BacLbUqkXo-ARUc8wT1EV4aT2EGZJRYAX38k')"></div>
+<div class="flex flex-col">
+<span class="text-sm font-medium text-slate-900 dark:text-white">Malika O.</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">malika@example.com</span>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="text-sm text-slate-700 dark:text-slate-300">Khiva Night Walk</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="text-sm text-slate-500 dark:text-slate-400">Oct 21, 2023</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-center">
+<span class="text-sm text-slate-700 dark:text-slate-300">3</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-right">
+<span class="text-sm font-medium text-slate-900 dark:text-white">$210.00</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">
+<span class="w-1.5 h-1.5 mr-1.5 bg-green-500 rounded-full"></span>
+                                        Confirmed
+                                    </span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-slate-400 hover:text-primary transition-colors p-1" title="View Details">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+<button class="text-slate-400 hover:text-primary transition-colors p-1" title="Edit">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="text-slate-400 hover:text-red-600 transition-colors p-1" title="Cancel">
+<span class="material-symbols-outlined text-[20px]">cancel</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Footer / Pagination -->
+<div class="px-6 py-4 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4 bg-slate-50 dark:bg-slate-900/20 rounded-b-xl">
+<p class="text-sm text-slate-500 dark:text-slate-400">Showing <span class="font-medium text-slate-900 dark:text-white">1</span> to <span class="font-medium text-slate-900 dark:text-white">4</span> of <span class="font-medium text-slate-900 dark:text-white">1240</span> results</p>
+<nav class="flex gap-2">
+<button class="px-3 py-1.5 rounded bg-white dark:bg-[#1A2230] border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 hover:text-primary disabled:opacity-50 text-sm font-medium transition-colors" disabled="">Previous</button>
+<button class="px-3 py-1.5 rounded bg-primary text-white border border-primary text-sm font-medium transition-colors">1</button>
+<button class="px-3 py-1.5 rounded bg-white dark:bg-[#1A2230] border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 text-sm font-medium transition-colors">2</button>
+<button class="px-3 py-1.5 rounded bg-white dark:bg-[#1A2230] border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 text-sm font-medium transition-colors">3</button>
+<span class="px-2 py-1.5 text-slate-500">...</span>
+<button class="px-3 py-1.5 rounded bg-white dark:bg-[#1A2230] border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 hover:text-primary text-sm font-medium transition-colors">Next</button>
+</nav>
+</div>
+</div>
+<!-- Empty state illustration spacer (optional, purely for visual balance if list was empty) -->
+<!-- <div class="flex-1"></div> -->
+</div>
+</main>
+</body></html>

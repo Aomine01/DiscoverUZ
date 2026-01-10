@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Personal Info - Uzbekistan Tours</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d59f2",
+                        "primary-hover": "#0b4dc4",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "sans": ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.375rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scrollbar for cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col text-slate-900 dark:text-white">
+<!-- Top Navigation -->
+<header class="bg-white dark:bg-[#1e2330] border-b border-gray-200 dark:border-gray-800 sticky top-0 z-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<!-- Logo & Brand -->
+<div class="flex items-center gap-8">
+<a class="flex items-center gap-3 text-slate-900 dark:text-white hover:opacity-80 transition-opacity" href="#">
+<div class="size-8 text-primary">
+<svg class="w-full h-full" fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold tracking-tight">Uzbekistan Tours</h2>
+</a>
+<!-- Desktop Nav Links -->
+<nav class="hidden md:flex items-center gap-8 ml-4">
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Tours</a>
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Hotels</a>
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Transport</a>
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">About Us</a>
+</nav>
+</div>
+<!-- Right Side Actions -->
+<div class="flex items-center gap-6">
+<!-- Search Bar (Compact) -->
+<div class="hidden lg:flex items-center bg-gray-100 dark:bg-gray-800 rounded-lg px-3 py-2 w-64 border border-transparent focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all">
+<span class="material-symbols-outlined text-gray-400 text-[20px]">search</span>
+<input class="bg-transparent border-none text-sm w-full focus:ring-0 text-slate-900 dark:text-white placeholder-gray-500 ml-2 h-5 p-0" placeholder="Search tours..." type="text"/>
+</div>
+<!-- User Profile -->
+<div class="flex items-center gap-3 pl-4 border-l border-gray-200 dark:border-gray-700">
+<div class="text-right hidden sm:block">
+<p class="text-sm font-semibold leading-none">Aziz Rakhimov</p>
+<p class="text-xs text-slate-500 mt-1">Traveler</p>
+</div>
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 border-2 border-white shadow-sm cursor-pointer" data-alt="User profile picture of a smiling man" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDdxk4spBGcxuJsKSlib3mAV4O-XN_ILtMW788jTc60756UOpdXjibWDtcKhiCbgYwQNc-YGuEJifCXSNUgbBBy9tixj5zGqFGQze_D4sjcqxyp3S5mWKPI4xY_-wIm9VjS7gGRQ_OQuDFt55P_KDm49N0CMKTrAMN14NKL5dwySBTlHZAtMDAA4lfeqweSatRMvO_KzfCchu2cMWBnq3_upIDQkxEwFVCLzuCjRzROAa7vxTJy_0xlgQkj0vI9A9_KFRJ3O5e6SIM");'>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Layout -->
+<main class="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<!-- Breadcrumbs -->
+<nav aria-label="Breadcrumb" class="flex mb-8 text-sm text-slate-500">
+<ol class="inline-flex items-center space-x-2">
+<li class="inline-flex items-center">
+<a class="hover:text-primary" href="#">Home</a>
+</li>
+<li>
+<span class="material-symbols-outlined text-[16px] text-slate-400 mx-1">chevron_right</span>
+</li>
+<li>
+<a class="hover:text-primary" href="#">Account</a>
+</li>
+<li>
+<span class="material-symbols-outlined text-[16px] text-slate-400 mx-1">chevron_right</span>
+</li>
+<li aria-current="page">
+<span class="font-medium text-slate-900 dark:text-white">Personal Info</span>
+</li>
+</ol>
+</nav>
+<div class="flex flex-col lg:flex-row gap-8">
+<!-- Sidebar Navigation -->
+<aside class="w-full lg:w-64 shrink-0">
+<nav class="sticky top-24 space-y-1">
+<div class="mb-6 px-3">
+<h1 class="text-lg font-bold text-slate-900 dark:text-white">My Account</h1>
+<p class="text-sm text-slate-500 mt-1">Manage your profile settings</p>
+</div>
+<a class="group flex items-center px-3 py-2.5 text-sm font-medium text-slate-600 dark:text-slate-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-slate-900 dark:hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined mr-3 text-[20px] text-slate-400 group-hover:text-slate-600">airplane_ticket</span>
+                        Bookings
+                    </a>
+<a class="group flex items-center px-3 py-2.5 text-sm font-medium bg-blue-50 dark:bg-blue-900/20 text-primary rounded-lg border border-blue-100 dark:border-blue-900/30" href="#">
+<span class="material-symbols-outlined mr-3 text-[20px] text-primary">person</span>
+                        Personal Info
+                    </a>
+<a class="group flex items-center px-3 py-2.5 text-sm font-medium text-slate-600 dark:text-slate-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-slate-900 dark:hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined mr-3 text-[20px] text-slate-400 group-hover:text-slate-600">credit_card</span>
+                        Payment Methods
+                    </a>
+<a class="group flex items-center px-3 py-2.5 text-sm font-medium text-slate-600 dark:text-slate-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-slate-900 dark:hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined mr-3 text-[20px] text-slate-400 group-hover:text-slate-600">shield</span>
+                        Security
+                    </a>
+<div class="border-t border-gray-200 dark:border-gray-700 my-4 mx-3"></div>
+<a class="group flex items-center px-3 py-2.5 text-sm font-medium text-red-600 hover:bg-red-50 dark:hover:bg-red-900/10 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined mr-3 text-[20px]">logout</span>
+                        Sign Out
+                    </a>
+</nav>
+</aside>
+<!-- Main Content Form -->
+<div class="flex-1">
+<div class="bg-white dark:bg-[#1e2330] rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
+<!-- Header Section -->
+<div class="px-6 py-6 sm:px-8 border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1e2330]">
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white">Edit Personal Information</h2>
+<p class="mt-2 text-sm text-slate-500 max-w-2xl">Update your personal details and address to ensure your booking documents are accurate.</p>
+</div>
+<form class="divide-y divide-gray-200 dark:divide-gray-700">
+<!-- Section 1: Photo & Basic Identity -->
+<div class="px-6 py-8 sm:px-8">
+<!-- Photo -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-6 mb-10">
+<div class="relative group">
+<div class="size-24 rounded-full bg-gray-100 bg-center bg-cover border-4 border-white shadow-sm" data-alt="Current user profile picture large view" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDMBolvwr90JPcJf5ck78eIJZK5B9ZpuUPLLUDf0_P016pIoLQqXWXWdFPkiizFqa0iCtxlzgLpKvbfUJSd2H-yGQ1Ke0HbHgIGU_-oy-sm0YR6ugS3peO83Sie_K3aRgzdEWltM11QCjqYvHu4Cp9hiU0M7rGwnPr68xpWOO37i2AOrMEWDGj_xeI3oVbbwAgDrM9Iy3Nh2s7QWZgzLjE4Pt3TQlzuvcKc_vpg6e1mf-QGyegA6nxYc2oWnMP5f8lTopovrktRaHM");'>
+</div>
+<button class="absolute bottom-0 right-0 bg-white dark:bg-slate-700 rounded-full p-1.5 shadow-md border border-gray-200 dark:border-gray-600 text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-white transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+<div class="flex flex-col">
+<h3 class="text-base font-semibold text-slate-900 dark:text-white">Profile Photo</h3>
+<p class="text-sm text-slate-500 mb-3">Accepts JPG, GIF or PNG. Max size of 5MB.</p>
+<div class="flex gap-3">
+<button class="px-4 py-2 bg-white dark:bg-slate-700 border border-gray-300 dark:border-gray-600 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 shadow-sm hover:bg-gray-50 dark:hover:bg-slate-600 transition-colors" type="button">
+                                            Change Photo
+                                        </button>
+<button class="px-4 py-2 text-sm font-medium text-red-600 hover:text-red-700 transition-colors" type="button">
+                                            Remove
+                                        </button>
+</div>
+</div>
+</div>
+<!-- Identity Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5" for="firstName">First Name</label>
+<input class="block w-full rounded-lg border-gray-300 bg-white dark:bg-slate-800 dark:border-gray-600 text-slate-900 dark:text-white shadow-sm focus:border-primary focus:ring-primary sm:text-sm py-2.5" id="firstName" name="firstName" type="text" value="Aziz"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5" for="lastName">Last Name</label>
+<input class="block w-full rounded-lg border-gray-300 bg-white dark:bg-slate-800 dark:border-gray-600 text-slate-900 dark:text-white shadow-sm focus:border-primary focus:ring-primary sm:text-sm py-2.5" id="lastName" name="lastName" type="text" value="Rakhimov"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5" for="dob">Date of Birth</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-gray-400 text-[20px]">calendar_today</span>
+</div>
+<input class="block w-full pl-10 rounded-lg border-gray-300 bg-white dark:bg-slate-800 dark:border-gray-600 text-slate-900 dark:text-white shadow-sm focus:border-primary focus:ring-primary sm:text-sm py-2.5" id="dob" name="dob" type="date" value="1990-05-15"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5" for="passport">Passport Number (Optional)</label>
+<input class="block w-full rounded-lg border-gray-300 bg-white dark:bg-slate-800 dark:border-gray-600 text-slate-900 dark:text-white shadow-sm focus:border-primary focus:ring-primary sm:text-sm py-2.5" id="passport" name="passport" placeholder="AA 1234567" type="text"/>
+</div>
+</div>
+</div>
+<!-- Section 2: Contact Info -->
+<div class="px-6 py-8 sm:px-8">
+<h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-6">Contact Information</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="md:col-span-2">
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5" for="email">Email Address</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-gray-400 text-[20px]">mail</span>
+</div>
+<input class="block w-full pl-10 pr-24 rounded-lg border-gray-300 bg-gray-50 dark:bg-slate-800 dark:border-gray-600 text-slate-500 dark:text-slate-400 shadow-sm sm:text-sm py-2.5 cursor-not-allowed" id="email" name="email" readonly="" type="email" value="aziz.rakhimov@example.com"/>
+<div class="absolute inset-y-0 right-0 flex items-center pr-3">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300">
+                                                Verified
+                                            </span>
+</div>
+</div>
+<p class="mt-1.5 text-xs text-slate-500">To change your email, please contact support.</p>
+</div>
+<div class="md:col-span-1">
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5" for="phone">Phone Number</label>
+<div class="relative rounded-lg shadow-sm">
+<div class="absolute inset-y-0 left-0 flex items-center">
+<label class="sr-only" for="country">Country</label>
+<select class="h-full py-0 pl-3 pr-7 border-transparent bg-transparent text-gray-500 sm:text-sm rounded-md focus:ring-primary focus:border-primary" id="country" name="country">
+<option>UZ (+998)</option>
+<option>US (+1)</option>
+<option>RU (+7)</option>
+</select>
+</div>
+<input class="block w-full pl-28 rounded-lg border-gray-300 bg-white dark:bg-slate-800 dark:border-gray-600 text-slate-900 dark:text-white focus:ring-primary focus:border-primary sm:text-sm py-2.5" id="phone" name="phone" placeholder="90 123 45 67" type="text" value="90 123 45 67"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 3: Address -->
+<div class="px-6 py-8 sm:px-8">
+<h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-6">Address</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="md:col-span-1">
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5" for="address_country">Country</label>
+<select class="block w-full rounded-lg border-gray-300 bg-white dark:bg-slate-800 dark:border-gray-600 text-slate-900 dark:text-white shadow-sm focus:border-primary focus:ring-primary sm:text-sm py-2.5" id="address_country" name="address_country">
+<option>Uzbekistan</option>
+<option>Kazakhstan</option>
+<option>USA</option>
+<option>Germany</option>
+</select>
+</div>
+<div class="md:col-span-1">
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5" for="city">City</label>
+<input class="block w-full rounded-lg border-gray-300 bg-white dark:bg-slate-800 dark:border-gray-600 text-slate-900 dark:text-white shadow-sm focus:border-primary focus:ring-primary sm:text-sm py-2.5" id="city" name="city" type="text" value="Tashkent"/>
+</div>
+<div class="md:col-span-2">
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5" for="street_address">Street Address</label>
+<input class="block w-full rounded-lg border-gray-300 bg-white dark:bg-slate-800 dark:border-gray-600 text-slate-900 dark:text-white shadow-sm focus:border-primary focus:ring-primary sm:text-sm py-2.5" id="street_address" name="street_address" type="text" value="Amir Temur Avenue, 105"/>
+</div>
+<div class="md:col-span-1">
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5" for="postal_code">Postal Code</label>
+<input class="block w-full rounded-lg border-gray-300 bg-white dark:bg-slate-800 dark:border-gray-600 text-slate-900 dark:text-white shadow-sm focus:border-primary focus:ring-primary sm:text-sm py-2.5" id="postal_code" name="postal_code" type="text" value="100000"/>
+</div>
+</div>
+</div>
+<!-- Footer Actions -->
+<div class="bg-gray-50 dark:bg-gray-800/50 px-6 py-4 sm:px-8 flex items-center justify-between sm:justify-end gap-3 rounded-b-2xl">
+<div class="hidden sm:flex items-center text-slate-500 mr-auto text-sm">
+<span class="material-symbols-outlined text-[16px] mr-1.5">lock</span>
+                                Your data is encrypted and secure.
+                            </div>
+<button class="px-4 py-2 bg-white dark:bg-transparent border border-gray-300 dark:border-gray-600 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors" type="button">
+                                Cancel
+                            </button>
+<button class="px-6 py-2 bg-primary hover:bg-primary-hover border border-transparent rounded-lg text-sm font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors" type="submit">
+                                Save Changes
+                            </button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Simple -->
+<footer class="bg-white dark:bg-[#1e2330] border-t border-gray-200 dark:border-gray-800 mt-12">
+<div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-sm text-slate-500 dark:text-slate-400">© 2024 Uzbekistan Tours. All rights reserved.</p>
+<div class="flex space-x-6">
+<a class="text-slate-400 hover:text-slate-500 dark:hover:text-slate-300" href="#">Privacy</a>
+<a class="text-slate-400 hover:text-slate-500 dark:hover:text-slate-300" href="#">Terms</a>
+<a class="text-slate-400 hover:text-slate-500 dark:hover:text-slate-300" href="#">Support</a>
+</div>
+</div>
+</footer>
+</body></html>

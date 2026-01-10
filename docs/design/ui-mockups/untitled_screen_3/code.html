@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Personal Page - Discover Uz</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style type="text/tailwindcss">
+        :root {
+            --primary-color: #0F4C81;--accent-color: #D4AF37;--surface-bg: #F8FAFC;
+            --text-primary: #1E293B;
+            --text-secondary: #64748B;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--surface-bg);
+            color: var(--text-primary);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+<header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-20">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-[var(--primary-color)] rounded-lg flex items-center justify-center text-white font-bold text-xl">
+                        D
+                    </div>
+<span class="text-xl font-bold tracking-tight text-[var(--primary-color)]">Discover Uz</span>
+</div>
+<nav class="hidden md:flex space-x-8">
+<a class="text-gray-500 hover:text-[var(--primary-color)] px-3 py-2 text-sm font-medium transition-colors" href="#">Destinations</a>
+<a class="text-gray-500 hover:text-[var(--primary-color)] px-3 py-2 text-sm font-medium transition-colors" href="#">Experiences</a>
+<a class="text-gray-500 hover:text-[var(--primary-color)] px-3 py-2 text-sm font-medium transition-colors" href="#">Tours</a>
+<a class="text-gray-500 hover:text-[var(--primary-color)] px-3 py-2 text-sm font-medium transition-colors" href="#">About Us</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2 text-gray-400 hover:text-gray-600 relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border border-white"></span>
+</button>
+<div class="flex items-center gap-3 pl-4 border-l border-gray-200">
+<div class="text-right hidden sm:block">
+<p class="text-sm font-semibold text-gray-900">Alisher Usmanov</p>
+<p class="text-xs text-gray-500">Travel Enthusiast</p>
+</div>
+<img alt="User" class="h-10 w-10 rounded-full object-cover border-2 border-white shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXbqKxT9d2Kcg5Gn2LI72X8WZkCSJC_3wvp92wbGsfzltM3ZDzz2pkIj0HvXvaHkLg7owa9dROueVIz8QqeDYx3r5nWOCD9MvSJdUzcDFDNYfK78dJZAdp_zgt-aLVcxzT1lBdvSIBgVLpFPRKEjBcU_FGDq5XnYaAK2iCktVygkhT_24H2pprR7_SIMNBq8ir5UK6Ou4cQu4ERW-UUwEh071mt4XB_nUhSEvt6b4SZrqflWbKND5KRWQ2zLXc68qdkzyVEzV6e6w"/>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow py-10">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<aside class="lg:col-span-3">
+<nav class="space-y-1 sticky top-28">
+<a aria-current="page" class="bg-[var(--primary-color)] text-white group flex items-center px-3 py-3 text-sm font-medium rounded-md shadow-sm" href="#">
+<span class="material-symbols-outlined mr-3 text-[20px]">dashboard</span>
+                            Overview
+                        </a>
+<a class="text-gray-600 hover:bg-white hover:text-gray-900 group flex items-center px-3 py-3 text-sm font-medium rounded-md transition-all" href="#">
+<span class="material-symbols-outlined mr-3 text-[20px] text-gray-400 group-hover:text-gray-500">confirmation_number</span>
+                            My Bookings
+                            <span class="ml-auto bg-gray-100 text-gray-600 py-0.5 px-2 rounded-full text-xs">2</span>
+</a>
+<a class="text-gray-600 hover:bg-white hover:text-gray-900 group flex items-center px-3 py-3 text-sm font-medium rounded-md transition-all" href="#">
+<span class="material-symbols-outlined mr-3 text-[20px] text-gray-400 group-hover:text-gray-500">history</span>
+                            History
+                        </a>
+<a class="text-gray-600 hover:bg-white hover:text-gray-900 group flex items-center px-3 py-3 text-sm font-medium rounded-md transition-all" href="#">
+<span class="material-symbols-outlined mr-3 text-[20px] text-gray-400 group-hover:text-gray-500">favorite</span>
+                            Saved Tours
+                        </a>
+<a class="text-gray-600 hover:bg-white hover:text-gray-900 group flex items-center px-3 py-3 text-sm font-medium rounded-md transition-all" href="#">
+<span class="material-symbols-outlined mr-3 text-[20px] text-gray-400 group-hover:text-gray-500">credit_card</span>
+                            Payment Methods
+                        </a>
+<a class="text-gray-600 hover:bg-white hover:text-gray-900 group flex items-center px-3 py-3 text-sm font-medium rounded-md transition-all" href="#">
+<span class="material-symbols-outlined mr-3 text-[20px] text-gray-400 group-hover:text-gray-500">settings</span>
+                            Settings
+                        </a>
+</nav>
+<div class="mt-8 bg-gradient-to-br from-[var(--primary-color)] to-blue-900 rounded-xl p-5 text-white relative overflow-hidden">
+<div class="absolute top-0 right-0 -mt-2 -mr-2 w-20 h-20 bg-white opacity-10 rounded-full"></div>
+<h3 class="font-semibold text-lg mb-2">Need Help?</h3>
+<p class="text-sm text-blue-100 mb-4">Contact our 24/7 support for any questions about your trip to Uzbekistan.</p>
+<button class="bg-white text-[var(--primary-color)] text-xs font-bold py-2 px-4 rounded shadow-sm hover:bg-gray-50 transition-colors">
+                            Contact Support
+                        </button>
+</div>
+</aside>
+<div class="lg:col-span-9 space-y-8">
+<div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+<div>
+<h1 class="text-2xl font-bold text-gray-900">Welcome back, Alisher</h1>
+<p class="text-gray-500 mt-1">Here is what’s happening with your upcoming adventures.</p>
+</div>
+<a class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-[var(--primary-color)] hover:bg-blue-900 shadow-sm transition-all" href="#">
+<span class="material-symbols-outlined text-[18px] mr-2">add</span>
+                            Book New Tour
+                        </a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+<div class="flex items-center">
+<div class="p-3 rounded-lg bg-blue-50 text-[var(--primary-color)]">
+<span class="material-symbols-outlined">flight_takeoff</span>
+</div>
+<div class="ml-4">
+<p class="text-sm font-medium text-gray-500">Upcoming Trips</p>
+<p class="text-2xl font-semibold text-gray-900">2</p>
+</div>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+<div class="flex items-center">
+<div class="p-3 rounded-lg bg-green-50 text-green-600">
+<span class="material-symbols-outlined">map</span>
+</div>
+<div class="ml-4">
+<p class="text-sm font-medium text-gray-500">Cities Visited</p>
+<p class="text-2xl font-semibold text-gray-900">5</p>
+</div>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+<div class="flex items-center">
+<div class="p-3 rounded-lg bg-amber-50 text-amber-600">
+<span class="material-symbols-outlined">loyalty</span>
+</div>
+<div class="ml-4">
+<p class="text-sm font-medium text-gray-500">Loyalty Points</p>
+<p class="text-2xl font-semibold text-gray-900">1,250</p>
+</div>
+</div>
+</div>
+</div>
+<section>
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-lg font-bold text-gray-900">Upcoming Experiences</h2>
+<a class="text-sm font-medium text-[var(--primary-color)] hover:text-blue-800" href="#">View all</a>
+</div>
+<div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden mb-4 hover:shadow-md transition-shadow">
+<div class="md:flex">
+<div class="md:shrink-0 relative">
+<img alt="Samarkand Registan" class="h-48 w-full md:h-full md:w-64 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJOAv2E6RqzuvYJcBMv0zcdJZEKWBFhyJGPaMMvaJ2nwD09BpFX65xW5LtmN56RKNF-xt0kPV9x3wVTcacPxgKJZ0F7y8u6bE3B7eGOxy1lW5PbssOpB0o2kUZquGLdfxY9cjWaNnLKlzjzFbB5jR60HJeM_zeydWcFN4_sAsPtWIOrV9ugzSzMgE4xFBnJ3Z3CuT5TEGYQd1teokZ85sjJg4Ouwd1NLe_21ryYyw2yc5nvNhrlp3udFslAeZGnSAkjTfM1Oxnlm4"/>
+<div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2 py-1 rounded text-xs font-bold text-gray-800 shadow-sm">
+<span class="material-symbols-outlined text-[14px] align-text-bottom mr-1">calendar_month</span> In 3 Days
+                                    </div>
+</div>
+<div class="p-6 w-full flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<div>
+<div class="uppercase tracking-wide text-xs text-[var(--accent-color)] font-bold">Historical Tour</div>
+<h3 class="mt-1 text-xl font-semibold text-gray-900">The Golden Road to Samarkand</h3>
+<p class="mt-2 text-gray-500 text-sm line-clamp-2">Experience the majesty of the Registan Square and dive deep into the history of the Silk Road with our expert guides.</p>
+</div>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                                Confirmed
+                                            </span>
+</div>
+<div class="mt-4 flex flex-wrap gap-4 text-sm text-gray-500">
+<div class="flex items-center">
+<span class="material-symbols-outlined text-gray-400 mr-1.5 text-[18px]">schedule</span>
+                                                Oct 24, 2023 • 09:00 AM
+                                            </div>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-gray-400 mr-1.5 text-[18px]">group</span>
+                                                2 Adults
+                                            </div>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-gray-400 mr-1.5 text-[18px]">payments</span>
+                                                $450.00
+                                            </div>
+</div>
+</div>
+<div class="mt-6 flex gap-3 pt-4 border-t border-gray-100">
+<button class="flex-1 bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 px-4 py-2 rounded-md text-sm font-medium transition-colors">
+                                            Manage Booking
+                                        </button>
+<button class="flex-1 bg-[var(--primary-color)] text-white hover:bg-blue-900 px-4 py-2 rounded-md text-sm font-medium transition-colors">
+                                            View Ticket
+                                        </button>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow">
+<div class="md:flex">
+<div class="md:shrink-0 relative">
+<img alt="Bukhara" class="h-48 w-full md:h-full md:w-64 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOL-zW6_RVnXNWQC-s97YWPOAhui4vYjjmjEmZQW5j0yBbOLieo3HqWP_n39R-rWOzMyVAE25ziXlZerAGOhoQEpkKkOfZbOfqWkfTr4a5uqNB2_p29hXYSkTU-hygQVInJldKJQcSna3DKBYqLBN74UXJy27yjmnfgJ8InnIaUgRhOnRgXmvLhToj1nMmwgB7mlN2r8ZarUXtJXwyB9oN21VazptDECfZubEQXvMn0_e_i82lxVEy_6nVKr7FXwaZmk72OWFuHQ0"/>
+<div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2 py-1 rounded text-xs font-bold text-gray-800 shadow-sm">
+<span class="material-symbols-outlined text-[14px] align-text-bottom mr-1">calendar_month</span> Nov 12
+                                    </div>
+</div>
+<div class="p-6 w-full flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<div>
+<div class="uppercase tracking-wide text-xs text-[var(--accent-color)] font-bold">Culinary Experience</div>
+<h3 class="mt-1 text-xl font-semibold text-gray-900">Bukhara Masterclass: Plov Cooking</h3>
+<p class="mt-2 text-gray-500 text-sm line-clamp-2">Learn the secrets of authentic Uzbek Plov from a renowned local chef in the heart of old Bukhara.</p>
+</div>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800">
+                                                Pending Payment
+                                            </span>
+</div>
+<div class="mt-4 flex flex-wrap gap-4 text-sm text-gray-500">
+<div class="flex items-center">
+<span class="material-symbols-outlined text-gray-400 mr-1.5 text-[18px]">schedule</span>
+                                                Nov 12, 2023 • 11:30 AM
+                                            </div>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-gray-400 mr-1.5 text-[18px]">group</span>
+                                                1 Adult
+                                            </div>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-gray-400 mr-1.5 text-[18px]">payments</span>
+                                                $85.00
+                                            </div>
+</div>
+</div>
+<div class="mt-6 flex gap-3 pt-4 border-t border-gray-100">
+<button class="flex-1 bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 px-4 py-2 rounded-md text-sm font-medium transition-colors">
+                                            Cancel
+                                        </button>
+<button class="flex-1 bg-[var(--accent-color)] text-white hover:bg-yellow-600 px-4 py-2 rounded-md text-sm font-medium transition-colors shadow-sm">
+                                            Complete Payment
+                                        </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-lg font-bold text-gray-900">Personal Information</h2>
+<button class="text-[var(--primary-color)] hover:bg-blue-50 p-1 rounded transition-colors">
+<span class="material-symbols-outlined">edit</span>
+</button>
+</div>
+<div class="space-y-4">
+<div>
+<label class="block text-xs font-medium text-gray-500 uppercase">Full Name</label>
+<div class="mt-1 text-sm text-gray-900 font-medium">Alisher Usmanov</div>
+</div>
+<div>
+<label class="block text-xs font-medium text-gray-500 uppercase">Email Address</label>
+<div class="mt-1 text-sm text-gray-900 font-medium">alisher.usmanov@example.com</div>
+</div>
+<div>
+<label class="block text-xs font-medium text-gray-500 uppercase">Phone Number</label>
+<div class="mt-1 text-sm text-gray-900 font-medium">+998 90 123 45 67</div>
+</div>
+<div>
+<label class="block text-xs font-medium text-gray-500 uppercase">Nationality</label>
+<div class="mt-1 text-sm text-gray-900 font-medium">Uzbekistan</div>
+</div>
+<div class="pt-2 border-t border-gray-100 mt-2">
+<label class="block text-xs font-medium text-gray-500 uppercase mb-2">Saved Payment Method</label>
+<div class="flex items-center gap-3">
+<div class="bg-gray-100 p-1.5 rounded">
+<img alt="Mastercard" class="h-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJL27ZpLEHHvjlBvE1g6tbRArvW6Ns0qJ8pOV1ntBrq2ob-UXlp28UW0ok1Xxr1AdCwFQjq5HVurDjNsseSiMJfMprQYLBTZm0nXop6RJb_sknotuGX5AT_o8qFujA8rxiF1QU6m7YeOFf_mEy0P2zFhoA-Jkhc4kpa0PIYWW6xmv4fRLGWWZRBkDCMv9rsMDR_zovdmAHBYbuFRi-tnrwsZAYRYF_fpF2S917vEqgLkIyHTdixQYHqq589rhiIixDowtM1gw0d6o"/>
+</div>
+<span class="text-sm text-gray-900">•••• 4242</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+<h2 class="text-lg font-bold text-gray-900 mb-6">Recent History</h2>
+<div class="flow-root">
+<ul class="-mb-8" role="list">
+<li>
+<div class="relative pb-8">
+<span aria-hidden="true" class="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-200"></span>
+<div class="relative flex space-x-3">
+<div>
+<span class="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center ring-8 ring-white">
+<span class="material-symbols-outlined text-blue-600 text-[16px]">bookmark_added</span>
+</span>
+</div>
+<div class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
+<div>
+<p class="text-sm text-gray-500">Booked <span class="font-medium text-gray-900">Samarkand Tour</span></p>
+</div>
+<div class="whitespace-nowrap text-right text-sm text-gray-500">
+<time datetime="2023-09-20">2d ago</time>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="relative pb-8">
+<span aria-hidden="true" class="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-200"></span>
+<div class="relative flex space-x-3">
+<div>
+<span class="h-8 w-8 rounded-full bg-green-100 flex items-center justify-center ring-8 ring-white">
+<span class="material-symbols-outlined text-green-600 text-[16px]">check_circle</span>
+</span>
+</div>
+<div class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
+<div>
+<p class="text-sm text-gray-500">Completed <span class="font-medium text-gray-900">Khiva City Walk</span></p>
+</div>
+<div class="whitespace-nowrap text-right text-sm text-gray-500">
+<time datetime="2023-09-22">Sep 15</time>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="relative pb-8">
+<div class="relative flex space-x-3">
+<div>
+<span class="h-8 w-8 rounded-full bg-gray-100 flex items-center justify-center ring-8 ring-white">
+<span class="material-symbols-outlined text-gray-500 text-[16px]">person</span>
+</span>
+</div>
+<div class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
+<div>
+<p class="text-sm text-gray-500">Updated profile information</p>
+</div>
+<div class="whitespace-nowrap text-right text-sm text-gray-500">
+<time datetime="2023-09-30">Sep 10</time>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="bg-white border-t border-gray-200 mt-auto">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<div class="md:flex md:items-center md:justify-between">
+<div class="flex justify-center space-x-6 md:order-2">
+<a class="text-gray-400 hover:text-gray-500" href="#">
+<span class="sr-only">Facebook</span>
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path></svg>
+</a>
+<a class="text-gray-400 hover:text-gray-500" href="#">
+<span class="sr-only">Instagram</span>
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772 4.902 4.902 0 011.772-1.153c.636-.247 1.363-.416 2.427-.465 1.067-.047 1.409-.06 3.809-.06h.63zm1.672 5.374a5 5 0 11-6.712 6.712 5 5 0 016.712-6.712zM17.338 5.4a1 1 0 110 2 1 1 0 010-2zm-5.336 3.298a3.298 3.298 0 100 6.596 3.298 3.298 0 000-6.596z" fill-rule="evenodd"></path></svg>
+</a>
+</div>
+<div class="mt-8 md:mt-0 md:order-1">
+<p class="text-center text-sm text-gray-400">© 2023 Discover Uz. All rights reserved. National Tourism Platform.</p>
+</div>
+</div>
+</div>
+</footer>
+
+</body></html>

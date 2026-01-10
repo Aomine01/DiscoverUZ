@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin Comment Moderation - Discover Uz</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d59f2",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display min-h-screen flex flex-col overflow-x-hidden text-[#111318] dark:text-white">
+<!-- TopNavBar -->
+<div class="bg-white dark:bg-[#1a202c] border-b border-[#f0f1f5] dark:border-[#2d3748]">
+<div class="px-4 md:px-10 py-3 flex items-center justify-between whitespace-nowrap">
+<div class="flex items-center gap-4 text-[#111318] dark:text-white">
+<div class="size-8 rounded-lg bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined">admin_panel_settings</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">Discover Uz Admin</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<div class="hidden md:flex items-center gap-6">
+<a class="text-[#606e8a] dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+                        Dashboard
+                    </a>
+<a class="text-[#606e8a] dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[20px]">calendar_month</span>
+                        Bookings
+                    </a>
+<a class="text-[#606e8a] dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[20px]">group</span>
+                        Users
+                    </a>
+<a class="text-primary text-sm font-medium leading-normal flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[20px] fill-1">chat_bubble</span>
+                        Comments
+                    </a>
+<a class="text-[#606e8a] dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+                        Settings
+                    </a>
+</div>
+<div class="flex items-center gap-3 pl-4 border-l border-[#f0f1f5] dark:border-[#2d3748]">
+<div class="flex flex-col items-end mr-2 hidden sm:flex">
+<span class="text-sm font-semibold text-[#111318] dark:text-white">Admin User</span>
+<span class="text-xs text-[#606e8a] dark:text-gray-400">Super Admin</span>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 ring-2 ring-white dark:ring-[#1a202c]" data-alt="Administrator profile picture showing a smiling professional" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAhFjCmvmXOcDlX4d8eHO3ItEgnBC2vOlubv_x2ImqllEG5AcUzzOI9nju-Y-ZDpCQG2Url3ZQHLndV0-XzwWmGt2wezNHr_03WnPfG8DWF5mdSBKiJzHsZgxOIyQuQvrzvx0N5V7BikOsFs4MMSkvM8FXPkllUn5K5ZqKoKYPbEhSmijogea5kkCWZXG1pAO-XNaVIjtlFrVxebjT8yKetsL2e2a2HuSCgBt0PJwcE8_ESUaT_C3pSFpu5Gg1wN4CZb4buCEJ6P38");'></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Content -->
+<div class="flex flex-1 justify-center py-8 px-4 sm:px-8">
+<div class="flex flex-col max-w-[1200px] flex-1 w-full gap-6">
+<!-- PageHeading -->
+<div class="flex flex-col gap-2">
+<h1 class="text-[#111318] dark:text-white text-3xl md:text-4xl font-black leading-tight tracking-[-0.033em]">Comment Moderation</h1>
+<p class="text-[#606e8a] dark:text-gray-400 text-base font-normal leading-normal max-w-2xl">Review, approve, and manage user interactions across the Discover Uz platform to ensure a safe and high-quality community.</p>
+</div>
+<!-- Stats -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<div class="flex flex-col gap-2 rounded-xl p-6 border border-[#dbdfe6] dark:border-[#2d3748] bg-white dark:bg-[#1a202c] shadow-sm">
+<div class="flex items-center justify-between">
+<p class="text-[#606e8a] dark:text-gray-400 text-base font-medium leading-normal">Total Comments</p>
+<span class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-lg">forum</span>
+</div>
+<p class="text-[#111318] dark:text-white tracking-light text-3xl font-bold leading-tight">12,450</p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 border border-[#dbdfe6] dark:border-[#2d3748] bg-white dark:bg-[#1a202c] shadow-sm relative overflow-hidden">
+<div class="absolute right-0 top-0 h-full w-1 bg-yellow-500"></div>
+<div class="flex items-center justify-between">
+<p class="text-[#606e8a] dark:text-gray-400 text-base font-medium leading-normal">Pending Review</p>
+<span class="material-symbols-outlined text-yellow-600 bg-yellow-100 dark:bg-yellow-900/30 p-2 rounded-lg">pending_actions</span>
+</div>
+<p class="text-[#111318] dark:text-white tracking-light text-3xl font-bold leading-tight">42</p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 border border-[#dbdfe6] dark:border-[#2d3748] bg-white dark:bg-[#1a202c] shadow-sm relative overflow-hidden">
+<div class="absolute right-0 top-0 h-full w-1 bg-red-500"></div>
+<div class="flex items-center justify-between">
+<p class="text-[#606e8a] dark:text-gray-400 text-base font-medium leading-normal">Flagged</p>
+<span class="material-symbols-outlined text-red-600 bg-red-100 dark:bg-red-900/30 p-2 rounded-lg">flag</span>
+</div>
+<p class="text-[#111318] dark:text-white tracking-light text-3xl font-bold leading-tight">15</p>
+</div>
+</div>
+<!-- Toolbar (Search & Filters) -->
+<div class="flex flex-col md:flex-row gap-4 items-center bg-white dark:bg-[#1a202c] p-4 rounded-xl border border-[#dbdfe6] dark:border-[#2d3748] shadow-sm">
+<!-- Search -->
+<div class="flex-1 w-full md:w-auto">
+<div class="flex w-full items-stretch rounded-lg h-12 bg-[#f0f1f5] dark:bg-[#2d3748] group focus-within:ring-2 focus-within:ring-primary/50 transition-all">
+<div class="text-[#606e8a] dark:text-gray-400 flex items-center justify-center pl-4 pr-2">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-lg text-[#111318] dark:text-white bg-transparent focus:outline-0 border-none h-full placeholder:text-[#606e8a] dark:placeholder:text-gray-500 text-base font-normal leading-normal" placeholder="Search by author, keyword, or context..."/>
+</div>
+</div>
+<!-- Filters -->
+<div class="flex w-full md:w-auto gap-3 overflow-x-auto pb-1 md:pb-0">
+<select class="h-12 rounded-lg border-none bg-[#f0f1f5] dark:bg-[#2d3748] text-[#111318] dark:text-white px-4 pr-10 min-w-[160px] text-sm font-medium focus:ring-2 focus:ring-primary/50 cursor-pointer">
+<option selected="" value="">All Statuses</option>
+<option value="pending">Pending</option>
+<option value="approved">Approved</option>
+<option value="rejected">Rejected</option>
+</select>
+<select class="h-12 rounded-lg border-none bg-[#f0f1f5] dark:bg-[#2d3748] text-[#111318] dark:text-white px-4 pr-10 min-w-[160px] text-sm font-medium focus:ring-2 focus:ring-primary/50 cursor-pointer">
+<option selected="" value="">All Content Types</option>
+<option value="tour">Tours</option>
+<option value="blog">Blog Posts</option>
+<option value="guide">Guide Reviews</option>
+</select>
+<button class="h-12 px-6 rounded-lg bg-primary hover:bg-blue-700 text-white font-medium text-sm flex items-center gap-2 transition-colors whitespace-nowrap">
+<span class="material-symbols-outlined text-[20px]">filter_list</span>
+                        More Filters
+                    </button>
+</div>
+</div>
+<!-- Data Table Card -->
+<div class="bg-white dark:bg-[#1a202c] rounded-xl border border-[#dbdfe6] dark:border-[#2d3748] shadow-sm overflow-hidden flex flex-col">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-gray-50 dark:bg-[#232b38] border-b border-[#dbdfe6] dark:border-[#2d3748]">
+<th class="p-4 w-12">
+<input class="rounded border-gray-300 text-primary focus:ring-primary size-5 bg-white dark:bg-[#2d3748] dark:border-gray-600" type="checkbox"/>
+</th>
+<th class="p-4 text-xs font-semibold tracking-wide text-[#606e8a] dark:text-gray-400 uppercase w-64">Author</th>
+<th class="p-4 text-xs font-semibold tracking-wide text-[#606e8a] dark:text-gray-400 uppercase min-w-[300px]">Comment</th>
+<th class="p-4 text-xs font-semibold tracking-wide text-[#606e8a] dark:text-gray-400 uppercase w-48">Context</th>
+<th class="p-4 text-xs font-semibold tracking-wide text-[#606e8a] dark:text-gray-400 uppercase w-32">Status</th>
+<th class="p-4 text-xs font-semibold tracking-wide text-[#606e8a] dark:text-gray-400 uppercase w-40 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#dbdfe6] dark:divide-[#2d3748]">
+<!-- Row 1: Pending -->
+<tr class="group hover:bg-gray-50 dark:hover:bg-[#232b38] transition-colors">
+<td class="p-4">
+<input class="rounded border-gray-300 text-primary focus:ring-primary size-5 bg-white dark:bg-[#2d3748] dark:border-gray-600" type="checkbox"/>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-cover bg-center shrink-0" data-alt="User avatar for Aziz R." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAOb6-Cy1VtgFEfdscfUVn7W9DqLgQ2WGsI1wPaGgVODT2gAJEL-FelybWiA8ecXEaeQtktPhRbkaTyH4KpojQabzas6iMUqYFvCTzzzshokvGXBsocaqanliE82U0toxIVB2BJn78G5O1JUVeJTr6zFdDTgIPggB_POfiaRt68LMNQV78Hpbe_DAuiLX9khdxFbKLwmWH7MRYJ_X0dz-fHizQSf3_3expCzAY-g2lIC9-0M-lLFADn1Fwh_0Jwp2cWd2SnnoIsiIs')"></div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-[#111318] dark:text-white">Aziz R.</span>
+<span class="text-xs text-[#606e8a] dark:text-gray-400">June 12, 10:45 AM</span>
+</div>
+</div>
+</td>
+<td class="p-4">
+<p class="text-sm text-[#111318] dark:text-gray-200 line-clamp-2">The guide was knowledgeable, but the bus was late by about 30 minutes. Overall a good experience, but timing needs improvement.</p>
+</td>
+<td class="p-4">
+<div class="flex flex-col gap-1">
+<span class="text-xs font-medium text-[#606e8a] dark:text-gray-400 uppercase">Tour</span>
+<a class="text-sm font-medium text-primary hover:underline truncate" href="#">Samarkand Golden Journey</a>
+</div>
+</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300 border border-yellow-200 dark:border-yellow-900/50">
+<span class="size-1.5 rounded-full bg-yellow-500"></span>
+                                        Pending
+                                    </span>
+</td>
+<td class="p-4 text-right">
+<div class="flex items-center justify-end gap-2 opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 rounded-md text-green-600 hover:bg-green-100 dark:hover:bg-green-900/30 transition-colors" title="Approve">
+<span class="material-symbols-outlined text-[20px]">check</span>
+</button>
+<button class="p-1.5 rounded-md text-red-600 hover:bg-red-100 dark:hover:bg-red-900/30 transition-colors" title="Reject">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+<button class="p-1.5 rounded-md text-[#606e8a] hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 transition-colors" title="Edit">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-1.5 rounded-md text-[#606e8a] hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 transition-colors" title="Delete">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Approved -->
+<tr class="group hover:bg-gray-50 dark:hover:bg-[#232b38] transition-colors">
+<td class="p-4">
+<input class="rounded border-gray-300 text-primary focus:ring-primary size-5 bg-white dark:bg-[#2d3748] dark:border-gray-600" type="checkbox"/>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold shrink-0">
+                                            JL
+                                        </div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-[#111318] dark:text-white">Jennifer Lopez</span>
+<span class="text-xs text-[#606e8a] dark:text-gray-400">June 11, 04:20 PM</span>
+</div>
+</div>
+</td>
+<td class="p-4">
+<p class="text-sm text-[#111318] dark:text-gray-200 line-clamp-2">Absolutely stunning views! The Registan square at sunset is magical. Highly recommend this tour operator.</p>
+</td>
+<td class="p-4">
+<div class="flex flex-col gap-1">
+<span class="text-xs font-medium text-[#606e8a] dark:text-gray-400 uppercase">Blog Post</span>
+<a class="text-sm font-medium text-primary hover:underline truncate" href="#">Top 10 Sights in Bukhara</a>
+</div>
+</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 border border-green-200 dark:border-green-900/50">
+<span class="size-1.5 rounded-full bg-green-500"></span>
+                                        Approved
+                                    </span>
+</td>
+<td class="p-4 text-right">
+<div class="flex items-center justify-end gap-2 opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 rounded-md text-[#606e8a] hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 transition-colors" title="Delete">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+<button class="p-1.5 rounded-md text-[#606e8a] hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 transition-colors" title="More">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Flagged/Rejected -->
+<tr class="group hover:bg-gray-50 dark:hover:bg-[#232b38] transition-colors">
+<td class="p-4">
+<input class="rounded border-gray-300 text-primary focus:ring-primary size-5 bg-white dark:bg-[#2d3748] dark:border-gray-600" type="checkbox"/>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-cover bg-center shrink-0" data-alt="User avatar for Dmitry K." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDEuacB6A5A_KiL_MwTB7XJ_LZDuls6WMMYcNltj0KM3PuhpUJiuYIMy6peHGorGdITAkWEntSGoMmEhQJNFtnltUqi9leBsAeYP-85oGobyJSdxS-pSc9nRepWY6rOjhaJOyh_f-JZvp3i2YgBxiQTkIBCW3uWGn6jmE6r5n9D8JYXbpH_mAh__hfUKi4v1vgMn8ANfPsGbgDvitznrmIPRX5soCBH9DD7JA72vYg1WrLUP-dD22u3eNE5je_f6UbMjf96swHy6Vo')"></div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-[#111318] dark:text-white">Dmitry K.</span>
+<span class="text-xs text-[#606e8a] dark:text-gray-400">June 10, 09:15 AM</span>
+</div>
+</div>
+</td>
+<td class="p-4">
+<p class="text-sm text-[#111318] dark:text-gray-200 line-clamp-2">Cheap services elsewhere. Contact me at +998 90 123 4567 for better rates on taxi services.</p>
+</td>
+<td class="p-4">
+<div class="flex flex-col gap-1">
+<span class="text-xs font-medium text-[#606e8a] dark:text-gray-400 uppercase">Tour</span>
+<a class="text-sm font-medium text-primary hover:underline truncate" href="#">Khiva City Walk</a>
+</div>
+</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300 border border-red-200 dark:border-red-900/50">
+<span class="size-1.5 rounded-full bg-red-500"></span>
+                                        Flagged
+                                    </span>
+</td>
+<td class="p-4 text-right">
+<div class="flex items-center justify-end gap-2 opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 rounded-md text-green-600 hover:bg-green-100 dark:hover:bg-green-900/30 transition-colors" title="Approve">
+<span class="material-symbols-outlined text-[20px]">check</span>
+</button>
+<button class="p-1.5 rounded-md text-red-600 hover:bg-red-100 dark:hover:bg-red-900/30 transition-colors" title="Reject">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+<button class="p-1.5 rounded-md text-[#606e8a] hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 transition-colors" title="Delete">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Pending -->
+<tr class="group hover:bg-gray-50 dark:hover:bg-[#232b38] transition-colors">
+<td class="p-4">
+<input class="rounded border-gray-300 text-primary focus:ring-primary size-5 bg-white dark:bg-[#2d3748] dark:border-gray-600" type="checkbox"/>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-300 font-bold shrink-0">
+                                            SA
+                                        </div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-[#111318] dark:text-white">Sarah Al-Fayed</span>
+<span class="text-xs text-[#606e8a] dark:text-gray-400">June 09, 02:30 PM</span>
+</div>
+</div>
+</td>
+<td class="p-4">
+<p class="text-sm text-[#111318] dark:text-gray-200 line-clamp-2">Is this tour suitable for children under 5? We are planning a family trip next month.</p>
+</td>
+<td class="p-4">
+<div class="flex flex-col gap-1">
+<span class="text-xs font-medium text-[#606e8a] dark:text-gray-400 uppercase">Tour</span>
+<a class="text-sm font-medium text-primary hover:underline truncate" href="#">Tashkent Modern City</a>
+</div>
+</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300 border border-yellow-200 dark:border-yellow-900/50">
+<span class="size-1.5 rounded-full bg-yellow-500"></span>
+                                        Pending
+                                    </span>
+</td>
+<td class="p-4 text-right">
+<div class="flex items-center justify-end gap-2 opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 rounded-md text-green-600 hover:bg-green-100 dark:hover:bg-green-900/30 transition-colors" title="Approve">
+<span class="material-symbols-outlined text-[20px]">check</span>
+</button>
+<button class="p-1.5 rounded-md text-red-600 hover:bg-red-100 dark:hover:bg-red-900/30 transition-colors" title="Reject">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+<button class="p-1.5 rounded-md text-blue-600 hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors" title="Reply">
+<span class="material-symbols-outlined text-[20px]">reply</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="flex items-center justify-between p-4 border-t border-[#dbdfe6] dark:border-[#2d3748]">
+<div class="text-sm text-[#606e8a] dark:text-gray-400">
+                        Showing <span class="font-medium text-[#111318] dark:text-white">1</span> to <span class="font-medium text-[#111318] dark:text-white">10</span> of <span class="font-medium text-[#111318] dark:text-white">42</span> results
+                    </div>
+<div class="flex items-center gap-2">
+<button class="flex items-center justify-center size-9 rounded-lg border border-[#dbdfe6] dark:border-[#2d3748] hover:bg-gray-50 dark:hover:bg-[#232b38] text-[#606e8a] dark:text-gray-400 transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<div class="flex items-center gap-1">
+<button class="size-9 rounded-lg bg-primary text-white text-sm font-medium shadow-sm transition-colors">1</button>
+<button class="size-9 rounded-lg hover:bg-gray-50 dark:hover:bg-[#232b38] text-[#606e8a] dark:text-gray-400 text-sm font-medium transition-colors">2</button>
+<button class="size-9 rounded-lg hover:bg-gray-50 dark:hover:bg-[#232b38] text-[#606e8a] dark:text-gray-400 text-sm font-medium transition-colors">3</button>
+<span class="text-[#606e8a] dark:text-gray-400 px-1">...</span>
+<button class="size-9 rounded-lg hover:bg-gray-50 dark:hover:bg-[#232b38] text-[#606e8a] dark:text-gray-400 text-sm font-medium transition-colors">5</button>
+</div>
+<button class="flex items-center justify-center size-9 rounded-lg border border-[#dbdfe6] dark:border-[#2d3748] hover:bg-gray-50 dark:hover:bg-[#232b38] text-[#111318] dark:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

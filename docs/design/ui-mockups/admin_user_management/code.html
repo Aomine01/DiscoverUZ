@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin User Management - Discover Uz</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d59f2",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white h-screen flex overflow-hidden">
+<!-- Sidebar -->
+<aside class="w-64 bg-white dark:bg-[#1e2330] border-r border-slate-200 dark:border-slate-800 flex flex-col flex-shrink-0 h-full transition-colors duration-200">
+<div class="p-6 pb-2">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 bg-primary/10 shrink-0" data-alt="Abstract geometric logo representing Uzbekistan tourism" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDV_rSNHJ1uZNkikfIjL5fM20GBK2xC9bInV4-c83Dj_8p5RN6C1R4cl7JHXBfZd2oxbH0GncQuuacWhXEsmA4kHue2yVum93SIf6appO8kF4svQmsS5w9o8QqQp8V-ste7YyQGNyub6WKU211ariZEfYBUr_hJmtUblFUUVGUn-bNXD_nErB17tHm3GLbTAAlwX0mXo3KwiD5hNwicJBRIIjFZOzfaZ76634Amqw6mHFjDlzBwDiSEqXzlCImhTYWiOlQif0yFkic");'></div>
+<div class="flex flex-col overflow-hidden">
+<h1 class="text-slate-900 dark:text-white text-base font-bold leading-normal truncate">Discover Uz</h1>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-normal leading-normal truncate">Admin Panel</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-1 px-3 py-4 overflow-y-auto no-scrollbar">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-[24px] text-slate-500 dark:text-slate-400 group-hover:text-primary transition-colors">grid_view</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary dark:text-primary-400" href="#">
+<span class="material-symbols-outlined text-[24px] text-primary fill-1">group</span>
+<span class="text-sm font-medium">Users</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-[24px] text-slate-500 dark:text-slate-400 group-hover:text-primary transition-colors">calendar_month</span>
+<span class="text-sm font-medium">Bookings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-[24px] text-slate-500 dark:text-slate-400 group-hover:text-primary transition-colors">map</span>
+<span class="text-sm font-medium">Tours</span>
+</a>
+<div class="my-2 border-t border-slate-100 dark:border-slate-700"></div>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-[24px] text-slate-500 dark:text-slate-400 group-hover:text-primary transition-colors">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-[24px] text-slate-500 dark:text-slate-400 group-hover:text-primary transition-colors">help</span>
+<span class="text-sm font-medium">Support</span>
+</a>
+</nav>
+<div class="p-4 border-t border-slate-200 dark:border-slate-800">
+<button class="flex items-center gap-3 w-full px-2 py-2 text-left rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-8 bg-slate-200" data-alt="Current admin user profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAghjLovIgkk8iw8DhtsgCWp_cQuRZ1Z7uqrusX6CFbIw0hx6EfHwxOGt-sA02XUmu5ck8mszBWfxsLlrcVu0LIEwAHZvrLc4ANgMiWbBI8Ns6DmZZvs7qWZ9epBvQXYlU8NOIEy6NbU5BPBquBDRx_G26y5rY7jWQ-rXJPpOOaWuasp-BnjmVMJEjVVSd-DtizzxAApnvVxe4ouR8dfV0cOwWMEcBUW1kz77zek17DtnRa-16abYlceVudTFKdXnAGJHLgEpUmEso");'></div>
+<div class="flex-1 overflow-hidden">
+<p class="text-sm font-medium text-slate-900 dark:text-white truncate">Admin User</p>
+<p class="text-xs text-slate-500 dark:text-slate-400 truncate">admin@discoveruz.com</p>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-sm">logout</span>
+</button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col h-full overflow-hidden bg-background-light dark:bg-background-dark">
+<!-- Header area within main content for Breadcrumbs -->
+<header class="px-6 py-4 flex flex-col gap-4">
+<!-- Breadcrumbs -->
+<div class="flex flex-wrap gap-2 text-sm">
+<a class="text-slate-500 hover:text-primary dark:text-slate-400 transition-colors font-medium" href="#">Home</a>
+<span class="text-slate-400 font-medium">/</span>
+<a class="text-slate-500 hover:text-primary dark:text-slate-400 transition-colors font-medium" href="#">Admin</a>
+<span class="text-slate-400 font-medium">/</span>
+<span class="text-slate-900 dark:text-white font-medium">User Management</span>
+</div>
+</header>
+<!-- Scrollable Page Content -->
+<div class="flex-1 overflow-y-auto px-6 pb-6">
+<div class="max-w-[1400px] mx-auto flex flex-col gap-6">
+<!-- Page Heading & Actions -->
+<div class="flex flex-wrap items-center justify-between gap-4">
+<div class="flex flex-col gap-1">
+<h1 class="text-slate-900 dark:text-white text-3xl font-black leading-tight tracking-tight">User Management</h1>
+<p class="text-slate-500 dark:text-slate-400 text-base font-normal">Manage user access, roles, and permissions across the platform.</p>
+</div>
+<button class="flex cursor-pointer items-center justify-center gap-2 rounded-lg bg-primary hover:bg-blue-700 text-white h-10 px-5 text-sm font-bold leading-normal tracking-wide transition-colors shadow-sm shadow-blue-200 dark:shadow-none">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span class="truncate">Add New User</span>
+</button>
+</div>
+<!-- Filters Toolbar -->
+<div class="bg-white dark:bg-[#1e2330] rounded-xl border border-slate-200 dark:border-slate-700 p-4 shadow-sm">
+<div class="flex flex-col md:flex-row gap-4">
+<div class="relative flex-1 min-w-[200px]">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 material-symbols-outlined">search</span>
+<input class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary text-sm transition-all" placeholder="Search by name, email, or ID..." value=""/>
+</div>
+<div class="flex gap-4 flex-wrap sm:flex-nowrap">
+<div class="relative min-w-[160px] flex-1 sm:flex-initial">
+<select class="w-full pl-4 pr-10 py-2.5 rounded-lg border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary text-sm appearance-none cursor-pointer">
+<option value="">All Roles</option>
+<option value="admin">Admin</option>
+<option value="guide">Guide</option>
+<option value="traveler">Traveler</option>
+</select>
+<span class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 material-symbols-outlined pointer-events-none">expand_more</span>
+</div>
+<div class="relative min-w-[160px] flex-1 sm:flex-initial">
+<select class="w-full pl-4 pr-10 py-2.5 rounded-lg border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary text-sm appearance-none cursor-pointer">
+<option value="">All Statuses</option>
+<option value="active">Active</option>
+<option value="pending">Pending</option>
+<option value="suspended">Suspended</option>
+</select>
+<span class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 material-symbols-outlined pointer-events-none">expand_more</span>
+</div>
+<div class="relative min-w-[160px] flex-1 sm:flex-initial">
+<select class="w-full pl-4 pr-10 py-2.5 rounded-lg border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary text-sm appearance-none cursor-pointer">
+<option value="">All Regions</option>
+<option value="tashkent">Tashkent</option>
+<option value="samarkand">Samarkand</option>
+<option value="bukhara">Bukhara</option>
+<option value="khiva">Khiva</option>
+</select>
+<span class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 material-symbols-outlined pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Table Container -->
+<div class="flex flex-col overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#1e2330] shadow-sm">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-700">
+<th class="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 min-w-[200px]">User</th>
+<th class="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 min-w-[200px]">Role</th>
+<th class="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 min-w-[120px]">Status</th>
+<th class="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 min-w-[150px]">Region</th>
+<th class="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 min-w-[150px]">Last Active</th>
+<th class="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 w-[100px] text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<!-- Row 1 -->
+<tr class="group hover:bg-blue-50/50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="relative shrink-0">
+<div class="size-10 rounded-full bg-slate-200 bg-cover bg-center" data-alt="Profile picture of Aziz Rahimov" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuABDFILhbxUhsso7BOMW1l4MN0mLxxZHgY57pnLkykgYnwLqBQarmJNsLwUkyaQrBI3C0IOtyTrVXKx3-mce4EqD_QwGaXkZj6KJq3B8pzOY2VOb6JwDJdZli1GZSMlJrL5r0RqVmbLKNvwyt6TaOVkG0DwtGNOIjxyLILOUDI5qH6vc4inSdec4gVFa_zkiCYrZ7wlecXcKVueLVBEj2bGsvJzVodJ8Y9vYRPsSubMkNzO3PWJyqrOTmx697pXnYFLYaUuJw1-nJc");'></div>
+<span class="absolute bottom-0 right-0 size-2.5 rounded-full border-2 border-white dark:border-[#1e2330] bg-green-500"></span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-slate-900 dark:text-white">Aziz Rahimov</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">aziz@discoveruz.com</span>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-indigo-500">security</span>
+<span class="text-sm font-medium text-slate-700 dark:text-slate-200">Administrator</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400 border border-green-200 dark:border-green-800">
+                                            Active
+                                        </span>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-300">Tashkent</td>
+<td class="px-6 py-4 text-sm text-slate-500 dark:text-slate-400">2 mins ago</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-primary transition-colors p-1 rounded hover:bg-slate-100 dark:hover:bg-slate-700">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="group hover:bg-blue-50/50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="relative shrink-0">
+<div class="size-10 rounded-full bg-slate-200 bg-cover bg-center" data-alt="Profile picture of Sarah Jones" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBG5HpVMR_bv2YdxRv3DRO3VksRJcEBscBwkSJZBRqhEAN_cD9Zz0OZcbqISznJd3i0JNE__Y-TYwh9C_Jxg-f5rl9X1fgtLVqKowdU0FhIvXJh_Acrg2hwdWL2I3XbROuJYSlgMXUaZP3fApUIDJ4lpjLG6n4zclFoOPLsjLM3pIh5wcO5iFYFPpwS_kzFDH6S0QV776IoYHhNYhLs7U8uFqargH-L-ydIZtqsloZphfxF-3-Ua6WXuQn5-cyshKe-a4yBJUQuhL0");'></div>
+<span class="absolute bottom-0 right-0 size-2.5 rounded-full border-2 border-white dark:border-[#1e2330] bg-green-500"></span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-slate-900 dark:text-white">Sarah Jones</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">s.jones@gmail.com</span>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-blue-400">flight</span>
+<span class="text-sm font-medium text-slate-700 dark:text-slate-200">Traveler</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400 border border-green-200 dark:border-green-800">
+                                            Active
+                                        </span>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-300">International</td>
+<td class="px-6 py-4 text-sm text-slate-500 dark:text-slate-400">1 hour ago</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-primary transition-colors p-1 rounded hover:bg-slate-100 dark:hover:bg-slate-700">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="group hover:bg-blue-50/50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="relative shrink-0">
+<div class="size-10 rounded-full bg-slate-200 bg-cover bg-center" data-alt="Profile picture of Rustam Aliev" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCPkf44hjyP4aqm2tC857DEmucryfAZItQYMwcNbjd4eRr7pKrd5UKpFaOA200btRnFt2UOOqUqtNkR6YXU1SOwsKFY7nimiiO-s_-FXoWgzHCTi2WfgnTdNKD3FVLvN6fqpp1itHHbFFCQQiKndEZEWJd5I-hojZNOX4-8V4E4S8oM-sh_GeidyYmCz1BfFRqBsf7CI39Hn57Mho8VmXYIZaUnRlnMCr_Y0uDB0NHKOZx8D1KNjBSirP6VYlt1WXbbkEBaEPmeo8M");'></div>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-slate-900 dark:text-white">Rustam Aliev</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">rustam.a@guide.uz</span>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-amber-500">explore</span>
+<span class="text-sm font-medium text-slate-700 dark:text-slate-200">Guide</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400 border border-amber-200 dark:border-amber-800">
+                                            Pending
+                                        </span>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-300">Samarkand</td>
+<td class="px-6 py-4 text-sm text-slate-500 dark:text-slate-400">1 day ago</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-primary transition-colors p-1 rounded hover:bg-slate-100 dark:hover:bg-slate-700">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="group hover:bg-blue-50/50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="relative shrink-0">
+<div class="size-10 rounded-full bg-slate-200 bg-cover bg-center" data-alt="Profile picture of Elena Petrova" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAnPsiIhH4uL0OjaSTevr8vKF9mlblpQFq8ENPB8iSyFgdvGXH914XI4OcqjGK6lreuXUqC7mDWUOGZhiZq8v9h6F1jOQit1EtKGp8SP-AQMVgQwgmjSP7wYDLwQOtnqxd2lJFJvK9_2KkuqYOCQpUU0XQUsnELxEQYJE8tDgRACl8MSMZt7LPLNwUXUqbdIRNO0okWXw52ZKiCaqpb2ZlaHNsh73Ri5u2LDvX0WItWPwL_PTX8eIsTqKOlo2tU4tdcW-atMTCfqxo");'></div>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-slate-900 dark:text-white">Elena Petrova</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">elena.p@mail.ru</span>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-blue-400">flight</span>
+<span class="text-sm font-medium text-slate-700 dark:text-slate-200">Traveler</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400 border border-red-200 dark:border-red-800">
+                                            Suspended
+                                        </span>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-300">Bukhara</td>
+<td class="px-6 py-4 text-sm text-slate-500 dark:text-slate-400">3 days ago</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-primary transition-colors p-1 rounded hover:bg-slate-100 dark:hover:bg-slate-700">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="group hover:bg-blue-50/50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="relative shrink-0">
+<div class="size-10 rounded-full bg-slate-200 bg-cover bg-center" data-alt="Profile picture of John Doe" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB4n_rwk8UoUnJ3VTtjCJW9mV_yXKdDDfEJbyvmcDJOKL9ot0_C0xd8yYZnmbokDVkfIbVXwQCBxaECHNE5Tygh9uK_PpPY6P41aBofgNWEsN_aF-xc5UapAPh9H6aUF1zwM2WG2EwexDnJiQnxTGXRhnin8_BRBonlZoZfNYCJqpyBhy9c9yb_IgwCTCAZnxIh_S0E3QGAxgguxUb5aSCUB_QigCQYZf7LZ_JkprGuCvBbVD833RWWTsLbjdQUHvcS4eys4CGvNAM");'></div>
+<span class="absolute bottom-0 right-0 size-2.5 rounded-full border-2 border-white dark:border-[#1e2330] bg-green-500"></span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-slate-900 dark:text-white">John Doe</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">john.doe@example.com</span>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-blue-400">flight</span>
+<span class="text-sm font-medium text-slate-700 dark:text-slate-200">Traveler</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400 border border-green-200 dark:border-green-800">
+                                            Active
+                                        </span>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-300">International</td>
+<td class="px-6 py-4 text-sm text-slate-500 dark:text-slate-400">5 days ago</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-primary transition-colors p-1 rounded hover:bg-slate-100 dark:hover:bg-slate-700">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="flex items-center justify-between px-6 py-4 border-t border-slate-200 dark:border-slate-700 bg-white dark:bg-[#1e2330]">
+<p class="text-sm text-slate-500 dark:text-slate-400">
+                            Showing <span class="font-medium text-slate-900 dark:text-white">1-5</span> of <span class="font-medium text-slate-900 dark:text-white">45</span> users
+                        </p>
+<div class="flex items-center gap-2">
+<button class="flex items-center justify-center size-8 rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700 disabled:opacity-50 transition-colors" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="flex items-center justify-center size-8 rounded bg-primary text-white text-sm font-medium transition-colors">1</button>
+<button class="flex items-center justify-center size-8 rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 text-sm font-medium transition-colors">2</button>
+<button class="flex items-center justify-center size-8 rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 text-sm font-medium transition-colors">3</button>
+<span class="text-slate-400 px-1">...</span>
+<button class="flex items-center justify-center size-8 rounded border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

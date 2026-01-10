@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact Us - Discover Uz</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d59f2",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased min-h-screen flex flex-col">
+<!-- Navbar -->
+<header class="sticky top-0 z-50 w-full bg-white dark:bg-[#1a2332] border-b border-[#f0f1f5] dark:border-slate-800">
+<div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<!-- Logo -->
+<div class="flex items-center gap-2">
+<div class="size-8 text-primary">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-[#111318] dark:text-white text-xl font-bold leading-tight tracking-[-0.015em]">Discover Uz</h2>
+</div>
+<!-- Navigation -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-[#111318] dark:text-slate-200 text-sm font-medium hover:text-primary transition-colors" href="#">Tours</a>
+<a class="text-[#111318] dark:text-slate-200 text-sm font-medium hover:text-primary transition-colors" href="#">Activities</a>
+<a class="text-[#111318] dark:text-slate-200 text-sm font-medium hover:text-primary transition-colors" href="#">About Us</a>
+<a class="text-primary text-sm font-semibold leading-normal" href="#">Contact</a>
+</nav>
+<!-- Mobile Menu Button -->
+<button class="md:hidden text-[#111318] dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow">
+<!-- Hero / Page Header -->
+<div class="bg-white dark:bg-[#1a2332] border-b border-[#f0f1f5] dark:border-slate-800">
+<div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+<div class="max-w-3xl">
+<h1 class="text-[#111318] dark:text-white text-4xl md:text-5xl font-black leading-tight tracking-tight mb-4">Get in Touch</h1>
+<p class="text-[#606e8a] dark:text-slate-400 text-lg md:text-xl font-normal leading-relaxed">
+                        Have questions about a tour or need support? Fill out the form below and our team will get back to you within 24 hours.
+                    </p>
+</div>
+</div>
+</div>
+<div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 xl:gap-24">
+<!-- Contact Form Section -->
+<div class="lg:col-span-7">
+<div class="bg-white dark:bg-[#1a2332] rounded-2xl shadow-sm border border-[#e5e7eb] dark:border-slate-800 p-6 md:p-8">
+<form class="space-y-6">
+<!-- Name and Email Row -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<label class="flex flex-col flex-1">
+<span class="text-[#111318] dark:text-slate-200 text-sm font-semibold mb-2">Full Name</span>
+<input class="form-input w-full rounded-lg border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-900 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary h-12 px-4 transition-colors" placeholder="Enter your name" type="text"/>
+</label>
+<label class="flex flex-col flex-1">
+<span class="text-[#111318] dark:text-slate-200 text-sm font-semibold mb-2">Email Address</span>
+<input class="form-input w-full rounded-lg border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-900 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary h-12 px-4 transition-colors" placeholder="Enter your email" type="email"/>
+</label>
+</div>
+<!-- Subject Select -->
+<label class="flex flex-col w-full">
+<span class="text-[#111318] dark:text-slate-200 text-sm font-semibold mb-2">Subject</span>
+<div class="relative">
+<select class="form-select w-full rounded-lg border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-900 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary h-12 px-4 pr-10 appearance-none transition-colors">
+<option disabled="" selected="" value="">Select a topic</option>
+<option value="booking">Tour Booking Inquiry</option>
+<option value="support">Customer Support</option>
+<option value="partnership">Partnership Opportunities</option>
+<option value="other">Other</option>
+</select>
+<!-- Custom dropdown arrow using Material Symbol -->
+<div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-500">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</div>
+</div>
+</label>
+<!-- Message Textarea -->
+<label class="flex flex-col w-full">
+<span class="text-[#111318] dark:text-slate-200 text-sm font-semibold mb-2">How can we help?</span>
+<textarea class="form-textarea w-full rounded-lg border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-900 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary min-h-[160px] p-4 resize-y transition-colors" placeholder="Write your message here..."></textarea>
+</label>
+<!-- Submit Button -->
+<button class="inline-flex items-center justify-center rounded-lg bg-primary px-8 py-3 text-sm font-bold text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all w-full md:w-auto" type="button">
+                                Send Message
+                            </button>
+</form>
+</div>
+</div>
+<!-- Contact Info & Map Section -->
+<div class="lg:col-span-5 space-y-8">
+<!-- Contact Details Card -->
+<div class="bg-white dark:bg-[#1a2332] rounded-2xl shadow-sm border border-[#e5e7eb] dark:border-slate-800 p-6 md:p-8">
+<h3 class="text-xl font-bold text-[#111318] dark:text-white mb-6">Contact Information</h3>
+<div class="space-y-6">
+<!-- Phone -->
+<div class="flex items-start gap-4 group">
+<div class="flex items-center justify-center size-10 rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors shrink-0">
+<span class="material-symbols-outlined text-[20px]">call</span>
+</div>
+<div>
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400 mb-1">Call Us</p>
+<a class="text-base font-semibold text-[#111318] dark:text-white hover:text-primary transition-colors" href="tel:+998710000000">+998 71 000 00 00</a>
+<p class="text-xs text-slate-400 mt-1">Mon-Fri from 9am to 6pm</p>
+</div>
+</div>
+<!-- Email -->
+<div class="flex items-start gap-4 group">
+<div class="flex items-center justify-center size-10 rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors shrink-0">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</div>
+<div>
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400 mb-1">Email Us</p>
+<a class="text-base font-semibold text-[#111318] dark:text-white hover:text-primary transition-colors" href="mailto:info@discoveruz.uz">info@discoveruz.uz</a>
+<p class="text-xs text-slate-400 mt-1">We reply within 24 hours</p>
+</div>
+</div>
+<!-- Address -->
+<div class="flex items-start gap-4 group">
+<div class="flex items-center justify-center size-10 rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors shrink-0">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+</div>
+<div>
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400 mb-1">Visit Us</p>
+<p class="text-base font-semibold text-[#111318] dark:text-white">12 Amir Temur Avenue</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">Tashkent, Uzbekistan, 100000</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Map Card -->
+<div class="bg-white dark:bg-[#1a2332] rounded-2xl shadow-sm border border-[#e5e7eb] dark:border-slate-800 p-2 h-64 md:h-80 overflow-hidden relative group">
+<!-- Abstract Map placeholder - simulating a map interface -->
+<div class="w-full h-full rounded-xl overflow-hidden relative bg-slate-200 dark:bg-slate-700">
+<img alt="Map location" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500" data-alt="Map showing the location of Discover Uz office in Tashkent" data-location="Tashkent" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDahnGOG8k_zFeBNxDPJ_9hHmYraAYxvMCERMSAR1ntop1RUZaZiMmp2merD5R5DOAJ-N8ykegfu5WeMu3H_N2_c8bu0Ia2Uhqyhe0UkaM8bBgiP9qxCUg2weyt9f_LY6dlV9TdVoDRLZ7Cd1g_1wwjLRDhxDAc-oiFw5CAd4ARSYP7-EtCEtBkCkqnszwnzge3K5CcXsPds868J9Wna1X0gcxyiF7Q-9WEa-wzj9mlcgXDqkOrJ0x2M4LoJYREk5BtAZy1XdbnFjs"/>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">location_on</span>
+<span class="text-xs font-bold text-slate-900 dark:text-white">Headquarters</span>
+</div>
+</div>
+<a class="absolute bottom-3 right-3 bg-white dark:bg-slate-800 text-xs font-medium px-3 py-1.5 rounded shadow-md hover:bg-gray-50 transition-colors z-10 text-slate-700 dark:text-slate-200" href="#">
+                               View larger map
+                           </a>
+</div>
+</div>
+<!-- FAQ Teaser -->
+<div class="bg-primary/5 rounded-xl p-6 border border-primary/10">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary text-[24px]">help</span>
+<div>
+<h4 class="text-sm font-bold text-[#111318] dark:text-white mb-1">Frequently Asked Questions</h4>
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-3">Find quick answers to common questions about booking and tours.</p>
+<a class="text-sm font-semibold text-primary hover:text-blue-700 inline-flex items-center gap-1 group" href="#">
+                                    Visit FAQ Page 
+                                    <span class="material-symbols-outlined text-[16px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-[#1a2332] border-t border-[#f0f1f5] dark:border-slate-800 py-12 mt-auto">
+<div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-2 mb-4">
+<div class="size-6 text-primary">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-[#111318] dark:text-white text-lg font-bold">Discover Uz</h2>
+</div>
+<p class="text-sm text-slate-500 dark:text-slate-400">
+                        Your gateway to the hidden gems of Uzbekistan. Authentic experiences, verified tours, and unforgettable memories.
+                    </p>
+</div>
+<div>
+<h3 class="text-sm font-bold text-[#111318] dark:text-white mb-4 uppercase tracking-wider">Platform</h3>
+<ul class="space-y-3">
+<li><a class="text-sm text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="#">Browse Tours</a></li>
+<li><a class="text-sm text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="#">Popular Activities</a></li>
+<li><a class="text-sm text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="#">Destinations</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-sm font-bold text-[#111318] dark:text-white mb-4 uppercase tracking-wider">Company</h3>
+<ul class="space-y-3">
+<li><a class="text-sm text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="#">About Us</a></li>
+<li><a class="text-sm text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="#">Careers</a></li>
+<li><a class="text-sm text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="#">Press</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-sm font-bold text-[#111318] dark:text-white mb-4 uppercase tracking-wider">Support</h3>
+<ul class="space-y-3">
+<li><a class="text-sm text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="#">Contact</a></li>
+<li><a class="text-sm text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="#">FAQ</a></li>
+<li><a class="text-sm text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-slate-200 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-sm text-slate-400">© 2024 Discover Uz. All rights reserved.</p>
+<div class="flex gap-4">
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="sr-only">Facebook</span>FB</a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="sr-only">Twitter</span>TW</a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="sr-only">Instagram</span>IG</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
