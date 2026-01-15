@@ -1,7 +1,42 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+import { newsletterSchema } from "@/lib/validations/inputs";
+import { sanitizeFormData } from "@/lib/utils/sanitize";
 
 export default function ForTouristsPage() {
+    const [newsletterEmail, setNewsletterEmail] = useState("");
+    const [newsletterError, setNewsletterError] = useState("");
+    const [isSubscribing, setIsSubscribing] = useState(false);
+
+    const handleNewsletterSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setNewsletterError("");
+        setIsSubscribing(true);
+
+        try {
+            // 1. Sanitize
+            const sanitized = await sanitizeFormData({ email: newsletterEmail });
+
+            // 2. Validate
+            newsletterSchema.parse(sanitized);
+
+            // 3. TODO: Send to API when ready
+            alert("Thank you for subscribing! Check your email for confirmation.");
+            setNewsletterEmail("");
+        } catch (error: any) {
+            if (error.name === "ZodError") {
+                setNewsletterError(error.issues[0]?.message || "Invalid email address");
+            } else {
+                setNewsletterError("Something went wrong. Please try again.");
+            }
+        } finally {
+            setIsSubscribing(false);
+        }
+    };
+
     return (
         <div className="pt-20">
             {/* Hero Section with Integrated Search */}
@@ -517,18 +552,33 @@ export default function ForTouristsPage() {
                             </p>
                         </div>
                         <div className="relative z-10 w-full max-w-md">
-                            <form className="flex flex-col sm:flex-row gap-2">
-                                <input
-                                    className="flex-1 rounded-lg border-0 px-4 py-3 text-gray-900 focus:ring-2 focus:ring-white/50"
-                                    placeholder="Enter your email"
-                                    type="email"
-                                />
-                                <button
-                                    className="bg-primary hover:bg-yellow-400 text-secondary font-bold py-3 px-6 rounded-lg transition-colors"
-                                    type="button"
-                                >
-                                    Subscribe
-                                </button>
+                            <form onSubmit={handleNewsletterSubmit} noValidate className="flex flex-col gap-2">
+                                <div className="flex flex-col sm:flex-row gap-2">
+                                    <input
+                                        className={`flex-1 rounded-lg border-0 px-4 py-3 text-gray-900 focus:ring-2 focus:ring-white/50 ${newsletterError ? 'ring-2 ring-red-500' : ''
+                                            }`}
+                                        placeholder="Enter your email"
+                                        type="email"
+                                        value={newsletterEmail}
+                                        onChange={(e) => setNewsletterEmail(e.target.value)}
+                                        required
+                                    />
+                                    <button
+                                        className={`font-bold py-3 px-6 rounded-lg transition-colors ${isSubscribing
+                                            ? 'bg-gray-300 cursor-not-allowed'
+                                            : 'bg-primary hover:bg-yellow-400 text-secondary'
+                                            }`}
+                                        type="submit"
+                                        disabled={isSubscribing}
+                                    >
+                                        {isSubscribing ? 'Subscribing...' : 'Subscribe'}
+                                    </button>
+                                </div>
+                                {newsletterError && (
+                                    <p className="text-red-100 text-sm bg-red-500/20 px-3 py-2 rounded">
+                                        {newsletterError}
+                                    </p>
+                                )}
                             </form>
                         </div>
                     </section>

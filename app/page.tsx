@@ -106,7 +106,10 @@ export default function Home() {
                 <input
                   className="w-full border-none p-0 text-sm font-medium text-gray-900 placeholder:text-gray-400 focus:ring-0"
                   placeholder="Add guests"
-                  type="text"
+                  type="number"
+                  min="1"
+                  max="20"
+                  step="1"
                 />
               </div>
             </div>

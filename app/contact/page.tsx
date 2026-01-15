@@ -1,7 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import { ZodError } from "zod";
 import YandexMap from "@/components/YandexMap";
+import { contactFormSchema } from "@/lib/validations/inputs";
+import { sanitizeFormData } from "@/lib/utils/sanitize";
 
 export default function ContactPage() {
     const [formData, setFormData] = useState({
@@ -11,12 +14,122 @@ export default function ContactPage() {
         message: "",
     });
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const [errors, setErrors] = useState<Record<string, string>>({});
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    // Helper to clear field-specific errors (prevents stale errors in Playwright tests)
+    const clearError = (field: string) => {
+        setErrors((prev) => {
+            if (!prev || !prev[field]) return prev;
+            const copy = { ...prev };
+            delete copy[field];
+            return copy;
+        });
+    };
+
+
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        alert(
-            "Thank you for your message! We'll get back to you within 24 hours.\n\nNote: Form submission will be implemented in the backend phase."
-        );
-        setFormData({ name: "", email: "", subject: "", message: "" });
+        setErrors({});
+        setIsSubmitting(true);
+
+        try {
+            // 1. Sanitize input first (dynamic import, browser-only)
+            const sanitized = await sanitizeFormData(formData);
+
+            // 2. Validate with Zod
+            const validated = contactFormSchema.parse(sanitized);
+
+            // 3. Call the API
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(validated)
+            });
+
+            // DEBUG: Log raw response (TEMP)
+            let resultText: string;
+            try {
+                resultText = await response.text();
+                console.debug('[DEBUG][CLIENT] /api/contact response', {
+                    status: response.status,
+                    statusText: response.statusText,
+                    textPreview: resultText.substring(0, 200)
+                });
+            } catch (e) {
+                console.error('[DEBUG][CLIENT] Failed to read response text', e);
+                resultText = '';
+            }
+
+            // Parse JSON
+            let result: any;
+            try {
+                result = resultText ? JSON.parse(resultText) : null;
+            } catch (e) {
+                console.error('[DEBUG][CLIENT] Failed to parse JSON', e);
+                result = null;
+            }
+
+            if (!response.ok) {
+                // Handle API errors (including rate limiting and validation)
+                console.debug('[DEBUG][CLIENT] Handling error response', {
+                    status: response.status,
+                    result
+                });
+
+                if (response.status === 429) {
+                    const errorMsg = result?.error || "Too many requests. Please wait and try again later.";
+                    console.debug('[DEBUG][CLIENT] Setting 429 error', { errorMsg });
+                    setErrors({ general: errorMsg });
+                } else if (response.status === 400) {
+                    // Handle validation errors with field mapping
+                    if (result?.fields) {
+                        console.debug('[DEBUG][CLIENT] Setting field errors', result.fields);
+                        setErrors(result.fields);
+                    } else {
+                        const errorMsg = result?.error || "Invalid form data.";
+                        console.debug('[DEBUG][CLIENT] Setting general 400 error', { errorMsg });
+                        setErrors({ general: errorMsg });
+                    }
+                } else {
+                    const errorMsg = result?.error || "Something went wrong. Please try again.";
+                    console.debug('[DEBUG][CLIENT] Setting general error', { errorMsg });
+                    setErrors({ general: errorMsg });
+                }
+                setIsSubmitting(false);
+                return;
+            }
+
+            // Success!
+            alert(result.message || "Thank you for your message! We'll get back to you within 24 hours.");
+            setFormData({ name: "", email: "", subject: "", message: "" });
+        } catch (error: any) {
+            // Handle Zod validation errors
+            if (error instanceof ZodError) {
+                // Extract field-specific error messages from Zod issues
+                const fieldErrors: Record<string, string> = {};
+
+                error.issues.forEach((issue) => {
+                    const fieldName = issue.path[0] as string;
+                    if (fieldName) {
+                        // Use the first error message for each field
+                        if (!fieldErrors[fieldName]) {
+                            fieldErrors[fieldName] = issue.message;
+                        }
+                    }
+                });
+
+                setErrors(fieldErrors);
+                setIsSubmitting(false);
+                return; // Early return - keep errors visible
+            } else {
+                // Unknown error - show generic message
+                setErrors({ general: "Network error. Please try again." });
+                setIsSubmitting(false);
+                return;
+            }
+        }
+        // No finally block - explicit state management per branch
     };
 
     return (
@@ -42,21 +155,35 @@ export default function ContactPage() {
                             <h2 className="text-2xl font-bold text-secondary mb-6">
                                 Send Us a Message
                             </h2>
-                            <form onSubmit={handleSubmit} className="space-y-4">
+
+                            {/* General error */}
+                            {errors.general && (
+                                <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
+                                    {errors.general}
+                                </div>
+                            )}
+
+                            <form onSubmit={handleSubmit} noValidate className="space-y-4">
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 mb-2">
                                         Full Name *
                                     </label>
                                     <input
                                         type="text"
+                                        name="name"
                                         required
                                         value={formData.name}
-                                        onChange={(e) =>
-                                            setFormData({ ...formData, name: e.target.value })
-                                        }
-                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                        onChange={(e) => {
+                                            setFormData({ ...formData, name: e.target.value });
+                                            clearError('name');
+                                        }}
+                                        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent ${errors.name ? 'border-red-500' : 'border-gray-300'
+                                            }`}
                                         placeholder="John Doe"
                                     />
+                                    {errors.name && (
+                                        <p className="mt-1 text-sm text-red-600">{errors.name}</p>
+                                    )}
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -64,26 +191,35 @@ export default function ContactPage() {
                                     </label>
                                     <input
                                         type="email"
+                                        name="email"
                                         required
                                         value={formData.email}
-                                        onChange={(e) =>
-                                            setFormData({ ...formData, email: e.target.value })
-                                        }
-                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                        onChange={(e) => {
+                                            setFormData({ ...formData, email: e.target.value });
+                                            clearError('email');
+                                        }}
+                                        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent ${errors.email ? 'border-red-500' : 'border-gray-300'
+                                            }`}
                                         placeholder="john@example.com"
                                     />
+                                    {errors.email && (
+                                        <p className="mt-1 text-sm text-red-600">{errors.email}</p>
+                                    )}
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 mb-2">
                                         Subject *
                                     </label>
                                     <select
+                                        name="subject"
                                         required
                                         value={formData.subject}
-                                        onChange={(e) =>
-                                            setFormData({ ...formData, subject: e.target.value })
-                                        }
-                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                        onChange={(e) => {
+                                            setFormData({ ...formData, subject: e.target.value });
+                                            clearError('subject');
+                                        }}
+                                        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent ${errors.subject ? 'border-red-500' : 'border-gray-300'
+                                            }`}
                                     >
                                         <option value="">Select a topic</option>
                                         <option value="general">General Inquiry</option>
@@ -92,27 +228,40 @@ export default function ContactPage() {
                                         <option value="support">Technical Support</option>
                                         <option value="other">Other</option>
                                     </select>
+                                    {errors.subject && (
+                                        <p className="mt-1 text-sm text-red-600">{errors.subject}</p>
+                                    )}
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 mb-2">
                                         Message *
                                     </label>
                                     <textarea
+                                        name="message"
                                         required
                                         rows={5}
                                         value={formData.message}
-                                        onChange={(e) =>
-                                            setFormData({ ...formData, message: e.target.value })
-                                        }
-                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                        onChange={(e) => {
+                                            setFormData({ ...formData, message: e.target.value });
+                                            clearError('message');
+                                        }}
+                                        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent ${errors.message ? 'border-red-500' : 'border-gray-300'
+                                            }`}
                                         placeholder="Tell us how we can help..."
                                     ></textarea>
+                                    {errors.message && (
+                                        <p className="mt-1 text-sm text-red-600">{errors.message}</p>
+                                    )}
                                 </div>
                                 <button
                                     type="submit"
-                                    className="w-full h-12 bg-secondary text-white font-bold rounded-lg hover:bg-blue-900 transition-colors"
+                                    disabled={isSubmitting}
+                                    className={`w-full h-12 font-bold rounded-lg transition-colors ${isSubmitting
+                                        ? 'bg-gray-400 cursor-not-allowed'
+                                        : 'bg-secondary text-white hover:bg-blue-900'
+                                        }`}
                                 >
-                                    Send Message
+                                    {isSubmitting ? 'Sending...' : 'Send Message'}
                                 </button>
                             </form>
                         </div>

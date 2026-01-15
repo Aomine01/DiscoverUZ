@@ -25,11 +25,25 @@ export default function YandexMap({
     useEffect(() => {
         // Load Yandex Maps API
         const loadYandexMaps = () => {
+            // Check if API is already loaded
             if (typeof window.ymaps !== "undefined") {
                 initMap();
                 return;
             }
 
+            // Check if script is already being loaded (prevent duplicates)
+            const existingScript = document.querySelector(
+                'script[src*="api-maps.yandex.ru"]'
+            );
+            if (existingScript) {
+                // Script exists, wait for it to load
+                existingScript.addEventListener("load", () => {
+                    window.ymaps?.ready(initMap);
+                });
+                return;
+            }
+
+            // Create and add script
             const script = document.createElement("script");
             script.src =
                 "https://api-maps.yandex.ru/2.1/?apikey=&lang=en_US";

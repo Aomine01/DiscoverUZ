@@ -46,7 +46,10 @@ export default function SearchBox() {
                         <input
                             className="w-full border-0 bg-transparent p-0 text-sm font-medium text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-0"
                             placeholder="Add guests"
-                            type="text"
+                            type="number"
+                            min="1"
+                            max="20"
+                            step="1"
                         />
                     </div>
                 </div>
