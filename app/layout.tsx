@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { cookies } from "next/headers";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -14,13 +15,17 @@ export const metadata: Metadata = {
   description: "Official tourism platform for authentic tours, experiences, and travel in Uzbekistan",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Extract CSP nonce from middleware-set cookie
+  const cookieStore = await cookies();
+  const nonce = cookieStore.get("__csp_nonce")?.value;
+
   return (
-    <html lang="en">
+    <html lang="en" nonce={nonce}>
       <head>
         <link
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
