@@ -173,4 +173,4 @@ For questions or issues:
 
 ---
 
-**Built with ❤️ by an experienced full-stack developer with 10+ years of experience**
+**Built with ❤️ by Sharof/Aomine full-stack developer**
