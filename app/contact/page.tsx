@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import YandexMap from "@/components/YandexMap";
 
 export default function ContactPage() {
     const [formData, setFormData] = useState({
@@ -203,17 +204,108 @@ export default function ContactPage() {
                 </div>
             </section>
 
-            {/* Map Placeholder */}
-            <section className="py-16 bg-gray-50">
+            {/* Interactive Map Section */}
+            <section className="py-16 bg-gradient-to-br from-secondary to-blue-900">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                    <div className="h-96 bg-gray-200 rounded-xl flex items-center justify-center">
-                        <div className="text-center">
-                            <span className="material-symbols-outlined text-6xl text-gray-400 mb-4 block">
-                                map
-                            </span>
-                            <p className="text-gray-500">
-                                Map integration will be added in future update
-                            </p>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        {/* Map Container */}
+                        <div className="order-2 lg:order-1">
+                            <h2 className="text-2xl font-bold text-white mb-6">
+                                Find Us on the Map
+                            </h2>
+                            <div className="relative overflow-hidden rounded-xl shadow-2xl">
+                                {/* Gradient overlay for premium effect */}
+                                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-secondary/20 pointer-events-none z-10"></div>
+
+                                {/* Yandex Map */}
+                                <div className="relative h-[450px] w-full">
+                                    <YandexMap
+                                        center={[41.320043, 69.262534]}
+                                        zoom={17}
+                                        className="rounded-xl"
+                                    />
+                                </div>
+                            </div>
+
+                            {/* Open in Yandex Maps Button */}
+                            <div className="mt-6">
+                                <a
+                                    href="https://yandex.uz/maps/?ll=69.262534%2C41.320043&z=16&pt=69.262534,41.320043,pm2ywm"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-secondary font-bold rounded-lg hover:bg-yellow-400 transition-colors shadow-lg"
+                                >
+                                    <span className="material-symbols-outlined">open_in_new</span>
+                                    <span>Open in Yandex Maps</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        {/* Contact Details Card */}
+                        <div className="order-1 lg:order-2">
+                            <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 shadow-xl">
+                                <h2 className="text-2xl font-bold text-white mb-6">
+                                    Visit Our Office
+                                </h2>
+                                <div className="space-y-6">
+                                    <div className="flex items-start gap-4">
+                                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/20 text-primary">
+                                            <span className="material-symbols-outlined">location_on</span>
+                                        </div>
+                                        <div>
+                                            <h3 className="font-bold text-white mb-1">Address</h3>
+                                            <p className="text-blue-100">
+                                                Alisher Navoi Street, 11A
+                                                <br />
+                                                Shaykhontohur District
+                                                <br />
+                                                Tashkent, 100011, Uzbekistan
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex items-start gap-4">
+                                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/20 text-primary">
+                                            <span className="material-symbols-outlined">schedule</span>
+                                        </div>
+                                        <div>
+                                            <h3 className="font-bold text-white mb-1">Working Hours</h3>
+                                            <p className="text-blue-100">
+                                                Monday - Friday: 9:00 AM - 6:00 PM
+                                                <br />
+                                                Saturday: 10:00 AM - 2:00 PM
+                                                <br />
+                                                Sunday: Closed
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex items-start gap-4">
+                                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/20 text-primary">
+                                            <span className="material-symbols-outlined">directions</span>
+                                        </div>
+                                        <div>
+                                            <h3 className="font-bold text-white mb-1">Getting Here</h3>
+                                            <p className="text-blue-100">
+                                                Near Webster University and Great Gatsby restaurant. Easily accessible by metro via Pakhtakor station (10 min walk).
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Get Directions Button */}
+                                <div className="mt-8 pt-6 border-t border-white/10">
+                                    <a
+                                        href="https://yandex.uz/maps/?rtext=~41.320043,69.262534&rtt=auto"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 text-white font-bold rounded-lg hover:bg-white/20 transition-colors border border-white/20"
+                                    >
+                                        <span className="material-symbols-outlined">navigation</span>
+                                        <span>Get Directions</span>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

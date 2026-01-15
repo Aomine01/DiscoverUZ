@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import Logo from "@/components/ui/Logo";
 
 export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -15,25 +16,14 @@ export default function Header() {
             {/* Header */}
             <header className="fixed top-0 z-50 w-full border-b border-gray-100 bg-white/95 backdrop-blur-md">
                 <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
-                    <Link href="/" className="flex items-center gap-3">
-                        <svg className="h-10 w-10" fill="none" viewBox="0 0 40 40">
-                            <rect fill="#1E3A8A" height="40" rx="10" width="40"></rect>
-                            <path
-                                d="M20 12L21.5 16.5H26L22.5 19.5L24 24L20 21.5L16 24L17.5 19.5L14 16.5H18.5L20 12Z"
-                                fill="#f2cc0d"
-                            ></path>
-                        </svg>
-                        <h1 className="text-xl font-bold tracking-tight text-secondary">
-                            Discover Uz
-                        </h1>
-                    </Link>
+                    <Logo width={64} height={64} />
 
                     <nav className="hidden md:flex items-center gap-8">
                         <Link
                             href="/"
                             className={`text-sm font-medium transition-colors ${isActive("/")
-                                    ? "text-primary"
-                                    : "text-gray-600 hover:text-primary"
+                                ? "text-primary"
+                                : "text-gray-600 hover:text-primary"
                                 }`}
                         >
                             Home
@@ -41,8 +31,8 @@ export default function Header() {
                         <Link
                             href="/for-tourists"
                             className={`text-sm font-medium transition-colors ${isActive("/for-tourists")
-                                    ? "text-primary"
-                                    : "text-gray-600 hover:text-primary"
+                                ? "text-primary"
+                                : "text-gray-600 hover:text-primary"
                                 }`}
                         >
                             For Tourists
@@ -50,8 +40,8 @@ export default function Header() {
                         <Link
                             href="/for-locals"
                             className={`text-sm font-medium transition-colors ${isActive("/for-locals")
-                                    ? "text-primary"
-                                    : "text-gray-600 hover:text-primary"
+                                ? "text-primary"
+                                : "text-gray-600 hover:text-primary"
                                 }`}
                         >
                             For Locals
@@ -59,8 +49,8 @@ export default function Header() {
                         <Link
                             href="/about"
                             className={`text-sm font-medium transition-colors ${isActive("/about")
-                                    ? "text-primary"
-                                    : "text-gray-600 hover:text-primary"
+                                ? "text-primary"
+                                : "text-gray-600 hover:text-primary"
                                 }`}
                         >
                             About
@@ -68,8 +58,8 @@ export default function Header() {
                         <Link
                             href="/contact"
                             className={`text-sm font-medium transition-colors ${isActive("/contact")
-                                    ? "text-primary"
-                                    : "text-gray-600 hover:text-primary"
+                                ? "text-primary"
+                                : "text-gray-600 hover:text-primary"
                                 }`}
                         >
                             Contact
