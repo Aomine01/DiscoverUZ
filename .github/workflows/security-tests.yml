@@ -6,10 +6,15 @@ on:
   pull_request:
     branches: [main, master]
 
+permissions:
+  contents: read
+  actions: read
+
 jobs:
   test:
     runs-on: ubuntu-latest
     name: Run Security Tests
+    timeout-minutes: 15  # Prevent infinite hangs
     
     steps:
       - name: Checkout code
