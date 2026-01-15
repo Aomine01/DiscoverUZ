@@ -1,6 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // ===== TRANSPILE PACKAGES =====
+  // Tell Next.js to transpile specific packages (fixes ESM issues in deployment)
+  transpilePackages: ['isomorphic-dompurify'],
+
   // ===== WEBPACK CONFIGURATION =====
   // Transpile isomorphic-dompurify and its dependencies for proper ESM handling
   webpack: (config) => {
