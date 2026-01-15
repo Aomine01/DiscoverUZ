@@ -50,11 +50,13 @@ export function middleware(request: NextRequest) {
     // Generate nonce for HTML pages using Web Crypto API
     const nonce = generateNonce();
 
-    // Build production-grade CSP without unsafe-inline or unsafe-eval
+    // Build production-grade CSP with strict-dynamic for Next.js compatibility
+    // 'strict-dynamic' allows scripts loaded by nonce-trusted scripts to also execute
+    // This is critical for Next.js hydration and module loading
     // Includes Yandex Maps domains (api-maps.yandex.ru, yastatic.net, etc.)
     const csp = [
         "default-src 'self'",
-        `script-src 'self' 'nonce-${nonce}' https://api-maps.yandex.ru https://*.yandex.ru https://yastatic.net`,
+        `script-src 'self' 'nonce-${nonce}' 'strict-dynamic' https://api-maps.yandex.ru https://*.yandex.ru https://yastatic.net`,
         "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://yastatic.net", // unsafe-inline for styles (lower risk)
         "font-src 'self' https://fonts.gstatic.com",
         "img-src 'self' data: https: blob:", // Allow data: and blob: for map tiles
@@ -72,7 +74,10 @@ export function middleware(request: NextRequest) {
     // Set CSP header
     response.headers.set("Content-Security-Policy", csp);
 
-    // Set nonce cookie for server components to read
+    // Set x-nonce header for Next.js to read (recommended approach)
+    response.headers.set("x-nonce", nonce);
+
+    // Set nonce cookie for server components to read (backup method)
     // Note: httpOnly=false so server components can access via cookies()
     // Short-lived (60s) and secure/sameSite for safety
     response.cookies.set("__csp_nonce", nonce, {
