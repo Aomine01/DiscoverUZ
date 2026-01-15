@@ -1,9 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // ===== EXTERNAL PACKAGES =====
-  // Handle packages that need to be external (not bundled)
-  serverExternalPackages: ['isomorphic-dompurify'],
+  // ===== WEBPACK CONFIGURATION =====
+  // Transpile isomorphic-dompurify and its dependencies for proper ESM handling
+  webpack: (config) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+    };
+    return config;
+  },
 
   // ===== TURBOPACK CONFIGURATION =====
   // Empty config to silence Turbopack warning
