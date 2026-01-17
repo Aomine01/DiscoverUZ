@@ -40,6 +40,11 @@ test.describe("Contact Form - XSS Prevention", () => {
     test("should block form submission with XSS in message", async ({ page }) => {
         await page.goto("http://localhost:3000/contact");
 
+        // Extract CSRF token from cookie
+        const cookies = await page.context().cookies();
+        const csrfCookie = cookies.find(c => c.name === '__csrf_token');
+        const csrfToken = csrfCookie?.value || '';
+
         // Bypass client-side sanitization by directly calling the API
         // This tests server-side XSS detection properly
         const response = await page.request.post('http://localhost:3000/api/contact', {
@@ -50,7 +55,8 @@ test.describe("Contact Form - XSS Prevention", () => {
                 message: "This is a test message with <script>alert('XSS')</script> embedded content"
             },
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'X-CSRF-Token': csrfToken
             }
         });
 
@@ -184,6 +190,11 @@ test.describe("Rate Limiting", () => {
     test("should prevent rapid form submissions", async ({ page }) => {
         await page.goto("http://localhost:3000/contact");
 
+        // Extract CSRF token from cookie
+        const cookies = await page.context().cookies();
+        const csrfCookie = cookies.find(c => c.name === '__csrf_token');
+        const csrfToken = csrfCookie?.value || '';
+
         // Valid form data for rapid submission
         const formData = {
             name: "Test User Name",
@@ -198,7 +209,10 @@ test.describe("Rate Limiting", () => {
             requests.push(
                 page.request.post('http://localhost:3000/api/contact', {
                     data: formData,
-                    headers: { 'Content-Type': 'application/json' }
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': csrfToken
+                    }
                 })
             );
         }
