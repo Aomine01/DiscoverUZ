@@ -1,4 +1,9 @@
 import { defineConfig, devices } from "@playwright/test";
+import * as dotenv from 'dotenv';
+import * as path from 'path';
+
+// Load environment variables from .env file for testing
+dotenv.config({ path: path.resolve(__dirname, '.env') });
 
 /**
  * Playwright Test Configuration
@@ -34,5 +39,7 @@ export default defineConfig({
         url: "http://localhost:3000",
         reuseExistingServer: !process.env.CI,
         timeout: 120 * 1000,
+        // Pass environment variables to the dev server
+        env: process.env as { [key: string]: string },
     },
 });
