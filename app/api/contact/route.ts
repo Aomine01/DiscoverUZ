@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { contactFormSchema } from "@/lib/validations/inputs";
 import { checkRateLimit } from "@/lib/rate-limit";
 import { containsXSS } from "@/lib/utils/sanitize";
+import { validateCSRFOrReject } from "@/lib/csrf";
 import crypto from "crypto";
 
 /**
@@ -15,6 +16,7 @@ import crypto from "crypto";
  * - Content-Length enforcement 
  * - No sensitive data in error responses
  * - Payload hash logging (not raw payloads)
+ * - CSRF protection (Double Submit Cookie pattern)
 // - HMAC email hashing
 // - Observable metrics
 // - Always-on enforcement (never disables)
@@ -41,6 +43,12 @@ function hashPayload(data: any): string {
 }
 
 export async function POST(req: Request) {
+    // 0. CSRF Protection - Validate token before any processing
+    const csrfValidation = await validateCSRFOrReject(req as any);
+    if (!csrfValidation.valid) {
+        return csrfValidation.error;
+    }
+
     const startTime = Date.now();
     const clientId = getClientIdentifier(req);
 
@@ -63,24 +71,15 @@ export async function POST(req: Request) {
         // Extract email safely for composite rate limit key
         const email = typeof body?.email === 'string' ? body.email : undefined;
 
-        // DEBUG: Log request metadata (TEMP)
-        console.debug("[DEBUG][API] Request metadata", {
-            payloadHash,
-            emailPreview: email ? `${email.substring(0, 3)}***` : undefined,
-        });
+        // Payload hash computed for security audit correlation
 
         // 3. Rate Limiting - BEFORE expensive validation (DoS prevention)
         const rateLimit = await checkRateLimit(clientId, email);
         const rateLimitKeyPreview = `${clientId}:${email ? email.substring(0, 3) + '***' : 'no-email'}`;
 
-        console.debug("[DEBUG][API] Rate limit result", {
-            allowed: rateLimit.allowed,
-            ttl: rateLimit.ttl,
-            keyPreview: rateLimitKeyPreview,
-        });
+
 
         if (!rateLimit.allowed) {
-            console.debug("[DEBUG][API] Responding 429", { clientId, payloadHash });
             return NextResponse.json(
                 { error: "Too many requests. Please wait and try again later." },
                 { status: 429 }
@@ -92,14 +91,8 @@ export async function POST(req: Request) {
 
         // 5. Defense-in-depth: Server-side XSS double-check
         const xssFound = containsXSS(validatedData.message);
-        console.debug("[DEBUG][API] XSS check", {
-            payloadHash,
-            xssFound,
-            messagePreview: validatedData.message.substring(0, 50),
-        });
 
         if (xssFound) {
-            console.debug("[DEBUG][API] Responding 400 XSS", { clientId, payloadHash });
             return NextResponse.json(
                 {
                     error: "Invalid form data. Please check your inputs.",
@@ -109,11 +102,11 @@ export async function POST(req: Request) {
             );
         }
 
-        // 5. TODO: CSRF token validation
-        // const csrfToken = req.headers.get("x-csrf-token");
-        // if (!csrfToken || !isValidCSRFToken(csrfToken)) {
-        //     return NextResponse.json({ error: "Invalid CSRF token" }, { status: 403 });
-        // }
+        // 5. CSRF Protection
+        // NOTE: For production, implement CSRF token validation using a library like:
+        // - 'csrf' package for token generation/validation
+        // - Or Next.js middleware with encrypted cookies
+        // Example: https://github.com/pillarjs/csrf
 
         // 6. Process the contact form (send email, save to DB, etc.)
         console.log("Processing contact form:", {
@@ -126,12 +119,18 @@ export async function POST(req: Request) {
             processingTime: Date.now() - startTime,
         });
 
-        // TODO: Implement actual business logic
-        // await sendEmailNotification(sanitizedData);
-        // await saveToDatabase(sanitizedData);
+        // 6. Send email notification
+        try {
+            const { sendContactFormEmail } = await import('@/lib/contact-email');
+            await sendContactFormEmail(validatedData);
+        } catch (emailError) {
+            // Log email error but don't expose to client
+            console.error('[API] Email delivery failed:', emailError);
+            // Still return success to user (email failure shouldn't block submission)
+            // In production, you might want to queue this for retry
+        }
 
         // 8. Success response (no sensitive data)
-        console.debug("[DEBUG][API] Responding 200 success", { payloadHash });
         return NextResponse.json(
             {
                 success: true,
@@ -188,11 +187,17 @@ export async function POST(req: Request) {
 
 // Preflight CORS (if needed)
 export async function OPTIONS() {
+    // SECURITY: Enforce strict CORS origin - no wildcards
+    const ALLOWED_ORIGIN = process.env.ALLOWED_ORIGIN;
+    if (!ALLOWED_ORIGIN) {
+        throw new Error('ALLOWED_ORIGIN environment variable is required for CORS');
+    }
+
     return NextResponse.json(
         {},
         {
             headers: {
-                "Access-Control-Allow-Origin": process.env.ALLOWED_ORIGIN || "*",
+                "Access-Control-Allow-Origin": ALLOWED_ORIGIN,
                 "Access-Control-Allow-Methods": "POST",
                 "Access-Control-Allow-Headers": "Content-Type, X-CSRF-Token",
             },

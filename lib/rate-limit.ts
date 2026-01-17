@@ -20,7 +20,11 @@ const MAX_REQUESTS = 6;
 const MAX_ENTRIES = 10000;
 
 // 🔐 SECURITY: HMAC secret for email hashing (prevents precomputation attacks)
-const EMAIL_HMAC_KEY = process.env.EMAIL_HMAC_KEY || "fallback-dev-key-change-in-production";
+// Fail-secure: throw error if missing in production
+if (!process.env.EMAIL_HMAC_KEY && process.env.NODE_ENV === 'production') {
+    throw new Error('CRITICAL: EMAIL_HMAC_KEY environment variable is required in production. Generate with: node -e "console.log(require(\'crypto\').randomBytes(32).toString(\'hex\'))"');
+}
+const EMAIL_HMAC_KEY = process.env.EMAIL_HMAC_KEY || "dev-only-key-not-for-production";
 
 const ipRequestMap = new Map<string, { count: number; resetTime: number }>();
 

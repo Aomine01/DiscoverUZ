@@ -97,6 +97,93 @@ export const searchSchema = z.object({
 
 export type SearchFormData = z.infer<typeof searchSchema>;
 
+// ===== AUTHENTICATION SCHEMAS =====
+
+// Signup schema with strong password requirements
+export const signupSchema = z.object({
+    name: z
+        .string()
+        .min(2, 'Name must be at least 2 characters')
+        .max(100, 'Name must be less than 100 characters')
+        .trim()
+        .refine(noHTMLTags, 'HTML tags are not allowed'),
+
+    email: z
+        .string()
+        .email('Please enter a valid email address')
+        .max(255, 'Email must be less than 255 characters')
+        .toLowerCase()
+        .trim(),
+
+    password: z
+        .string()
+        .min(8, 'Password must be at least 8 characters')
+        .max(128, 'Password must be less than 128 characters')
+        .regex(/[A-Z]/, 'Password must contain at least one uppercase letter')
+        .regex(/[a-z]/, 'Password must contain at least one lowercase letter')
+        .regex(/[0-9]/, 'Password must contain at least one number')
+        .regex(/[@$!%*?&]/, 'Password must contain at least one special character (@$!%*?&)'),
+
+    confirmPassword: z.string(),
+
+    terms: z.boolean()
+        .refine((val) => val === true, 'You must accept the terms and conditions'),
+}).refine((data) => data.password === data.confirmPassword, {
+    message: 'Passwords do not match',
+    path: ['confirmPassword'],
+});
+
+export type SignupInput = z.infer<typeof signupSchema>;
+
+// Login schema
+export const loginSchema = z.object({
+    email: z
+        .string()
+        .email('Please enter a valid email address')
+        .toLowerCase()
+        .trim(),
+
+    password: z
+        .string()
+        .min(1, 'Password is required'),
+
+    remember: z.boolean().optional(),
+});
+
+export type LoginInput = z.infer<typeof loginSchema>;
+
+// Forgot password schema
+export const forgotPasswordSchema = z.object({
+    email: z
+        .string()
+        .email('Please enter a valid email address')
+        .toLowerCase()
+        .trim(),
+});
+
+export type ForgotPasswordInput = z.infer<typeof forgotPasswordSchema>;
+
+// Reset password schema
+export const resetPasswordSchema = z.object({
+    password: z
+        .string()
+        .min(8, 'Password must be at least 8 characters')
+        .max(128, 'Password must be less than 128 characters')
+        .regex(/[A-Z]/, 'Password must contain at least one uppercase letter')
+        .regex(/[a-z]/, 'Password must contain at least one lowercase letter')
+        .regex(/[0-9]/, 'Password must contain at least one number')
+        .regex(/[@$!%*?&]/, 'Password must contain at least one special character'),
+
+    confirmPassword: z.string(),
+
+    token: z.string().min(1, 'Invalid reset token'),
+}).refine((data) => data.password === data.confirmPassword, {
+    message: 'Passwords do not match',
+    path: ['confirmPassword'],
+});
+
+export type ResetPasswordInput = z.infer<typeof resetPasswordSchema>;
+
 // =====  HELPER: Safe Parse with Error Formatting =====
 export function safeValidate<T>(
     schema: z.ZodSchema<T>,

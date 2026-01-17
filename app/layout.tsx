@@ -20,12 +20,9 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // Extract CSP nonce from middleware-set cookie
-  const cookieStore = await cookies();
-  const nonce = cookieStore.get("__csp_nonce")?.value;
 
   return (
-    <html lang="en" nonce={nonce}>
+    <html lang="en">
       <head>
         <link
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
@@ -33,9 +30,7 @@ export default async function RootLayout({
         />
       </head>
       <body className={`${inter.variable} font-sans antialiased bg-white text-gray-900`}>
-        <Header />
         {children}
-        <Footer />
       </body>
     </html>
   );

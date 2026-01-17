@@ -1,4 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
+import { jwtVerify } from 'jose';
+import { generateSignedCSRFToken } from './lib/csrf';
 
 /**
  * PRODUCTION SECURITY MIDDLEWARE
@@ -7,6 +9,8 @@ import { NextResponse, type NextRequest } from "next/server";
  * - Per-request CSP nonce generation (eliminates unsafe-inline)
  * - Request size limits for API routes
  * - Secure nonce cookie for server components
+ * - Authentication route protection
+ * - Session verification and cleanup
  * 
  * The nonce is generated per-request and passed to:
  * 1. CSP header (script-src 'nonce-XXXXX')
@@ -17,6 +21,16 @@ import { NextResponse, type NextRequest } from "next/server";
 
 // Maximum request body size (bytes)
 const MAX_REQUEST_SIZE = 10 * 1024 * 1024; // 10MB
+
+// Authentication configuration
+// SECURITY: Fail-secure - throw error if SESSION_SECRET is missing
+if (!process.env.SESSION_SECRET) {
+    throw new Error('CRITICAL: SESSION_SECRET environment variable is required. Generate with: node -e "console.log(require(\'crypto\').randomBytes(32).toString(\'hex\'))"');
+}
+const SECRET_KEY = new TextEncoder().encode(process.env.SESSION_SECRET);
+const COOKIE_NAME = 'session';
+const protectedRoutes = ['/dashboard', '/admin'];
+const authRoutes = ['/login', '/signup'];
 
 /**
  * Generate a cryptographically secure random nonce using Web Crypto API
@@ -29,7 +43,7 @@ function generateNonce(): string {
     return btoa(String.fromCharCode(...array));
 }
 
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
     const pathname = request.nextUrl.pathname;
 
     // Content-Length check for API routes
@@ -43,12 +57,56 @@ export function middleware(request: NextRequest) {
             );
         }
 
-        // API routes don't need CSP nonce
+        // API routes don't need CSP nonce or auth checks
         return NextResponse.next();
     }
 
+    // === AUTHENTICATION LOGIC ===
+    const token = request.cookies.get(COOKIE_NAME)?.value;
+    let session = null;
+
+    // Verify session if token exists
+    if (token) {
+        try {
+            const { payload } = await jwtVerify(token, SECRET_KEY);
+            session = payload;
+        } catch (error) {
+            // Invalid/expired token - will be cleaned up below
+            session = null;
+        }
+    }
+
+    // Check if current path requires authentication
+    const isProtectedRoute = protectedRoutes.some(route => pathname.startsWith(route));
+    const isAuthRoute = authRoutes.some(route => pathname.startsWith(route));
+
+    // Redirect unauthenticated users away from protected routes
+    if (isProtectedRoute && !session) {
+        const response = NextResponse.redirect(new URL('/login', request.url));
+        response.cookies.delete(COOKIE_NAME); // Clean up invalid session
+        return response;
+    }
+
+    // Redirect authenticated users away from auth pages
+    if (isAuthRoute && session) {
+        return NextResponse.redirect(new URL('/dashboard', request.url));
+    }
+
+    // If session is invalid, clean up cookie
+    if (token && !session) {
+        const response = NextResponse.next();
+        response.cookies.delete(COOKIE_NAME);
+        // Continue with CSP setup below
+    }
+
+    // === CSP SECURITY LOGIC ===
     // Generate nonce for HTML pages using Web Crypto API
     const nonce = generateNonce();
+
+    // === CSRF PROTECTION ===
+    // Generate CSRF token if not present (stateless Double Submit Cookie pattern)
+    const existingCSRFToken = request.cookies.get('__csrf_token')?.value;
+    const csrfToken = existingCSRFToken || await generateSignedCSRFToken();
 
     // Build production-grade CSP with strict-dynamic for Next.js compatibility
     // 'strict-dynamic' allows scripts loaded by nonce-trusted scripts to also execute
@@ -87,6 +145,18 @@ export function middleware(request: NextRequest) {
         path: "/",
         maxAge: 60, // 60 seconds
     });
+
+    // Set CSRF token cookie (httpOnly=false so client can read for form submissions)
+    // SECURITY: Token is HMAC-signed to prevent forgery
+    if (!existingCSRFToken) {
+        response.cookies.set("__csrf_token", csrfToken, {
+            httpOnly: false, // Client needs to read this for forms/API calls
+            sameSite: "strict",
+            secure: process.env.NODE_ENV === "production",
+            path: "/",
+            maxAge: 60 * 60 * 24, // 24 hours
+        });
+    }
 
     return response;
 }

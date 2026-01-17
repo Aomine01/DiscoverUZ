@@ -67,12 +67,12 @@ export default function Header() {
                     </nav>
 
                     <div className="hidden md:flex items-center gap-3">
-                        <button className="text-sm font-semibold text-secondary hover:text-primary transition-colors px-3">
+                        <Link href="/login" className="text-sm font-semibold text-secondary hover:text-primary transition-colors px-3">
                             Log in
-                        </button>
-                        <button className="h-10 rounded-lg bg-secondary px-5 text-sm font-bold text-white shadow-sm hover:bg-blue-900 transition-colors">
+                        </Link>
+                        <Link href="/signup" className="h-10 rounded-lg bg-secondary px-5 text-sm font-bold text-white shadow-sm hover:bg-blue-900 transition-colors flex items-center">
                             Sign Up
-                        </button>
+                        </Link>
                     </div>
 
                     <button
@@ -127,12 +127,12 @@ export default function Header() {
                             Contact
                         </Link>
                         <div className="flex flex-col gap-3 mt-4">
-                            <button className="h-12 rounded-lg border border-secondary text-secondary font-bold">
+                            <Link href="/login" className="h-12 rounded-lg border border-secondary text-secondary font-bold flex items-center justify-center">
                                 Log in
-                            </button>
-                            <button className="h-12 rounded-lg bg-secondary text-white font-bold">
+                            </Link>
+                            <Link href="/signup" className="h-12 rounded-lg bg-secondary text-white font-bold flex items-center justify-center">
                                 Sign Up
-                            </button>
+                            </Link>
                         </div>
                     </nav>
                 </div>
