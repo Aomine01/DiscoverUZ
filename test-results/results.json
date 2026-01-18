@@ -60,7 +60,7 @@
     "version": "1.57.0",
     "workers": 8,
     "webServer": {
-      "command": "npm run dev",
+      "command": "dotenv -e .env -- npm run dev",
       "url": "http://localhost:3000",
       "reuseExistingServer": true,
       "timeout": 120000
@@ -96,12 +96,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 5236,
+                      "duration": 6597,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-15T19:10:57.376Z",
+                      "startTime": "2026-01-17T13:27:26.536Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -130,12 +130,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 7119,
+                      "duration": 5598,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-15T19:10:57.380Z",
+                      "startTime": "2026-01-17T13:27:26.535Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -164,12 +164,12 @@
                       "workerIndex": 2,
                       "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 8651,
+                      "duration": 7609,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-15T19:10:57.373Z",
+                      "startTime": "2026-01-17T13:27:26.528Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -179,7 +179,7 @@
               ],
               "id": "a7e9410bcc1ef00e9656-b05921cc090b6681f2c3",
               "file": "security.spec.ts",
-              "line": 63,
+              "line": 69,
               "column": 9
             },
             {
@@ -198,12 +198,12 @@
                       "workerIndex": 3,
                       "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 7950,
+                      "duration": 8027,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-15T19:10:57.394Z",
+                      "startTime": "2026-01-17T13:27:26.532Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -213,7 +213,7 @@
               ],
               "id": "a7e9410bcc1ef00e9656-b88bf655acc89386357c",
               "file": "security.spec.ts",
-              "line": 88,
+              "line": 94,
               "column": 9
             }
           ]
@@ -221,7 +221,7 @@
         {
           "title": "Search Box - Input Sanitization",
           "file": "security.spec.ts",
-          "line": 101,
+          "line": 107,
           "column": 6,
           "specs": [
             {
@@ -240,12 +240,12 @@
                       "workerIndex": 4,
                       "parallelIndex": 4,
                       "status": "passed",
-                      "duration": 6923,
+                      "duration": 6825,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-15T19:10:57.375Z",
+                      "startTime": "2026-01-17T13:27:26.595Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -255,7 +255,7 @@
               ],
               "id": "a7e9410bcc1ef00e9656-ccd0eff7b386a708e25d",
               "file": "security.spec.ts",
-              "line": 106,
+              "line": 112,
               "column": 9
             },
             {
@@ -274,12 +274,12 @@
                       "workerIndex": 5,
                       "parallelIndex": 5,
                       "status": "passed",
-                      "duration": 6198,
+                      "duration": 6970,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-15T19:10:57.412Z",
+                      "startTime": "2026-01-17T13:27:26.581Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -289,7 +289,7 @@
               ],
               "id": "a7e9410bcc1ef00e9656-39313fe61ee38c9c2def",
               "file": "security.spec.ts",
-              "line": 119,
+              "line": 125,
               "column": 9
             }
           ]
@@ -297,7 +297,7 @@
         {
           "title": "Newsletter Form - Email Validation",
           "file": "security.spec.ts",
-          "line": 139,
+          "line": 145,
           "column": 6,
           "specs": [
             {
@@ -316,12 +316,12 @@
                       "workerIndex": 6,
                       "parallelIndex": 6,
                       "status": "passed",
-                      "duration": 7437,
+                      "duration": 7112,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-15T19:10:57.398Z",
+                      "startTime": "2026-01-17T13:27:26.545Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -331,7 +331,7 @@
               ],
               "id": "a7e9410bcc1ef00e9656-5ebd35b98b308855dc42",
               "file": "security.spec.ts",
-              "line": 140,
+              "line": 146,
               "column": 9
             }
           ]
@@ -339,7 +339,7 @@
         {
           "title": "Security Headers",
           "file": "security.spec.ts",
-          "line": 160,
+          "line": 166,
           "column": 6,
           "specs": [
             {
@@ -358,12 +358,12 @@
                       "workerIndex": 7,
                       "parallelIndex": 7,
                       "status": "passed",
-                      "duration": 6281,
+                      "duration": 7139,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-15T19:10:57.398Z",
+                      "startTime": "2026-01-17T13:27:26.538Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -373,7 +373,7 @@
               ],
               "id": "a7e9410bcc1ef00e9656-1da325913cd0c70b5a85",
               "file": "security.spec.ts",
-              "line": 161,
+              "line": 167,
               "column": 9
             }
           ]
@@ -381,7 +381,7 @@
         {
           "title": "Rate Limiting",
           "file": "security.spec.ts",
-          "line": 183,
+          "line": 189,
           "column": 6,
           "specs": [
             {
@@ -397,15 +397,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 2640,
+                      "duration": 2881,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-15T19:11:05.920Z",
+                      "startTime": "2026-01-17T13:27:32.699Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -415,7 +415,7 @@
               ],
               "id": "a7e9410bcc1ef00e9656-87797389753bcac32d5e",
               "file": "security.spec.ts",
-              "line": 184,
+              "line": 190,
               "column": 9
             }
           ]
@@ -425,8 +425,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-01-15T19:10:52.645Z",
-    "duration": 16819.993000000002,
+    "startTime": "2026-01-17T13:27:22.077Z",
+    "duration": 13706.996,
     "expected": 9,
     "skipped": 0,
     "unexpected": 0,
