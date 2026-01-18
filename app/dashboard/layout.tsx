@@ -44,11 +44,17 @@ export default async function DashboardLayout({
     // if (!session) redirect('/login');
 
     // Mock user data - replace with actual auth
-    const user = {
+    const user: {
+        name: string;
+        email: string;
+        avatar: string;
+        subscriptionTier: 'free' | 'insider' | 'premium';
+        isVerified: boolean;
+    } = {
         name: 'Alex Johnson',
         email: 'alex@example.com',
         avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Alex',
-        subscriptionTier: 'insider' as const,
+        subscriptionTier: 'insider',
         isVerified: true,
     };
 
