@@ -38,15 +38,33 @@ export async function sendVerificationEmail(
   });
 
   // SECURITY: Validate APP_URL to prevent phishing attacks
-  const APP_URL = process.env.NEXT_PUBLIC_APP_URL;
-  if (!APP_URL) {
-    throw new Error('NEXT_PUBLIC_APP_URL environment variable is required');
-  }
+  const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
   if (process.env.NODE_ENV === 'production' && !APP_URL.startsWith('https://')) {
     throw new Error('NEXT_PUBLIC_APP_URL must use HTTPS in production');
   }
-  const verifyUrl = new URL(`/auth/verify-email?token=${token}`, APP_URL).href;
+  const verifyUrl = new URL(`/verify-email?token=${token}`, APP_URL).href;
 
+  // ============================================================
+  // DEV MODE BYPASS: Console.log verification link if no API key
+  // ============================================================
+  const RESEND_API_KEY = process.env.RESEND_API_KEY;
+
+  if (!RESEND_API_KEY) {
+    // Development mode: Log link to terminal instead of sending email
+    console.log('\n' + '='.repeat(80));
+    console.log('🔗 [DEV MODE] EMAIL VERIFICATION LINK');
+    console.log('='.repeat(80));
+    console.log(`📧 To: ${email}`);
+    console.log(`👤 Name: ${name}`);
+    console.log(`🔗 Verification URL:\n\n   ${verifyUrl}\n`);
+    console.log('⚠️  RESEND_API_KEY not configured - Email not sent');
+    console.log('✅ Click the link above to verify your account');
+    console.log('='.repeat(80) + '\n');
+
+    return; // Exit early - don't attempt to send email
+  }
+
+  // Production mode: Send actual email via Resend
   try {
     await resend.emails.send({
       from: 'DiscoverUz <noreply@discoveruz.uz>',
@@ -87,6 +105,7 @@ export async function sendVerificationEmail(
         </div>
       `,
     });
+    console.log(`✅ [Email] Verification email sent to ${email}`);
   } catch (error) {
     console.error('[Email] Failed to send verification email:', error);
     throw new Error('Failed to send verification email');

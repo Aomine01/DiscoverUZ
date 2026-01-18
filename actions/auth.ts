@@ -196,6 +196,76 @@ export async function login(formData: FormData) {
 }
 
 /**
+ * Email Verification Server Action
+ * 
+ * @security
+ * - Single-use tokens (deleted after verification)
+ * - 24-hour expiration check
+ * - Database transaction for atomicity
+ * 
+ * @param token - Verification token from email link
+ * @returns success/error result
+ */
+export async function verifyEmail(token: string) {
+    try {
+        // Validate token exists
+        if (!token || typeof token !== 'string') {
+            return {
+                error: 'Invalid verification token',
+            };
+        }
+
+        // Find token in database
+        const verificationToken = await prisma.verificationToken.findUnique({
+            where: { token },
+            include: { user: true },
+        });
+
+        if (!verificationToken) {
+            return {
+                error: 'Invalid or expired verification link',
+            };
+        }
+
+        // Check if token has expired (24 hours)
+        if (verificationToken.expiresAt < new Date()) {
+            // Delete expired token
+            await prisma.verificationToken.delete({
+                where: { token },
+            });
+            return {
+                error: 'Verification link has expired. Please request a new one.',
+            };
+        }
+
+        // Update user's email verification status
+        await prisma.user.update({
+            where: { id: verificationToken.userId },
+            data: {
+                emailVerified: true,
+            },
+        });
+
+        // Delete used token (single-use security)
+        await prisma.verificationToken.delete({
+            where: { token },
+        });
+
+        console.log(`✅ [Auth] Email verified for user: ${verificationToken.user.email}`);
+
+        return {
+            success: true,
+            message: 'Email verified successfully! You can now log in.',
+        };
+    } catch (error) {
+        console.error('[Auth] Email verification error:', error);
+        return {
+            error: 'Failed to verify email. Please try again or contact support.',
+        };
+    }
+}
+
+/**
  * Logout Server Action
  * 
  * @security

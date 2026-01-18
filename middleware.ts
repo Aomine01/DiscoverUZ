@@ -108,24 +108,27 @@ export async function middleware(request: NextRequest) {
     const existingCSRFToken = request.cookies.get('__csrf_token')?.value;
     const csrfToken = existingCSRFToken || await generateSignedCSRFToken();
 
-    // Build production-grade CSP with strict-dynamic for Next.js compatibility
-    // 'strict-dynamic' allows scripts loaded by nonce-trusted scripts to also execute
-    // This is critical for Next.js hydration and module loading
-    // Includes Yandex Maps domains (api-maps.yandex.ru, yastatic.net, etc.)
+    // Build production-grade CSP with Next.js compatibility
+    // For DEVELOPMENT: Need 'unsafe-inline' and 'unsafe-eval' for Next.js HMR and React DevTools
+    // For PRODUCTION: strict-dynamic + nonce provides strong security
+    const isDev = process.env.NODE_ENV === 'development';
+
     const csp = [
         "default-src 'self'",
-        `script-src 'self' 'nonce-${nonce}' 'strict-dynamic' https://api-maps.yandex.ru https://*.yandex.ru https://yastatic.net`,
-        "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://yastatic.net", // unsafe-inline for styles (lower risk)
+        isDev
+            ? `script-src 'self' 'unsafe-inline' 'unsafe-eval' 'nonce-${nonce}' https://api-maps.yandex.ru https://*.yandex.ru https://yastatic.net`
+            : `script-src 'self' 'nonce-${nonce}' 'strict-dynamic' https://api-maps.yandex.ru https://*.yandex.ru https://yastatic.net`,
+        "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://yastatic.net",
         "font-src 'self' https://fonts.gstatic.com",
-        "img-src 'self' data: https: blob:", // Allow data: and blob: for map tiles
+        "img-src 'self' data: https: blob:",
         "connect-src 'self' https://*.yandex.ru https://api-maps.yandex.ru https://yastatic.net",
         "frame-src 'self'",
         "object-src 'none'",
         "base-uri 'self'",
         "form-action 'self'",
         "frame-ancestors 'self'",
-        "upgrade-insecure-requests",
-    ].join("; ");
+        isDev ? "" : "upgrade-insecure-requests",
+    ].filter(Boolean).join("; ");
 
     const response = NextResponse.next();
 

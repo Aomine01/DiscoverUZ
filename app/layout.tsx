@@ -30,7 +30,9 @@ export default async function RootLayout({
         />
       </head>
       <body className={`${inter.variable} font-sans antialiased bg-white text-gray-900`}>
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
