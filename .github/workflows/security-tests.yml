@@ -33,6 +33,12 @@ jobs:
         run: npx playwright install --with-deps chromium
       
       - name: Run Playwright tests
+        env:
+          # Required environment variables for tests
+          SESSION_SECRET: ${{ secrets.SESSION_SECRET || 'test-secret-key-for-ci-only-not-for-production-use' }}
+          EMAIL_HMAC_KEY: ${{ secrets.EMAIL_HMAC_KEY || 'test-hmac-key-for-ci-only-not-for-production-use-key' }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL || 'postgresql://test:test@localhost:5432/test' }}
+          NEXT_PUBLIC_APP_URL: 'http://localhost:3000'
         run: npx playwright test
       
       - name: Upload test results
