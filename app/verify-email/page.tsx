@@ -1,5 +1,6 @@
 'use client';
 
+import { Suspense } from 'react';
 import { useEffect, useState } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -7,7 +8,7 @@ import { Loader2, CheckCircle2, AlertCircle, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { verifyEmail } from '@/actions/auth';
 
-export default function VerifyEmailPage() {
+function VerifyEmailContent() {
     const searchParams = useSearchParams();
     const router = useRouter();
     const [status, setStatus] = useState<'loading' | 'success' | 'error'>('loading');
@@ -178,5 +179,21 @@ export default function VerifyEmailPage() {
                 </div>
             </motion.div>
         </div>
+    );
+}
+
+// Wrap in Suspense boundary for Next.js 16 compatibility
+export default function VerifyEmailPage() {
+    return (
+        <Suspense fallback={
+            <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white flex items-center justify-center p-4">
+                <div className="text-center">
+                    <Loader2 className="w-12 h-12 animate-spin text-blue-600 mx-auto mb-4" />
+                    <p className="text-gray-600">Loading...</p>
+                </div>
+            </div>
+        }>
+            <VerifyEmailContent />
+        </Suspense>
     );
 }
