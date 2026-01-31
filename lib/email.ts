@@ -49,25 +49,40 @@ export async function sendVerificationEmail(
   // ============================================================
   const RESEND_API_KEY = process.env.RESEND_API_KEY;
 
-  if (!RESEND_API_KEY) {
-    // Development mode: Log link to terminal instead of sending email
-    console.log('\n' + '='.repeat(80));
-    console.log('🔗 [DEV MODE] EMAIL VERIFICATION LINK');
-    console.log('='.repeat(80));
-    console.log(`📧 To: ${email}`);
-    console.log(`👤 Name: ${name}`);
-    console.log(`🔗 Verification URL:\n\n   ${verifyUrl}\n`);
-    console.log('⚠️  RESEND_API_KEY not configured - Email not sent');
-    console.log('✅ Click the link above to verify your account');
-    console.log('='.repeat(80) + '\n');
+  // EXPLICIT DEBUG LOGGING (visible in Vercel logs)
+  console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+  console.log('📧 [EMAIL SERVICE] Attempting to send verification email');
+  console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+  console.log('📨 To:', email);
+  console.log('👤 Name:', name);
+  console.log('🌍 Environment:', process.env.NODE_ENV || 'unknown');
+  console.log('🔑 Has Resend API Key:', !!RESEND_API_KEY);
+  console.log('🔗 Verification URL:', verifyUrl);
+  console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
 
-    return; // Exit early - don't attempt to send email
+  if (!RESEND_API_KEY) {
+    // Development/Production WITHOUT API Key: Log to console
+    console.error('⚠️  [EMAIL SERVICE] RESEND_API_KEY not configured!');
+    console.error('📋 DEV MODE FALLBACK: Email not sent via Resend');
+    console.error('🔗 COPY THIS VERIFICATION LINK:');
+    console.error('');
+    console.error(`   ${verifyUrl}`);
+    console.error('');
+    console.error('✅ Paste this URL in your browser to verify the account');
+    console.error('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+
+    // CRITICAL: Return success so UI doesn't hang waiting for email
+    return {
+      success: true,
+      devMode: true,
+      message: 'Verification link logged to console (check server logs)'
+    };
   }
 
   // Production mode: Send actual email via Resend
   try {
     await resend.emails.send({
-      from: 'DiscoverUz <noreply@discoveruz.uz>',
+      from: 'DiscoverUz <onboarding@resend.dev>',
       to: email,
       subject: 'Verify your email - DiscoverUz',
       html: `
@@ -148,7 +163,7 @@ export async function sendPasswordResetEmail(
 
   try {
     await resend.emails.send({
-      from: 'DiscoverUz <noreply@discoveruz.uz>',
+      from: 'DiscoverUz <onboarding@resend.dev>',
       to: email,
       subject: 'Reset your password - DiscoverUz',
       html: `

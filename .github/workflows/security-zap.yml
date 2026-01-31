@@ -69,12 +69,12 @@ jobs:
       
       - name: Run OWASP ZAP Baseline Scan
         uses: zaproxy/action-baseline@v0.13.0  # Latest version
-        continue-on-error: true  # Don't fail workflow on security findings
+        continue-on-error: true  # NON-BLOCKING: Security scan is informative, not obstructive
         with:
           target: 'http://localhost:3000'
           rules_file_name: '.zap/rules.tsv'
           cmd_options: '-a -j'  # -a = aggressive, -j = use AJAX spider
-          fail_action: false
+          fail_action: true  # Generate report but don't fail workflow
           issue_title: 'ZAP Scan Report'
           token: ${{ secrets.GITHUB_TOKEN }}  # For creating issues
       

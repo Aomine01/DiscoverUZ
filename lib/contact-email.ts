@@ -15,7 +15,7 @@ import type { ContactFormData } from '@/lib/validations/inputs';
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Email configuration
-const FROM_EMAIL = 'DiscoverUz <noreply@discoveruz.uz>';
+const FROM_EMAIL = 'DiscoverUz <onboarding@resend.dev>';
 const TO_EMAIL = process.env.CONTACT_EMAIL || 'info@discoveruz.com';
 
 /**
