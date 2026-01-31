@@ -39,6 +39,12 @@ jobs:
         run: npm run build
       
       - name: Start application (from build or dev)
+        env:
+          # Required environment variables for app startup
+          SESSION_SECRET: ${{ secrets.SESSION_SECRET || 'test-secret-for-zap-scan-only' }}
+          EMAIL_HMAC_KEY: ${{ secrets.EMAIL_HMAC_KEY || 'test-hmac-for-zap-scan-only-key' }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL || 'postgresql://test:test@localhost:5432/test' }}
+          NEXT_PUBLIC_APP_URL: 'http://localhost:3000'
         run: |
           # Use production build if available, fallback to dev server
           if [ "${{ steps.build.outcome }}" == "success" ]; then
