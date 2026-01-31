@@ -2,8 +2,7 @@ import { defineConfig, devices } from '@playwright/test';
 
 /**
  * Playwright Configuration for Security Tests
- * 
- * @see https://playwright.dev/docs/test-configuration
+ * Load environment variables from .env.local for testing
  */
 export default defineConfig({
     testDir: './tests',
@@ -52,6 +51,7 @@ export default defineConfig({
 
     /* 
      * CRITICAL CI FIX: Auto-start dev server before tests
+     * - Loads .env.local for environment variables
      * - Checks if port 3000 is already in use (reuses if available)
      * - Starts dev server automatically if not running
      * - Waits for server to be ready before running tests
@@ -63,5 +63,9 @@ export default defineConfig({
         timeout: 120 * 1000, // 2 minutes for server startup (CI can be slow)
         stdout: 'ignore',
         stderr: 'pipe',
+        env: {
+            // Explicitly load environment variables from .env.local
+            ...require('dotenv').config({ path: '.env.local' }).parsed,
+        },
     },
 });
